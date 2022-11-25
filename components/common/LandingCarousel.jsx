@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function LandingCarousel() {
+  const ScrolableElement = useRef(null)
+
+
   return (
     <>
       <img
@@ -11,7 +14,7 @@ export default function LandingCarousel() {
         className="absolute top-0 left-0 w-full h-[130vh] object-fill -z-10"
       />
 
-      <section className="flex gap-3 sm:gap-10 items-center snap-display-none sm:h-[90vh] h-[65vh] snap-x overflow-x-scroll snap-mandatory px-10">
+      <section ref={ScrolableElement} className="flex gap-3 sm:gap-10 items-center snap-display-none sm:h-[90vh] h-[70vh] snap-x overflow-x-scroll snap-mandatory px-10">
         {[
           {
             title: "هناك حقيقة مثبتة منذ زمن طويل زمن طويل ",
@@ -79,11 +82,13 @@ export default function LandingCarousel() {
           </motion.div>
         ))}
 
-        <div className="sm:flex hidden">
+        <div dir="ltr" className="sm:flex hidden">
           <button className="py-2 px-4 rounded bg-black text-white font-bold text-xl absolute z-20 top-[50vh] left-4">
             {"<"}
           </button>
-          <button className="py-2 px-4 rounded bg-black text-white font-bold text-xl absolute z-20 top-[50vh] right-4">
+          <button
+            className="py-2 px-4 rounded bg-black text-white font-bold text-xl absolute z-20 top-[50vh] right-4"
+          >
             {">"}
           </button>
         </div>

@@ -19,7 +19,7 @@ export const LandingServicesCard = ({
           <div
             className={`
           absolute w-full h-full bg-zinc-300 -z-10 top-4 
-          ${dir === "ltr" ? "-left-4" : "-right-4"}
+          ${dir === "ltr" ? "-left-4" : "-right-4 "}
           `}
           ></div>
         </div>

@@ -24,6 +24,7 @@ export default function LandingWorkProccess() {
         <div className="flex sm:min-w-max sm:flex-col sm:justify-start overflow-x-scroll flex-row w-full gap-2 snap-display-none px-10 snap-x snap-mandatory ">
           {["نص وهمي", "نص وهمي", "نص وهمي"].map((i, index) => (
             <button
+              key={index}
               onClick={() => setworkProcess(index)}
               className={`transition-all sm:py-5 snap-start py-3 px-3 sm:px-10 rounded-xl font-bold sm:w-max min-w-[10em] border 
           ${

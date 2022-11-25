@@ -6,7 +6,9 @@ import LandingWorkProccess from "./common/LandingWorkProccess";
 import LandingServices from "./common/LandingServices";
 import { LandingServicesCard } from "./common/LandingServicesCard";
 import LandingCarousel from "./common/LandingCarousel";
+import DropDown from "./common/DropDown";
 export {
+  DropDown,
   LandingCarousel,
   MainLayout,
   NavBar,
