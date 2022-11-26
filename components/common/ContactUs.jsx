@@ -9,7 +9,7 @@ export default function ContactUs() {
             <div className="grow-0 shrink-0 basis-auto block w-full lg:flex lg:w-6/12 xl:w-4/12">
               <div className="map-container-2 w-full">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3251.6887374815315!2d44.37917021520217!3d35.41296508025767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1554d71cc5c27b43%3A0xece3b128ef79bd20!2sMelo%20Production!5e0!3m2!1sen!2siq!4v1669384725010!5m2!1sen!2siq"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.956563764727!2d44.35285599999999!3d35.43110599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zMzXCsDI1JzUyLjAiTiA0NMKwMjEnMTAuMyJF!5e0!3m2!1sen!2siq!4v1669462202702!5m2!1sen!2siq"
                   width="100%"
                   height="500"
                   allowFullScreen=""
