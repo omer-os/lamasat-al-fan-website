@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import ReactSwipe from "react-swipe";
 
 export default function LandingCarousel() {
   var ScrollRef = useRef(null);

@@ -26,9 +26,9 @@ export const LandingServicesCard = ({
   
         <div className="flex flex-col">
           <div className="text-zinc-500 text-xl">{category}</div>
-          <div className="text-3xl font-black">{title}</div>
+          <div className="sm:text-3xl text-2xl font-black">{title}</div>
   
-          <div className="text-xl mt-2 sm:mt-4">{subtitle} </div>
+          <div className="sm:text-xl mt-2 sm:mt-4">{subtitle} </div>
   
           <Link href={link} className="border mt-4 border-black py-2 px-3 w-max">
             عرض المشاريع

@@ -12,7 +12,7 @@ export default function CTAcard() {
 
       <div className="flex flex-col sm:items-start sm:w-4/6 max-w-[40em] items-center">
         <div className="sm:text-4xl text-3xl font-bold">عندما كانت طابعة</div>
-        <div className="sm:text-2xl text-xl sm:mt-2 mt-5">
+        <div className="sm:text-2xl text-xl sm:mt-2 mt-3">
           كان Lorem Ipsum هو النص الوهمي القياسي في الصناعة منذ القرن الخامس عشر
           الميلادي ، عندما كانت طابعة غير معروفة.
         </div>

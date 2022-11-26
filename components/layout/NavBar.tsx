@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 export default function NavBar() {
   const [OpenSideBar, setOpenSideBar] = useState(false);
   const [Lang, setLang] = useState("ar");
   const [LangOpened, setLangOpened] = useState(false);
+
+  const router = useRouter();
+
 
   return (
     <nav
@@ -23,21 +27,34 @@ export default function NavBar() {
           OpenSideBar && "!left-0 visible !opacity-100"
         } sm:bg-inherit bg-[#EAEAEA] opacity-0 sm:opacity-100 sm:left-0`}
       >
-        <Link onClick={() => setOpenSideBar(false)} href="/">
-          الرئيسية
-        </Link>
-        <Link onClick={() => setOpenSideBar(false)} href="/about">
-          من نحن
-        </Link>
-        <Link onClick={() => setOpenSideBar(false)} href="/services">
-          خدماتنا
-        </Link>
-        <Link onClick={() => setOpenSideBar(false)} href="/portfolio">
-          مشاريعنا
-        </Link>
+        {[
+          {
+            name: "الرئيسية",
+            link: "/",
+          },
+          {
+            name: "من نحن",
+            link: "/about",
+          },
+          {
+            name: "خدماتنا",
+            link: "/services",
+          },
+          {
+            name: "مشاريعنا",
+            link: "/portfolio",
+          },
+        ].map((i, index) => (
+          <Link 
+          className={`${router.pathname===i.link&&"!font-bold scale-[1.09]"} scale-1 transition-all font-normal`}
+          key={index} onClick={() => setOpenSideBar(false)} href={i.link}>
+            {i.name}
+          </Link>
+        ))}
 
         <div className="flex items-center sm:hidden flex-col-reverse mt-1 text-sm gap-3">
-          <div
+          {/* language dropdown */}
+          {/* <div
             className="flex active:scale-[.95] transition-all cursor-pointer relative px-3 items-center gap-1"
             onClick={() => setLangOpened(!LangOpened)}
           >
@@ -66,7 +83,7 @@ export default function NavBar() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           <Link
             href="/contact"
@@ -89,7 +106,8 @@ export default function NavBar() {
       </div>
 
       <div className="sm:flex hidden gap-3">
-        <div
+        {/* language dropdown */}
+        {/* <div
           className="flex active:scale-[.95] transition-all cursor-pointer relative px-3 items-center gap-1"
           onClick={() => setLangOpened(!LangOpened)}
         >
@@ -116,7 +134,7 @@ export default function NavBar() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         <Link
           href="/contact"

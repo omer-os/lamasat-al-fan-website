@@ -41,7 +41,7 @@ export default function Footer() {
       <div className="h-[.2em] max-w-[10em] rounded-xl w-full bg-zinc-800 mt-2" />
 
       <div className="text-center text-sm text-zinc-300">
-        lamasat al fan ©2020
+        lamasat al fan ©2022
       </div>
     </div>
   );

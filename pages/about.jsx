@@ -18,7 +18,7 @@ export default function About() {
           <button
             onClick={() => setSelectedTap(index)}
             key={index}
-            className="relative flex-1 py-4"
+            className={`relative bg-white flex-1 py-4 transition-all duration-500 ${index===SelectedTap&&'bg-zinc-200'}`}
           >
             {i}
 

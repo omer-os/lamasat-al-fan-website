@@ -10,10 +10,9 @@ export default function DropDown({ Ques, Ans }) {
         className={`
         ${
           Open && "bg-[#E8E8E8]"
-        } bg-white transition-all py-3 px-4 font-bold flex rounded-t cursor-pointer justify-between items-center
-        `}
+        } bg-white transition-all py-3 px-4 font-bold flex rounded-t cursor-pointer justify-between items-center text-sm `}
       >
-        <span>{Ques}</span>
+        <span className="max-w-[19em]">{Ques}</span>
         <motion.img
           animate={{
             rotate: Open ? 0 : 180,
