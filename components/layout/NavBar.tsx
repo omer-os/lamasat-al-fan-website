@@ -65,7 +65,10 @@ export default function NavBar() {
             </div>
           </div>
 
-          <Link href="/" className="bg-black text-white  py-2 px-3 rounded">
+          <Link
+            href="/contact"
+            className="bg-black text-white  py-2 px-3 rounded"
+          >
             تواصل معنا
           </Link>
         </div>
@@ -112,7 +115,10 @@ export default function NavBar() {
           </div>
         </div>
 
-        <Link href="/" className="bg-black text-white  py-2 px-3 rounded">
+        <Link
+          href="/contact"
+          className="bg-black text-white  py-2 px-3 rounded"
+        >
           تواصل معنا
         </Link>
       </div>

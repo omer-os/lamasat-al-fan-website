@@ -3,12 +3,16 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { CTAcard } from "../../components/Files";
-export default function Index() {
+import { gql } from "@apollo/client";
+import client from "../../data";
+import Link from "next/link";
+export default function Index({ data }) {
   const [SelectedCategory, setSelectedCategory] = useState("تجاري");
+
   return (
     <>
-      <div className="w-full sm:px-20 px-6 sm:mt-[7em] flex flex-col">
-        <div className="flex justify-between sm:flex-row flex-col-reverse sm:items-center items-end">
+      <div className="w-full sm:px-20 sm:mt-[7em] flex flex-col">
+        <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-20 sm:top-0 left-0 top-3 items-end">
           <div className="bg-[#E8E8E8] flex rounded-xl sm:w-max w-full p-2 mt-3 gap-2">
             {["تجاري", "حكومي", "سكني"].map((i, index) => (
               <button
@@ -28,40 +32,70 @@ export default function Index() {
           </div>
 
           <div className="text-zinc-500 text-xl mt-2">مشاريع لمسات الفن</div>
-        </div>{" "}
-        <motion.div className="mt-10 grid sm:grid-cols-3 gap-10">
+        </div>
+        <motion.div className="mt-10 px-6 grid sm:grid-cols-3 gap-10 auto-rows-[15em]">
           <AnimatePresence>
-            {[
-              "https://plus.unsplash.com/premium_photo-1661375445819-c04f5418ff53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80",
-              "https://plus.unsplash.com/premium_photo-1661375445819-c04f5418ff53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80",
-              "https://plus.unsplash.com/premium_photo-1661375445819-c04f5418ff53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80",
-              "https://plus.unsplash.com/premium_photo-1661375445819-c04f5418ff53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80",
-            ].map((i, index) => (
-              <motion.div
-                exit={{
-                  scale: [1, 0.9],
-                  opacity: [1, 0.5],
-                }}
-                animate={{
-                  scale: [0.9, 1],
-                  opacity: [0.5, 1],
-                }}
-                key={index}
-                className="rounded-xl w-full h-full object-cover"
-              >
-                <img
-                  src={i}
-                  className="w-full h-full object-cover rounded-xl"
-                  alt=""
-                />
-              </motion.div>
-            ))}
+            {data &&
+              data.allProjects
+                .filter((i) => i.category === SelectedCategory)
+                .map((i, index) => (
+                  <Link href={`/portfolio/${i.slug}`} key={index}>
+                    <motion.div
+                      exit={{
+                        scale: [1, 0.9],
+                        opacity: [1, 0.5],
+                      }}
+                      animate={{
+                        scale: [0.9, 1],
+                        opacity: [0.5, 1],
+                      }}
+                      className="rounded-xl w-full h-full object-cover relative"
+                    >
+                      <img
+                        src={i.coverImage.url}
+                        className="w-full h-full object-cover rounded-xl"
+                        alt=""
+                      />
+
+                      <div className="absolute w-full p-4 bg-gradient-to-t from-black bottom-0 text-xl text-white left-0 rounded-b-xl">
+                        {i.title}
+                      </div>
+                    </motion.div>
+                  </Link>
+                ))}
           </AnimatePresence>
         </motion.div>{" "}
       </div>
+
       <div className="mt-20">
         <CTAcard />
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      {
+        allProjects {
+          coverImage {
+            url
+          }
+          title
+          slug
+          category
+        }
+      }
+    `,
+  });
+
+  console.log(data);
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 10, // In seconds
+  };
 }

@@ -7,7 +7,9 @@ import LandingServices from "./common/LandingServices";
 import { LandingServicesCard } from "./common/LandingServicesCard";
 import LandingCarousel from "./common/LandingCarousel";
 import DropDown from "./common/DropDown";
+import ContactUs from "./common/ContactUs";
 export {
+  ContactUs,
   DropDown,
   LandingCarousel,
   MainLayout,
