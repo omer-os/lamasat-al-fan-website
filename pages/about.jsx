@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CTAcard } from "../components/Files";
+import { CTAcard } from "../components/";
+import { AnimatePresence } from "framer-motion";
 export default function About() {
   const [SelectedTap, setSelectedTap] = useState(2);
   return (
@@ -33,7 +34,6 @@ export default function About() {
 
       {SelectedTap === 2 && <Tap_1 />}
       {SelectedTap === 1 && <Tap_2 />}
-
       <div className="mt-10">
         <CTAcard />
       </div>
@@ -46,7 +46,11 @@ export const Tap_1 = () => {
     <motion.div
       animate={{
         opacity: [0, 1],
-        top: [10, 0],
+        bottom: [-10, 0],
+      }}
+      exit={{
+        bottom: -10,
+        opacity: 0,
       }}
       className="flex md:flex-row flex-col-reverse mx-auto lg:w-5/6 w-full px-10 sm:px-20 mt-10 items-center gap-10"
     >
@@ -108,13 +112,16 @@ export const Tap_1 = () => {
     </motion.div>
   );
 };
-
 export const Tap_2 = () => {
   return (
     <motion.div
       animate={{
         opacity: [0, 1],
-        top: [10, 0],
+        bottom: [-10, 0],
+      }}
+      exit={{
+        bottom: -10,
+        opacity: 0,
       }}
       className="flex relative flex-col mx-auto lg:w-5/6 w-full px-10 sm:px-20 mt-10"
     >
@@ -135,7 +142,16 @@ export const Tap_2 = () => {
 };
 export const Tap_3 = () => {
   return (
-    <div>
+    <motion.div
+      animate={{
+        opacity: [0, 1],
+        bottom: [-10, 0],
+      }}
+      exit={{
+        bottom: -10,
+        opacity: 0,
+      }}
+    >
       <div className="text-3xl font-bold">عن الشركة</div>
 
       <div className="text-xl text-zinc-500">
@@ -143,6 +159,15 @@ export const Tap_3 = () => {
         القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة
         التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ.
       </div>
-    </div>
+    </motion.div>
   );
 };
+
+
+
+
+
+
+
+
+

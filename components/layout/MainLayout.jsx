@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { NavBar, Footer } from "../Files";
+import { NavBar, Footer } from "..";
 
 export default function MainLayout({ children }) {
   return (

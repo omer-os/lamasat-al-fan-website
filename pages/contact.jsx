@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContactUs } from '../components/Files'
+import { ContactUs } from '../components'
 
 export default function ContectUs() {
   return (

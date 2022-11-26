@@ -11,14 +11,17 @@ export default function NavBar() {
       dir="ltr"
       className="flex z-40 justify-between items-center px-7 py-4 fixed right-0 top-0  sm:bg-white/0 transition-all bg-[#EAEAEA] sm:backdrop-blur-md left-0 w-full"
     >
-      <div className="text-xl  font-extrabold relative z-50 capitalize">
+      <Link
+        href="/"
+        className="text-md:xl  font-extrabold relative z-50 capitalize"
+      >
         lamasat al-fan
-      </div>
+      </Link>
 
       <div
         className={`flex flex-col sm:flex-row gap-5 sm:relative fixed sm:w-max sm:h-max w-full h-full z-40 top-0 items-center transition-all duration-300 justify-center left-full font-bold ${
-          OpenSideBar && "!left-0"
-        } sm:bg-inherit bg-[#EAEAEA] sm:left-0`}
+          OpenSideBar && "!left-0 visible !opacity-100"
+        } sm:bg-inherit bg-[#EAEAEA] opacity-0 sm:opacity-100 sm:left-0`}
       >
         <Link onClick={() => setOpenSideBar(false)} href="/">
           الرئيسية

@@ -1,4 +1,4 @@
-import {LandingServicesCard} from "../Files"
+import { LandingServicesCard } from "..";
 
 export default function LandingServices() {
   return (

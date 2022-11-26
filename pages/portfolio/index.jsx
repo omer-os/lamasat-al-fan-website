@@ -2,26 +2,35 @@ import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-import { CTAcard } from "../../components/Files";
+import { CTAcard } from "../../components/";
 import { gql } from "@apollo/client";
 import client from "../../data";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 export default function Index({ data }) {
+  const router = useRouter();
+  const QueryCategory = router.query.category;
+
   const [SelectedCategory, setSelectedCategory] = useState("تجاري");
+
+  useEffect(() => {
+    QueryCategory === undefined && router.push("?category=سكني");
+  }, []);
 
   return (
     <>
       <div className="w-full sm:px-20 sm:mt-[7em] flex flex-col">
         <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-20 sm:top-0 left-0 top-3 items-end">
-          <div className="bg-[#E8E8E8] flex rounded-xl sm:w-max w-full p-2 mt-3 gap-2">
+          <div className="bg-[#E8E8E8] flex rounded-xl sm:w-max w-full p-2 mt-3 gap-2 ">
             {["تجاري", "حكومي", "سكني"].map((i, index) => (
               <button
-                onClick={() => setSelectedCategory(i)}
+                onClick={() => router.push(`?category=${i}`)}
                 key={i}
                 className="font-bold flex-1 text-sm p-2 px-6 rounded-xl relative"
               >
                 <span className="z-20 relative">{i}</span>
-                {SelectedCategory === i && (
+                {QueryCategory === i && (
                   <motion.div
                     className="bg-[#B8B8B8] w-full rounded-xl h-full absolute inset-0 z-10"
                     layoutId="category-bg"
@@ -33,11 +42,11 @@ export default function Index({ data }) {
 
           <div className="text-zinc-500 text-xl mt-2">مشاريع لمسات الفن</div>
         </div>
-        <motion.div className="mt-10 px-6 grid sm:grid-cols-3 gap-10 auto-rows-[15em]">
-          <AnimatePresence>
+        <motion.div className="mt-10 px-6 grid sm:grid-cols-3 gap-10 min-h-[30em] auto-rows-[15em]">
+          <AnimatePresence exit>
             {data &&
               data.allProjects
-                .filter((i) => i.category === SelectedCategory)
+                .filter((i) => i.category === QueryCategory)
                 .map((i, index) => (
                   <Link href={`/portfolio/${i.slug}`} key={index}>
                     <motion.div
@@ -49,9 +58,13 @@ export default function Index({ data }) {
                         scale: [0.9, 1],
                         opacity: [0.5, 1],
                       }}
+                      transition={{
+                        duration: 0.3,
+                      }}
                       className="rounded-xl w-full h-full object-cover relative"
                     >
-                      <img
+                      <motion.img
+                        layoutId={i.slug}
                         src={i.coverImage.url}
                         className="w-full h-full object-cover rounded-xl"
                         alt=""
@@ -64,7 +77,7 @@ export default function Index({ data }) {
                   </Link>
                 ))}
           </AnimatePresence>
-        </motion.div>{" "}
+        </motion.div>
       </div>
 
       <div className="mt-20">
@@ -90,7 +103,7 @@ export async function getStaticProps() {
     `,
   });
 
-  console.log(data);
+  // console.log(data);
 
   return {
     props: {

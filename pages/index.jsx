@@ -6,10 +6,17 @@ import {
   MainLayout,
   DropDown,
   ContactUs,
-} from "../components/Files";
+} from "../components";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
+
+
+
+
+
+
+
 export default function Index() {
   const [SelectedCard, setSelectedCard] = useState(0);
   const cards = ["blue", "red", "blue"];
