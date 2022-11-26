@@ -10,6 +10,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { Test } from "../components/common/LandingCarousel";
 
 
 
@@ -23,7 +24,8 @@ export default function Index() {
   return (
     <>
       <div>
-        <LandingCarousel />
+        {/* <LandingCarousel /> */}
+        <Test />
         <LandingServices />
         <LandingWorkProccess />
         <div className="h-1 mx-auto rounded bg-black w-4/6 my-10" />
