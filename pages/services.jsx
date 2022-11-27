@@ -59,7 +59,7 @@ export default function Services() {
                 bottom: [-10, 0],
                 opacity: [0, 1],
                 transition: {
-                  delay: index * 0.5+1,
+                  delay: index * 0.5+.2,
                 },
               }}
               key={index}

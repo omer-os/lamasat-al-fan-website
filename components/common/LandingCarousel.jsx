@@ -52,7 +52,7 @@ export default function LandingCarousel({ data }) {
                 <img
                   loading="lazy"
                   src={i.url}
-                  className="w-full h-[26em] object-cover rounded"
+                  className="w-full h-[26em] object-cover  rounded"
                 />
               </SwiperSlide>
             ))}
