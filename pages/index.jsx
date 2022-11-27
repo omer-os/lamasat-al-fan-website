@@ -24,7 +24,6 @@ export default function Index() {
   return (
     <>
       <div>
-        {/* <LandingCarousel /> */}
         <Test />
         <LandingServices />
         <LandingWorkProccess />
