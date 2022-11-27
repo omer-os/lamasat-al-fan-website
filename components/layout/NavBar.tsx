@@ -12,19 +12,21 @@ export default function NavBar() {
   return (
     <nav
       dir="ltr"
-      className="flex z-40 justify-between items-center px-7 py-4 fixed right-0 top-0  sm:bg-white/0 transition-all bg-[#EAEAEA] sm:backdrop-blur-md left-0 w-full"
+      className="flex z-40 justify-between items-center px-7 py-4 fixed right-0 top-0 transition-all sm:bg-white/0 sm:backdrop-blur-md left-0 w-full"
     >
+      <div className="w-full h-full absolute inset-0 sm:bg-white/0 sm:hidden transition-all bg-white/0 backdrop-blur-lg z-10"></div>
+
       <Link
         href="/"
-        className="text-md:xl  font-extrabold relative z-50 capitalize"
+        className="text-md:xl  font-extrabold relative z-50 capitalize text-first"
       >
         lamasat al-fan
       </Link>
 
       <div
         className={`flex flex-col sm:flex-row gap-5 sm:relative fixed sm:w-max sm:h-max w-full h-full z-40 top-0 items-center transition-all duration-300 justify-center left-full font-bold ${
-          OpenSideBar && "!left-0 visible !opacity-100"
-        } sm:bg-inherit bg-[#EAEAEA] opacity-0 sm:opacity-100 sm:left-0`}
+          OpenSideBar && "!left-0 bg-third visible !opacity-100"
+        }  opacity-0 sm:opacity-100 sm:left-0`}
       >
         {[
           {
@@ -92,7 +94,7 @@ export default function NavBar() {
           <Link
             onClick={() => setOpenSideBar(false)}
             href="/contact"
-            className="bg-black text-white active:scale-95 transition-all py-2 px-3 rounded"
+            className="bg-first text-white active:scale-95 transition-all py-2 px-3 rounded"
           >
             تواصل معنا
           </Link>
@@ -104,7 +106,7 @@ export default function NavBar() {
             <img src="/icons/twitter.svg" alt="" />
             <img src="/icons/instagram.svg" alt="" />
           </div>
-          <div className="text-center capitalize text-[#737373] font-normal">
+          <div className="text-center capitalize text-zinc-600 font-normal">
             lamasat al fan ©2020{" "}
           </div>
         </div>
@@ -143,7 +145,7 @@ export default function NavBar() {
 
         <Link
           href="/contact"
-          className="bg-black text-white  py-2 px-3 rounded"
+          className="bg-first text-white  py-2 px-3 rounded"
         >
           تواصل معنا
         </Link>

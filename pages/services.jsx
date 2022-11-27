@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Services() {
   return (
     <main>
-      <div  className="flex md:flex-row flex-col items-center px-6 sm:px-10 mt-20 gap-10 lg:w-4/6 mx-auto ">
+      <div className="flex md:flex-row flex-col items-center px-6 sm:px-10 mt-20 gap-10 lg:w-4/6 mx-auto ">
         <motion.div
           animate={{
             right: [-10, 0],
@@ -18,7 +18,7 @@ export default function Services() {
           className="flex-col min-w-[17em] flex"
         >
           <div className="text-zinc-400">خدماتنا</div>
-          <div className="font-bold md:text-3xl text-2xl">
+          <div className="font-bold text-first md:text-3xl text-2xl">
             عبارة تسويقية لطيفة هنا تسويقية لطيفة هنا
           </div>
 
@@ -27,13 +27,13 @@ export default function Services() {
           </div>
 
           <Link
-            className="py-2 px-4 bg-black mt-4 sm:mt-10 text-white w-max"
+            className="py-2 px-4 bg-first mt-4 sm:mt-10 text-white w-max"
             href="/portfolio"
           >
             اهم مشاريعنا
           </Link>
         </motion.div>
-        <div  className="flex-col flex gap-4 max-w-[28em]">
+        <div className="flex-col flex gap-4 max-w-[28em]">
           {[
             {
               title: "تصاميم الهندسية",
@@ -59,11 +59,11 @@ export default function Services() {
                 bottom: [-10, 0],
                 opacity: [0, 1],
                 transition: {
-                  delay: index * 0.5+.2,
+                  delay: index * 0.5 + 0.2,
                 },
               }}
               key={index}
-              className="px-3 py-4 relative flex flex-col bg-zinc-100 pr-[8em]"
+              className="px-3 py-4 relative flex flex-col bg-third pr-[8em]"
             >
               <div className=" font-bold">{service.title}</div>
               <div className="text-zinc-600 text-sm">{service.subtitle}</div>
@@ -75,7 +75,7 @@ export default function Services() {
                 رؤية المشاريع
               </Link>
 
-              <div className="absolute h-full bg-zinc-200 top-0 right-0 flex items-center justify-center py-3 px-6">
+              <div className="absolute h-full bg-first/20 top-0 right-0 flex items-center justify-center py-3 px-6">
                 <img
                   src={`/icons/${service.img}.png`}
                   className="object-contain w-14 h-14"

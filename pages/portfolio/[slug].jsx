@@ -20,14 +20,14 @@ export default function ProjectDetails({ data }) {
           alt=""
         />
 
-        <div className="absolute sm:flex hidden -top-6 -right-6 w-[8em] h-[7em] bg-zinc-200 -z-10"></div>
-        <div className="absolute  bottom-0 sm:-bottom-6 left-0  sm:-left-6 sm:flex hidden sm:w-[8em] h-[7em] sm:bg-zinc-200 sm:-z-10"></div>
+        <div className="absolute sm:flex hidden -top-6 -right-6 w-[8em] h-[7em] bg-first -z-10"></div>
+        <div className="absolute  bottom-0 sm:-bottom-6 left-0  sm:-left-6 sm:flex hidden sm:w-[8em] h-[7em] sm:bg-first sm:-z-10"></div>
         <div className="absolute  sm:hidden -bottom-1 left-0  w-full h-[7em] bg-gradient-to-t from-white "></div>
       </div>
 
       <button
         onClick={() => router.back()}
-        className="rounded-full flex items-center justify-center w-12 h-12 fixed sm:hidden z-30 top-16 left-2 bg-zinc-300 scale-1 active:scale-95 transition-all"
+        className="rounded-full flex items-center justify-center w-12 h-12 fixed sm:hidden z-30 top-16 left-2 bg-zinc-200 scale-1 active:scale-95 transition-all"
       >
         <img
           src="/icons/down-arrow.png"

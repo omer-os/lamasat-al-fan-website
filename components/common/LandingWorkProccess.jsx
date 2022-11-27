@@ -9,13 +9,13 @@ export default function LandingWorkProccess() {
     "على الإنترنت على إعادة تكرار مقاطع من نص لوريم إيبسوم نفسه عدة مرات بما تتطلبه الحاجة، يقوم مولّدنا هذا باستخدام كلمات من قاموس يحوي على أكثر من 200 كلمة لا تينية، مضاف",
     "على الإنترنت على إعادة تكرار مقاطع من نص لوريم إيبسوم نفسه عدة  بما تتطلبه يقوم مولّدنا هذا باستخدام كلمات من قاموس يحوي على أكثر من 200 كلمة لا تينية، مضاف",
   ];
-  
+
   return (
-    <section className="sm:mt-24 mt-10">
-      <div className="sm:text-center sm:text-3xl text-zinc-500 sm:text-black px-10 sm:font-bold">
+    <section className="bg-first py-10 sm:mt-24 mt-10">
+      <div className="sm:text-center sm:text-3xl text-white  px-10 sm:font-bold">
         عملية عملنا
       </div>
-      <div className="sm:text-center text-2xl sm:text-xl mt-1 sm:text-zinc-400 px-10 font-bold sm:font-normal sm:mx-auto max-w-[15em] ">
+      <div className="sm:text-center text-2xl sm:text-xl mt-1 text-third/70 px-10 font-bold sm:font-normal sm:mx-auto max-w-[15em] ">
         النتائج الممتازة هي نتيجة عمل منضبط
       </div>
 
@@ -30,7 +30,7 @@ export default function LandingWorkProccess() {
               bottom: [0, -10],
               opacity: [1, 0],
             }}
-            className="mx-4 sm:mx-0 p-10 rounded-xl bg-zinc-200 sm:bg-transparent sm:px-0"
+            className="mx-4 text-zinc-500 sm:mx-0 p-10 rounded-xl bg-third sm:bg-transparent sm:px-0"
           >
             {workprostext[workProcess]}
           </motion.div>
@@ -41,16 +41,16 @@ export default function LandingWorkProccess() {
               key={index}
               onClick={() => setworkProcess(index)}
               className={`transition-all sm:py-5 snap-start py-3 flex-1 text-sm sm:text-md sm:px-10 rounded-xl font-bold sm:w-max relative ${
-                index === workProcess ? "sm:!text-white" : "text-zinc-500"
+                index === workProcess ? "!text-white" : "text-zinc-500"
               }`}
             >
               {index === workProcess && (
                 <motion.div
                   layoutId="workProsbtn"
-                  className="w-full h-full bg-zinc-200 sm:bg-black -z-10 absolute top-0 left-0 rounded-xl"
+                  className="w-full h-full bg-third/20 z-10 absolute top-0 left-0 rounded-xl"
                 />
               )}
-              نص وهمي
+              <span className="relative  z-20"> نص وهمي</span>
             </button>
           ))}
         </div>

@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="gap-4 bg-black p-7 flex items-center flex-col text-white w-full">
+    <div className="gap-4 bg-first p-7 flex items-center flex-col text-white w-full">
       <div className="text-xl font-extrabold text-center w-full">
         Lamasat Al Fan
       </div>
@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="flex gap-5 items-center mt-2">
         <Link href="/">
           <img
-            className="hover:scale-95 transition-all"
+            className="hover:scale-95 transition-all fill-white"
             src="/icons/facebook.svg"
             alt=""
           />
@@ -38,7 +38,7 @@ export default function Footer() {
         <Link href="/contact">تواصل معنا</Link>
       </div>
 
-      <div className="h-[.2em] max-w-[10em] rounded-xl w-full bg-zinc-800 mt-2" />
+      <div className="h-[.2em] max-w-[10em] rounded-xl w-full bg-third/30 mt-2" />
 
       <div className="text-center text-sm text-zinc-300">
         lamasat al fan ©2022

@@ -9,7 +9,7 @@ import {
 import { gql } from "@apollo/client";
 import client from "../data";
 
-export default function Index({data}) {
+export default function Index({ data }) {
   return (
     <>
       <div>
@@ -60,7 +60,6 @@ export async function getStaticProps() {
       }
     `,
   });
-
 
   return {
     props: {
