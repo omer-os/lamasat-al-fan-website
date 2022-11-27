@@ -3,28 +3,17 @@ import {
   LandingCarousel,
   LandingServices,
   LandingWorkProccess,
-  MainLayout,
   DropDown,
   ContactUs,
 } from "../components";
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { Test } from "../components/common/LandingCarousel";
+import { gql } from "@apollo/client";
+import client from "../data";
 
-
-
-
-
-
-
-export default function Index() {
-
- 
+export default function Index({data}) {
   return (
     <>
       <div>
-        <Test />
+        <LandingCarousel data={data} />
         <LandingServices />
         <LandingWorkProccess />
         <div className="h-1 mx-auto rounded bg-black w-4/6 my-10" />
@@ -57,4 +46,26 @@ export default function Index() {
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      {
+        landingPages {
+          heroImages {
+            url
+          }
+        }
+      }
+    `,
+  });
+
+
+  return {
+    props: {
+      data: data,
+    },
+    revalidate: 10,
+  };
 }

@@ -1,7 +1,12 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
+import Link from "next/link";
+import { Navigation } from "swiper";
+import { useEffect, useState } from "react";
 
-export function Test() {
+export default function LandingCarousel({ data }) {
+  const [ActiveSlide, setActiveSlide] = useState(0);
+
   return (
     <div className="flex mt-[8em] flex-col gap-10">
       <div className="flex px-7 mx-auto max-w-[40em] flex-col">
@@ -14,10 +19,18 @@ export function Test() {
         </div>
 
         <div className="flex mx-auto mt-10 gap-10">
-          <div className="px-4 rounded py-1 border-black border-[.09em]">
+          <Link
+            href="/portfolio"
+            className="px-4 rounded py-1 border-black border-[.09em] active:bg-black bg-white transition-all active:scale-95 active:text-white"
+          >
             اهم مشاريعنا
-          </div>
-          <div className="px-4 py-1 ">تواصل معنا</div>
+          </Link>
+          <Link
+            href="/contact"
+            className="px-4 active:scale-95 scale-1 transition-all py-1 "
+          >
+            تواصل معنا
+          </Link>
         </div>
       </div>
       <div className=" my-7">
@@ -30,58 +43,33 @@ export function Test() {
             }}
             grabCursor={true}
             effect={"coverflow"}
-            // onSlideChange={() => console.log("slide change")}
-            // onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={(s) => {
+              setActiveSlide(s.activeIndex);
+            }}
           >
-            <SwiperSlide>
-              <img
-                src="https://images.unsplash.com/photo-1669432007966-ab0c73488325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
-                className="w-full h-[26em] object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src="https://images.unsplash.com/photo-1669432007966-ab0c73488325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
-                className="w-full h-[26em] object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src="https://images.unsplash.com/photo-1669432007966-ab0c73488325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
-                className="w-full h-[26em] object-cover"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src="https://images.unsplash.com/photo-1669432007966-ab0c73488325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
-                className="w-full h-[26em] object-cover"
-              />
-            </SwiperSlide>
+            {data.landingPages[0].heroImages.map((i, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  loading="lazy"
+                  src={i.url}
+                  className="w-full h-[26em] object-cover rounded"
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
 
         <div className="flex sm:hidden overflow-x-scroll snap-mandatory px-5 snap-display-none gap-3 snap-x">
-          <div className="h-[20em] min-w-full snap-center">
-            <img
-              src="https://images.unsplash.com/photo-1669432007966-ab0c73488325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
-              className="min-w-full snap-center h-full object-cover"
-              alt=""
-            />
-          </div>
-          <div className="h-[20em] min-w-full snap-center">
-            <img
-              src="https://images.unsplash.com/photo-1669432007966-ab0c73488325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
-              className="min-w-full snap-center h-full object-cover"
-              alt=""
-            />
-          </div>
-          <div className="h-[20em] min-w-full snap-center">
-            <img
-              src="https://images.unsplash.com/photo-1669432007966-ab0c73488325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
-              className="w-full h-full object-cover"
-              alt=""
-            />
-          </div>
+          {data.landingPages[0].heroImages.map((i, index) => (
+            <div key={index} className="h-[20em] min-w-full snap-center">
+              <img
+                loading="lazy"
+                src={i.url}
+                className="min-w-full snap-center h-full object-cover rounded"
+                alt=""
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

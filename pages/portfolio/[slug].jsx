@@ -11,7 +11,7 @@ export default function ProjectDetails({ data }) {
 
   const router = useRouter();
   return (
-    <div className="md:w-4/6 w-full px-6 sm:w-5/6 transition-all mt-[0em] mx-auto">
+    <div className="md:w-4/6 w-full px-6 sm:w-5/6 transition-all mt-[0em] mx-auto mb-20">
       <div className="sm:relative absolute top-[3.5em] left-0 right-0 h-[25em] w-full -z-10 ">
         <motion.img
           layoutId={data[0].slug}

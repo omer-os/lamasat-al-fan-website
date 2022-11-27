@@ -9,7 +9,6 @@ export default function NavBar() {
 
   const router = useRouter();
 
-
   return (
     <nav
       dir="ltr"
@@ -45,9 +44,14 @@ export default function NavBar() {
             link: "/portfolio",
           },
         ].map((i, index) => (
-          <Link 
-          className={`${router.pathname===i.link&&"!font-bold scale-[1.09]"} scale-1 transition-all font-normal`}
-          key={index} onClick={() => setOpenSideBar(false)} href={i.link}>
+          <Link
+            className={`${
+              router.pathname === i.link && "!font-bold scale-[1.09]"
+            } scale-1 transition-all font-normal`}
+            key={index}
+            onClick={() => setOpenSideBar(false)}
+            href={i.link}
+          >
             {i.name}
           </Link>
         ))}
@@ -86,8 +90,9 @@ export default function NavBar() {
           </div> */}
 
           <Link
+            onClick={() => setOpenSideBar(false)}
             href="/contact"
-            className="bg-black text-white  py-2 px-3 rounded"
+            className="bg-black text-white active:scale-95 transition-all py-2 px-3 rounded"
           >
             تواصل معنا
           </Link>

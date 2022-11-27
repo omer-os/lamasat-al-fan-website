@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { CTAcard } from "../components/";
-import { AnimatePresence } from "framer-motion";
 export default function About() {
   const [SelectedTap, setSelectedTap] = useState(2);
   return (
