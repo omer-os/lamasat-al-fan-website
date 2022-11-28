@@ -22,7 +22,7 @@ export default function LandingCarousel({ data }) {
         <div className="flex mx-auto mt-10 gap-10">
           <Link
             href="/portfolio"
-            className="px-4 rounded py-2 bg-second transition-all active:scale-95 text-white"
+            className="px-4 rounded py-2 bg-gradient-to-br to-indigo-600 from-indigo-700 transition-all active:scale-95 text-white"
           >
             اهم مشاريعنا
           </Link>
@@ -135,7 +135,6 @@ export default function LandingCarousel({ data }) {
           {data.landingPages[0].heroImages.map((i, index) => (
             <div key={index} className="h-[20em] min-w-full snap-center">
               <motion.img
-                whileInView={() => console.log(index)}
                 loading="lazy"
                 src={i.url}
                 className="min-w-full snap-center h-full object-cover rounded"

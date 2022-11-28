@@ -21,7 +21,7 @@ export default function ProjectDetails({ data }) {
         />
 
         <div className="absolute sm:flex hidden -top-6 -right-6 w-[8em] h-[7em] bg-first -z-10"></div>
-        <div className="absolute  bottom-0 sm:-bottom-6 left-0  sm:-left-6 sm:flex hidden sm:w-[8em] h-[7em] sm:bg-first sm:-z-10"></div>
+        <div className="absolute  bottom-0 sm:-bottom-6 left-0 sm:-left-6 sm:flex hidden sm:w-[8em] h-[7em] sm:bg-first sm:-z-10"></div>
         <div className="absolute  sm:hidden -bottom-1 left-0  w-full h-[7em] bg-gradient-to-t from-white "></div>
       </div>
 

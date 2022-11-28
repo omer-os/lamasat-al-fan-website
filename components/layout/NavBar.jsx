@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import useTranslation from "next-translate/useTranslation";
 
 export default function NavBar() {
   const [OpenSideBar, setOpenSideBar] = useState(false);
   const [Lang, setLang] = useState("ar");
   const [LangOpened, setLangOpened] = useState(false);
+  const { t, lang } = useTranslation("common");
 
   const router = useRouter();
 
@@ -20,7 +22,8 @@ export default function NavBar() {
         href="/"
         className="text-md:xl  font-extrabold relative z-50 capitalize text-first"
       >
-        lamasat al-fan
+        {/* {t(`common:logo`)} */}
+        lamasat al fan
       </Link>
 
       <div

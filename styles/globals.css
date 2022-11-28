@@ -59,3 +59,16 @@ body {
 .ctaGradient{
   background: linear-gradient(274.92deg, #002D27 0.86%, #005C50 100%);
 }
+
+
+
+
+
+
+
+#hero1{
+  background:url(https://4.bp.blogspot.com/_AQ0vcRxFu0A/S9shDGGyMTI/AAAAAAAAAYk/kn3WTkY2LoQ/s1600/IMG_0714.JPG);
+   background-size:cover;
+   background-position:center center;
+   background-attachment:fixed;
+ }

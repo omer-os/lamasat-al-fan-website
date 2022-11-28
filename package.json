@@ -20,6 +20,7 @@
     "fslightbox-react": "1.6.2-2",
     "graphql": "^16.6.0",
     "next": "13.0.4",
+    "next-translate": "^1.6.0",
     "postcss": "^8.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",

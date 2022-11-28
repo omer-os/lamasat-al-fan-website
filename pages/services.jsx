@@ -79,7 +79,7 @@ export default function Services() {
                 <img
                   src={`/icons/${service.img}.png`}
                   className="object-contain w-14 h-14"
-                  alt=""
+                  alt="z"
                 />
               </div>
             </motion.div>

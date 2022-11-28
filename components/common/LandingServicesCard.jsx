@@ -27,7 +27,9 @@ export const LandingServicesCard = ({
       }`}
     >
       <div className="img sm:w-[40em] relative h-[25em] w-full">
-        <img className="w-full object-cover h-full" src={img} alt="" />
+        <img className="w-full object-cover h-full" src={img} alt="" 
+        
+        />
         <div
           className={`
           absolute w-full h-full bg-zinc-100 -z-10 top-4 
@@ -48,7 +50,7 @@ export const LandingServicesCard = ({
 
         <Link
           href={link}
-          className="border mt-4 border-first relative hover:text-white  group py-2 text-first hover:border-2 transition-all px-3 w-max"
+          className="mt-4 outline-first outline-2 relative hover:text-white outline group py-2 text-first  transition-all px-3 w-max"
         >
           عرض المشاريع
           <div className="absolute transition-all w-0 group-hover:w-full h-full bg-first top-0 left-0 -z-10" />

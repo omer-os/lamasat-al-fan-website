@@ -34,21 +34,22 @@ import React from "react";
 
 export default function CTAcard() {
   return (
-    <div className="text-white ctaGradient mx-40 rounded-xl p-10 mb-10">
-      <div className="flex pr-8 relative flex-col max-w-[50em]">
+    <div className="text-white ctaGradient mx-2 sm:mx-16 lg:mx-40 rounded-xl transition-all py-8 px-5 sm:p-10 mb-10">
+      <div className="flex sm:pr-8 pr-7 transition-all relative flex-col max-w-[50em]">
         <div className="bg-fourth right-0 w-2 top-0 bottom-0 absolute h-full" />
-        <p className="text-4xl font-bold">
+        <p className="text-2xl transition-all sm:text-4xl font-bold">
           عندما كانت طابعة عندما كانت طابعة عندما كانت طا بعة عندما كا نت طابعة
         </p>
-        <p className="mt-2 max-w-[45em]">
+        <p className="mt-2 transition-all text-sm sm:text-base max-w-[45em]">
           كان Lorem Ipsum هو النص الوهمي القياسي في الصناعة الوهمي القياسي في
-          الصناعة الوهمي القياسي في الصناعة{" "}
+          الصناعة الصناعة الوهمي القيا سي في
+          الصناعة  الوهمي القياسي في الصناعة{" "}
         </p>
         <Link
           className="bg-fourth w-max py-2 px-3 text-first rounded active:scale-95 transition-all font-bold mt-10"
           href="/portfolio"
         >
-          تواصل معنا
+          مشاريعنا
         </Link>
       </div>
     </div>

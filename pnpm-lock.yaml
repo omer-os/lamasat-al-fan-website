@@ -12,6 +12,7 @@ specifiers:
   fslightbox-react: 1.6.2-2
   graphql: ^16.6.0
   next: 13.0.4
+  next-translate: ^1.6.0
   postcss: ^8.4.19
   react: 18.2.0
   react-dom: 18.2.0
@@ -31,6 +32,7 @@ dependencies:
   fslightbox-react: 1.6.2-2_biqbaboplfbrettd7655fr4n2y
   graphql: 16.6.0
   next: 13.0.4_biqbaboplfbrettd7655fr4n2y
+  next-translate: 1.6.0_next@13.0.4+react@18.2.0
   postcss: 8.4.19
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -715,6 +717,16 @@ packages:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: false
+
+  /next-translate/1.6.0_next@13.0.4+react@18.2.0:
+    resolution: {integrity: sha512-rmRBYOwPHvokN+5uH3O/SZqfRUVORLkgt/097mSaq3+CWcEtXEjkVrfBZpYwZ8W3og4QVd+uphYX//qegnIbRg==}
+    peerDependencies:
+      next: '>= 10.0.0'
+      react: '>= 16.8.0'
+    dependencies:
+      next: 13.0.4_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
     dev: false
 
   /next/13.0.4_biqbaboplfbrettd7655fr4n2y:
