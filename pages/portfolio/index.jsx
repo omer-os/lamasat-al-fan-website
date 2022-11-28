@@ -22,12 +22,12 @@ export default function Index({ data }) {
     <>
       <div className="w-full sm:px-20 sm:mt-[7em] flex flex-col">
         <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-20 sm:top-0 left-0 top-3 items-end">
-          <div className="bg-third flex rounded-xl sm:w-max w-full p-2 mt-3 gap-2 ">
+          <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full p-2 mt-3 gap-2 ">
             {["تجاري", "حكومي", "سكني"].map((i, index) => (
               <button
                 onClick={() => router.push(`?category=${i}`)}
                 key={i}
-                className={`font-bold flex-1 text-sm text-white p-2 px-6 rounded-xl relative ${QueryCategory !== i&&"text-first"} transition-all duration-200`}
+                className={`font-bold flex-1 text-sm  p-2 px-6 rounded-xl relative ${QueryCategory !== i&&"!text-first"} text-white transition-all duration-200`}
               >
                 <span className="z-20 relative">{i}</span>
                 {QueryCategory === i && (

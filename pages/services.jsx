@@ -68,12 +68,12 @@ export default function Services() {
               <div className=" font-bold">{service.title}</div>
               <div className="text-zinc-600 text-sm">{service.subtitle}</div>
 
-              <Link
+              {/* <Link
                 className="border border-black py-1 px-2 text-sm w-max mt-3"
                 href="/"
               >
                 رؤية المشاريع
-              </Link>
+              </Link> */}
 
               <div className="absolute h-full bg-first/20 top-0 right-0 flex items-center justify-center py-3 px-6">
                 <img

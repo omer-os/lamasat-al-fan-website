@@ -11,7 +11,7 @@ export default function LandingCarousel({ data }) {
   return (
     <div className="flex mt-[8em] flex-col gap-10">
       <div className="flex px-7 mx-auto max-w-[40em] flex-col">
-        <div className="md:text-5xl text-4xl font-bold text-center text-first">
+        <div className="md:text-5xl text-4xl font-bold relative text-center text-first">
           هناك حقيقة مثبتة منذ زمن طويل زمن طويل
         </div>
         <div className=" text-center mt-6 sm:mt-8  text-first max-w-[30em] mx-auto sm:text-base text-sm">
