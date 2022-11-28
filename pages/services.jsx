@@ -63,7 +63,7 @@ export default function Services() {
                 },
               }}
               key={index}
-              className="px-3 py-4 relative flex flex-col bg-third pr-[8em]"
+              className="px-3 py-4 relative flex flex-col bg-zinc-100 pr-[8em]"
             >
               <div className=" font-bold">{service.title}</div>
               <div className="text-zinc-600 text-sm">{service.subtitle}</div>
@@ -75,7 +75,7 @@ export default function Services() {
                 رؤية المشاريع
               </Link> */}
 
-              <div className="absolute h-full bg-first/20 top-0 right-0 flex items-center justify-center py-3 px-6">
+              <div className="absolute h-full bg-zinc-300 top-0 right-0 flex items-center justify-center py-3 px-6">
                 <img
                   src={`/icons/${service.img}.png`}
                   className="object-contain w-14 h-14"

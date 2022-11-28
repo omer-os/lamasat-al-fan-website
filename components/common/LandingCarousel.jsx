@@ -22,7 +22,7 @@ export default function LandingCarousel({ data }) {
         <div className="flex mx-auto mt-10 gap-10">
           <Link
             href="/portfolio"
-            className="px-4 rounded py-2 bg-first transition-all active:scale-95 text-white"
+            className="px-4 rounded py-2 bg-second transition-all active:scale-95 text-white"
           >
             اهم مشاريعنا
           </Link>
@@ -65,7 +65,7 @@ export default function LandingCarousel({ data }) {
             ))}
           </Swiper>
         </div>
-        <div className="sm:flex hidden items-center mx-auto w-max gap-2 mt-8 flex-col">
+        <div className="sm:flex hidden items-center mx-auto w-max gap-1 mt-8 flex-col">
           <div className="flex gap-3">
             {data.landingPages[0].heroImages.map((i, index) => (
               <motion.div
