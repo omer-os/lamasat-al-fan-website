@@ -10,7 +10,7 @@ module.exports = {
         first: "#002D27",
         second: "#d10a20",
         third: "#EFFEFF",
-        fourth:"#00FFDD"
+        fourth: "#00FFDD",
       },
     },
   },

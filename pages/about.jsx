@@ -17,13 +17,15 @@ export default function About() {
           <button
             onClick={() => setSelectedTap(index)}
             key={index}
-            className={`relative bg-white flex-1 py-4 transition-all duration-500 ${index===SelectedTap&&'bg-zinc-200'}`}
+            className={`relative bg-white flex-1 py-4 transition-all duration-500 ${
+              index === SelectedTap && "bg-zinc-200"
+            }`}
           >
             {i}
 
             {index === SelectedTap && (
               <motion.div
-                className="absolute bg-black bottom-0 left-0 w-full h-[.09em]"
+                className="z-20 absolute bg-black bottom-0 left-0 w-full h-[.09em]"
                 layoutId="bottomborder"
               />
             )}
@@ -161,12 +163,3 @@ export const Tap_3 = () => {
     </motion.div>
   );
 };
-
-
-
-
-
-
-
-
-

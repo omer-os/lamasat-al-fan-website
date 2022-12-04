@@ -5,7 +5,8 @@ export default function MainLayout({ children }) {
   return (
     <div>
       <NavBar />
-      <div className="mt-[4.6em]">{children}</div>
+      {/* <div className="mt-[4.6em]">{children}</div> */}
+      <div>{children}</div>
 
       <Footer />
     </div>
