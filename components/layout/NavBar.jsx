@@ -218,6 +218,7 @@ export default function NavBar() {
               },
             ].map((i, index) => (
               <Link
+              key={index}
                 className={`font-sans relative hover:font-bold hover:text-black/80 transition-all ${
                   router.pathname == i.link && "font-bold text-black"
                 }`}

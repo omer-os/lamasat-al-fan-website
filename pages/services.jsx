@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Services() {
   return (
     <main>
-      <div className="flex md:flex-row flex-col items-center px-6 sm:px-10 mt-20 gap-10 lg:w-4/6 mx-auto ">
+      <div className="flex md:flex-row flex-col items-center px-6 sm:px-10 mt-20 gap-10 lg:w-4/6 mx-auto sm:mt-28  ">
         <motion.div
           animate={{
             right: [-10, 0],
