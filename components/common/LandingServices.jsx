@@ -2,7 +2,7 @@ import { LandingServicesCard } from "..";
 
 export default function LandingServices() {
   return (
-    <section className=" mt-20">
+    <section className="sm:mt-[10em] mt-10">
       <div className="text-center text-first text-3xl font-extrabold">
         بعض خدماتنا
       </div>

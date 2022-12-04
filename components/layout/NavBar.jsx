@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import useTranslation from "next-translate/useTranslation";
+import { motion } from "framer-motion";
 
 // export default function NavBar() {
 //   const [OpenSideBar, setOpenSideBar] = useState(false);
@@ -171,11 +172,8 @@ import useTranslation from "next-translate/useTranslation";
 
 export default function NavBar() {
   const [OpenSideBar, setOpenSideBar] = useState(false);
-  const [Lang, setLang] = useState("ar");
   const [LangOpened, setLangOpened] = useState(false);
-  const { t, lang } = useTranslation("common");
   const [ScrollTop, setScrollTop] = useState(0);
-
   const router = useRouter();
 
   useEffect(() => {
@@ -188,7 +186,7 @@ export default function NavBar() {
     <header className="fixed top-0 left-0 w-full px-7 md:px-16 z-50">
       <div
         className={`absolute transition-all inset-0 shadow-xl bg-white -z-10 ${
-          ScrollTop === 0 && "!shadow-none !bg-white/0"
+          ScrollTop === 0 && "!shadow-none sm:!bg-white/0"
         }`}
       />
 
@@ -201,15 +199,45 @@ export default function NavBar() {
           <div className="text-xl font-bold">Lamasta Al Fan</div>
 
           <div className="md:flex hidden gap-5 text-zinc-500">
-            <Link href="/">الرئيسية</Link>
-            <Link href="/">من نحن</Link>
-            <Link href="/">مشاريعنا</Link>
+            {[
+              {
+                name: "الرئيسية",
+                link: "/",
+              },
+              {
+                name: "من",
+                link: "/about",
+              },
+              {
+                name: "مشاريعنا",
+                link: "/portfolio",
+              },
+              {
+                name: "خدماتنا",
+                link: "/services",
+              },
+            ].map((i, index) => (
+              <Link
+                className={`font-sans relative hover:font-bold hover:text-black/80 transition-all ${
+                  router.pathname == i.link && "font-bold text-black"
+                }`}
+                href={i.link}
+              >
+                {router.pathname === i.link && (
+                  <motion.div
+                    layoutId="line-000"
+                    className="absolute w-full h-[.09em] rounded -bottom-1 left-0 z-20 bg-black"
+                  />
+                )}
+                {i.name}
+              </Link>
+            ))}
           </div>
         </div>
 
         <Link
-          className={`border-black transition-all border py-2 px-6 hidden md:block font-bold text-black
-          ${ScrollTop === 0 && "!text-white !border-white"}
+          className={`border-black transition-all border py-2 px-6 hidden md:block font-bold hover:bg-black hover:!text-white text-black 
+          ${ScrollTop === 0 && "!text-white !bg-transparent !border-white "}
           `}
           href="/"
         >

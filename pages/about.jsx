@@ -6,16 +6,18 @@ export default function About() {
   const [SelectedTap, setSelectedTap] = useState(2);
   return (
     <div>
-      <div className="text-3xl text-zinc-400 flex items-center justify-center  pt-8 px-10 gap-3">
+      <div className="text-3xl text-zinc-400 flex items-center justify-center pt-[4em] px-10 gap-3">
         <div className="max-w-[4em] w-full mt-1 h-[.09em] bg-zinc-400 rounded"></div>
         <span className="min-w-max">من نحن</span>
         <div className="max-w-[4em] w-full mt-1 h-[.09em] bg-zinc-400 rounded"></div>
       </div>
 
-      <div className="flex sm:relative sm:top-0 sticky top-14 bg-white flex-row-reverse sm:w-4/6 w-full z-30 sm:mt-10 mt-4 mx-auto items-center justify-center px-2">
+      <div className="flex sm:relative sm:top-0 sticky top-16 bg-white flex-row-reverse sm:w-4/6 w-full z-40 sm:mt-10 mt-4 mx-auto items-center justify-center px-2">
         {["الجوائز", "مهمتنا و رؤيتنا", "عن الشركة"].map((i, index) => (
           <button
-            onClick={() => setSelectedTap(index)}
+            onClick={() => {
+              setSelectedTap(index);
+            }}
             key={index}
             className={`relative bg-white flex-1 py-4 transition-all duration-500 ${
               index === SelectedTap && "bg-zinc-200"

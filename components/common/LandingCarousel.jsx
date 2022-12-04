@@ -176,7 +176,7 @@ export default function LandingCarousel() {
 
   return (
     <div>
-      <div className="sm:-z-10 sm:absolute relative top-0 left-0 sm:h-full sm:rounded-none rounded-xl sm:overflow-hidden sm:w-[50%] sm:mt-0 mt-20 sm:mx-0  mx-0">
+      <div className="sm:-z-10 sm:absolute relative top-0 left-0 sm:h-full sm:rounded-none rounded-xl sm:overflow-hidden sm:w-[50%] sm:mt-0 mt-20 sm:mx-0 mx-0">
         <div className="sm:block hidden">
           {dta.map((i, index) => (
             <motion.img
