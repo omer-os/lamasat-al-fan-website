@@ -2,8 +2,10 @@ import { LandingServicesCard } from "..";
 
 export default function LandingServices() {
   return (
-    <section className="sm:mt-24 mt-20">
-      <div className="text-center text-first text-3xl font-extrabold">بعض خدماتنا</div>
+    <section className=" mt-20">
+      <div className="text-center text-first text-3xl font-extrabold">
+        بعض خدماتنا
+      </div>
 
       <div className="flex gap-14 flex-col py-10 items-center px-7">
         <LandingServicesCard

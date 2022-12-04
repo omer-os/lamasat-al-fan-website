@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useTranslation from "next-translate/useTranslation";
 
 // export default function NavBar() {
@@ -174,14 +174,31 @@ export default function NavBar() {
   const [Lang, setLang] = useState("ar");
   const [LangOpened, setLangOpened] = useState(false);
   const { t, lang } = useTranslation("common");
+  const [ScrollTop, setScrollTop] = useState(0);
 
   const router = useRouter();
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScrollTop(window.pageYOffset);
+    });
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 w-full px-7 md:px-16 z-50">
-      <nav className="py-5 w-full sm:border-b border-zinc-300 items-center flex flex-row-reverse md:flex-row justify-between relative z-20">
+      <div
+        className={`absolute transition-all inset-0 shadow-xl bg-white -z-10 ${
+          ScrollTop === 0 && "!shadow-none !bg-white/0"
+        }`}
+      />
+
+      <nav
+        className={`py-5 w-full ${
+          ScrollTop === 0 && "sm:border-b"
+        } border-zinc-300 items-center transition-all flex flex-row-reverse md:flex-row justify-between relative z-20`}
+      >
         <div className="flex flex-row items-baseline gap-10">
-          <div className="text-xl font-bold">Lamasta La Fan</div>
+          <div className="text-xl font-bold">Lamasta Al Fan</div>
 
           <div className="md:flex hidden gap-5 text-zinc-500">
             <Link href="/">الرئيسية</Link>
@@ -191,7 +208,9 @@ export default function NavBar() {
         </div>
 
         <Link
-          className="border py-2 px-6 hidden md:block font-bold text-white"
+          className={`border-black transition-all border py-2 px-6 hidden md:block font-bold text-black
+          ${ScrollTop === 0 && "!text-white !border-white"}
+          `}
           href="/"
         >
           تواصل معنا

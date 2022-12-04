@@ -12,10 +12,9 @@ class MyDocument extends Document {
             crossOrigin={1}
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500"
+            href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;800&display=swap"
             rel="stylesheet"
           />
-          
         </Head>
         <body dir="rtl">
           <Main />

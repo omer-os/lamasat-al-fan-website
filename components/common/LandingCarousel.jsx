@@ -175,7 +175,7 @@ export default function LandingCarousel() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div>
       <div className="sm:-z-10 sm:absolute relative top-0 left-0 sm:h-full sm:rounded-none rounded-xl sm:overflow-hidden sm:w-[50%] sm:mt-0 mt-20 sm:mx-0  mx-0">
         <div className="sm:block hidden">
           {dta.map((i, index) => (
@@ -199,11 +199,11 @@ export default function LandingCarousel() {
           {dta.map((i, index) => (
             <div key={index} className="relative">
               <motion.img
-                className={`snap-center min-w-[19em] rounded-xl h-[23em] brightness-75 top-0 left-0 z-10 object-cover`}
+                className={`snap-center min-w-[18em] rounded-xl h-[23em] brightness-75 top-0 left-0 z-10 object-cover`}
                 src={dta[index].bg}
               />
 
-              <div className="absolute bottom-5 right-5 text-2xl text-white sm:hidden font-bold">
+              <div className="absolute bottom-5 right-5 text-xl text-white sm:hidden font-semibold">
                 {i.title}
               </div>
             </div>
@@ -224,7 +224,7 @@ export default function LandingCarousel() {
         </div>
         <Link
           href="/portfolio"
-          className="bg-black text-white active:bg-black/90 group active:scale-95 transition-all py-4 px-6 font-bold sm:w-max justify-center mt-5 sm:mt-10 sm:rounded-0 rounded-xl flex gap-7 flex-row"
+          className="bg-black text-white active:bg-black/90 group active:scale-95 transition-all py-4 px-6 font-bold sm:w-max justify-center mt-4 sm:mt-10 sm:rounded-0 rounded-xl flex gap-7 flex-row"
         >
           <span className="min-w-max">اهم مشاريعنا</span>
 
