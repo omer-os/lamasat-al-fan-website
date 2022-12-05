@@ -9,10 +9,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Head from "next/head";
-export default function Index({ data }) {
+
+import { SanityClient, urlFor } from "../../dta";
+
+export default function Index({ Dta }) {
   const router = useRouter();
   const QueryCategory = router.query.category;
-
   const [SelectedCategory, setSelectedCategory] = useState("تجاري");
 
   useEffect(() => {
@@ -26,7 +28,7 @@ export default function Index({ data }) {
       </Head>
       <div className="w-full sm:px-20 sm:mt-[7em] mt-20 flex flex-col">
         <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-30 sm:top-0 left-0 top-8 items-end ">
-          <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full p-2 mt-3 gap-2 ">
+          <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full overflow-y-hidden p-2 mt-3 gap-2 ">
             {["تجاري", "حكومي", "سكني"].map((i, index) => (
               <button
                 onClick={() => router.push(`?category=${i}`)}
@@ -52,11 +54,10 @@ export default function Index({ data }) {
         </div>
         <motion.div className="mt-10 px-6 grid md:grid-cols-3 sm:grid-cols-2 gap-10 min-h-[30em] auto-rows-[15em]">
           <AnimatePresence exit>
-            {data &&
-              data.allProjects
-                .filter((i) => i.category === QueryCategory)
-                .map((i, index) => (
-                  <Link href={`/portfolio/${i.slug}`} key={index}>
+            {Dta &&
+              Dta.filter((i) => i.category === QueryCategory).map(
+                (i, index) => (
+                  <Link href={`/portfolio/${i.slug.current}`} key={index}>
                     <motion.div
                       exit={{
                         scale: [1, 0.9],
@@ -72,23 +73,23 @@ export default function Index({ data }) {
                       className="rounded-xl w-full h-full object-cover relative"
                     >
                       <motion.img
-                        layoutId={i.slug}
-                        src={i.coverImage.url}
+                        layoutId={i.slug.current}
+                        src={urlFor(i.ProjectCover)}
                         className="w-full h-full object-cover rounded-xl"
                         alt=""
                       />
 
                       <div className="absolute w-full p-4 bottom-0 text-xl text-white left-0 rounded-b-xl font-bold z-20">
-                        {i.title}
+                        {i.ProjectName}
                       </div>
                       <div className="absolute rounded-xl h-full bg-gradient-to-t from-black/60 sm:from-black/50 w-full left-0 bottom-0" />
                     </motion.div>
                   </Link>
-                ))}
+                )
+              )}
           </AnimatePresence>
         </motion.div>
       </div>
-
       <div className="mt-20">
         <CTAcard />
       </div>
@@ -97,25 +98,18 @@ export default function Index({ data }) {
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      {
-        allProjects {
-          coverImage {
-            url
-          }
-          title
-          slug
-          category
-        }
-      }
-    `,
-  });
+  const Dta = await SanityClient.fetch(`*[_type=="projects"]{
+    ProjectName,
+    slug,
+    category,
+    ProjectCover
+  }
+  `);
 
   return {
     props: {
-      data,
+      Dta,
     },
-    revalidate: 10, // In seconds
+    revalidate: 10,
   };
 }

@@ -36,6 +36,7 @@ export default function Index({ data }) {
   );
 }
 
+
 export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
@@ -48,6 +49,7 @@ export async function getStaticProps() {
       }
     `,
   });
+
 
   return {
     props: {

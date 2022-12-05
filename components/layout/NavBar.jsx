@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import useTranslation from "next-translate/useTranslation";
 import { motion } from "framer-motion";
 
 export default function NavBar() {
@@ -54,6 +53,7 @@ export default function NavBar() {
               },
             ].map((i, index) => (
               <Link
+                scroll={true}
                 key={index}
                 className={`font-sans relative hover:font-bold hover:text-black/80 transition-all ${
                   router.pathname == i.link && "font-bold text-black"
@@ -99,7 +99,7 @@ export default function NavBar() {
 
       <div
         className={`flex sm:hidden flex-col gap-5 fixed w-full h-full z-10 top-0 items-center transition-all duration-300 justify-center left-full font-bold ${
-          OpenSideBar && "!left-0 bg-third visible !opacity-100"
+          OpenSideBar && "!left-0 bg-white visible !opacity-100"
         }  opacity-0 sm:opacity-100 sm:left-0`}
       >
         {[
@@ -136,7 +136,7 @@ export default function NavBar() {
           <Link
             onClick={() => setOpenSideBar(false)}
             href="/contact"
-            className="bg-first text-white active:scale-95 transition-all py-2 px-3 rounded"
+            className="bg-black text-white active:scale-95 transition-all py-2 px-3 rounded"
           >
             تواصل معنا
           </Link>
