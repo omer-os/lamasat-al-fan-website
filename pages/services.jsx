@@ -2,11 +2,15 @@ import Link from "next/link";
 import React from "react";
 import { CTAcard } from "../components/";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 export default function Services() {
   return (
     <main>
-      <div className="flex md:flex-row flex-col items-center px-6 sm:px-10 mt-20 gap-10 lg:w-4/6 mx-auto sm:mt-28  ">
+      <Head>
+        <title>خدماتنا</title>
+      </Head>
+      <div className="flex md:flex-row flex-col items-center px-6 sm:px-10 mt-20 gap-10 lg:w-4/6 mx-auto sm:mt-28">
         <motion.div
           animate={{
             right: [-10, 0],
@@ -67,14 +71,6 @@ export default function Services() {
             >
               <div className=" font-bold">{service.title}</div>
               <div className="text-zinc-600 text-sm">{service.subtitle}</div>
-
-              {/* <Link
-                className="border border-black py-1 px-2 text-sm w-max mt-3"
-                href="/"
-              >
-                رؤية المشاريع
-              </Link> */}
-
               <div className="absolute h-full bg-zinc-300 top-0 right-0 flex items-center justify-center py-3 px-6">
                 <img
                   src={`/icons/${service.img}.png`}

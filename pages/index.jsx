@@ -9,6 +9,7 @@ import {
 import { gql } from "@apollo/client";
 import client from "../data";
 import { motion } from "framer-motion";
+import Head from "next/head";
 export default function Index({ data }) {
   return (
     <motion.div
@@ -19,6 +20,9 @@ export default function Index({ data }) {
         opacity: [1, 0],
       }}
     >
+      <Head>
+        <title>الرئيسية</title>
+      </Head>
       <LandingCarousel data={data} />
       <LandingServices />
       <LandingWorkProccess />

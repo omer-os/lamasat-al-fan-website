@@ -2,10 +2,15 @@ import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { CTAcard } from "../components/";
+import Head from "next/head";
 export default function About() {
   const [SelectedTap, setSelectedTap] = useState(2);
   return (
     <div>
+      <Head>
+        <title>من نحن</title>
+      </Head>
+
       <div className="text-3xl text-zinc-400 flex items-center justify-center pt-[4em] px-10 gap-3">
         <div className="max-w-[4em] w-full mt-1 h-[.09em] bg-zinc-400 rounded"></div>
         <span className="min-w-max">من نحن</span>

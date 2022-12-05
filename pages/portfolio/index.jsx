@@ -8,6 +8,7 @@ import client from "../../data";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Head from "next/head";
 export default function Index({ data }) {
   const router = useRouter();
   const QueryCategory = router.query.category;
@@ -20,6 +21,9 @@ export default function Index({ data }) {
 
   return (
     <>
+      <Head>
+        <title>اهم مشاريعنا</title>
+      </Head>
       <div className="w-full sm:px-20 sm:mt-[7em] mt-20 flex flex-col">
         <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-30 sm:top-0 left-0 top-8 items-end ">
           <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full p-2 mt-3 gap-2 ">
@@ -107,8 +111,6 @@ export async function getStaticProps() {
       }
     `,
   });
-
-  // console.log(data);
 
   return {
     props: {

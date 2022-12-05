@@ -5,6 +5,7 @@ import client from "../../data";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import FsLightbox from "fslightbox-react";
+import Head from "next/head";
 
 export default function ProjectDetails({ data }) {
   const [toggler, setToggler] = useState(false);
@@ -12,6 +13,9 @@ export default function ProjectDetails({ data }) {
   const router = useRouter();
   return (
     <div className="md:w-4/6 w-full px-6 sm:w-5/6 transition-all sm:mt-[5em] mx-auto mb-20">
+      <Head>
+        <title>{data[0].title}</title>
+      </Head>
       <div className="sm:relative absolute top-[3.5em] left-0 right-0 h-[25em] w-full -z-10 ">
         <motion.img
           layoutId={data[0].slug}

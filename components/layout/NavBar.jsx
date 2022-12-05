@@ -62,26 +62,24 @@ export default function NavBar() {
               >
                 {router.pathname === i.link && (
                   <motion.div
-                  animate={{
-                    opacity:[0,1],
-                    scale:[.9,1]
-                  }}
+                    animate={{
+                      opacity: [0, 1],
+                      scale: [0.9, 1],
+                    }}
                     className="absolute w-full h-[.09em] rounded -bottom-1 left-0 z-20 bg-black"
                   />
                 )}
                 {i.name}
               </Link>
             ))}
-
-
           </div>
         </div>
 
         <Link
           className={`border-black transition-all border py-2 px-6 hidden md:block font-bold hover:bg-black hover:!text-white text-black 
-          ${ScrollTop === 0 && "!text-white !bg-transparent !border-white "}
+          ${ScrollTop === 0 && "!bg-transparent"}
           `}
-          href="/"
+          href="/contact"
         >
           تواصل معنا
         </Link>
