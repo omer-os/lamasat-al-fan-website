@@ -20,19 +20,21 @@ export default function Index({ data }) {
 
   return (
     <>
-      <div className="w-full sm:px-20 sm:mt-[7em] flex flex-col">
-        <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-20 sm:top-0 left-0 top-3 items-end">
+      <div className="w-full sm:px-20 sm:mt-[7em] mt-20 flex flex-col">
+        <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-30 sm:top-0 left-0 top-8 items-end ">
           <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full p-2 mt-3 gap-2 ">
             {["تجاري", "حكومي", "سكني"].map((i, index) => (
               <button
                 onClick={() => router.push(`?category=${i}`)}
                 key={i}
-                className={`font-bold flex-1 text-sm  p-2 px-6 rounded-xl relative ${QueryCategory !== i&&"!text-first"} text-white transition-all duration-200`}
+                className={`font-bold flex-1 text-sm  p-2 px-6 rounded-xl relative ${
+                  QueryCategory !== i && "!text-black"
+                } text-white transition-all duration-200`}
               >
                 <span className="z-20 relative">{i}</span>
                 {QueryCategory === i && (
                   <motion.div
-                    className="bg-first w-full rounded-xl h-full absolute inset-0 z-10"
+                    className="bg-black w-full rounded-xl h-full absolute inset-0 z-10"
                     layoutId="category-bg"
                   />
                 )}
@@ -40,9 +42,11 @@ export default function Index({ data }) {
             ))}
           </div>
 
-          <div className="text-zinc-500 text-xl mt-2">مشاريع لمسات الفن</div>
+          <div className="sm:text-zinc-500 text-black ml-auto text-xl font-bold sm:font-normal mt-2">
+            مشاريع لمسات الفن
+          </div>
         </div>
-        <motion.div className="mt-10 px-6 grid sm:grid-cols-3 gap-10 min-h-[30em] auto-rows-[15em]">
+        <motion.div className="mt-10 px-6 grid md:grid-cols-3 sm:grid-cols-2 gap-10 min-h-[30em] auto-rows-[15em]">
           <AnimatePresence exit>
             {data &&
               data.allProjects
@@ -70,9 +74,10 @@ export default function Index({ data }) {
                         alt=""
                       />
 
-                      <div className="absolute w-full p-4 bg-gradient-to-t from-black bottom-0 text-xl text-white left-0 rounded-b-xl">
+                      <div className="absolute w-full p-4 bottom-0 text-xl text-white left-0 rounded-b-xl font-bold z-20">
                         {i.title}
                       </div>
+                      <div className="absolute rounded-xl h-full bg-gradient-to-t from-black/60 sm:from-black/50 w-full left-0 bottom-0" />
                     </motion.div>
                   </Link>
                 ))}

@@ -22,7 +22,7 @@ export default function ContactUs() {
                 <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 lg:w-full xl:w-6/12 px-3 md:px-6 xl:px-12">
                   <div className="flex items-start">
                     <div className="shrink-0">
-                      <div className="p-4 bg-first rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                      <div className="p-4 bg-black rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                         <img src="/icons/gmail.png" alt="" />
                       </div>
                     </div>
@@ -35,7 +35,7 @@ export default function ContactUs() {
                 <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 lg:w-full xl:w-6/12 px-3 md:px-6 xl:px-12">
                   <div className="flex items-start">
                     <div className="shrink-0">
-                      <div className="p-4 bg-first rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                      <div className="p-4 bg-black rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                         <img src="/icons/phone.png" alt="" />
                       </div>
                     </div>
@@ -48,7 +48,7 @@ export default function ContactUs() {
                 <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 lg:w-full xl:w-6/12 px-3 md:px-6 xl:px-12">
                   <div className="flex align-start">
                     <div className="shrink-0">
-                      <div className="p-4 bg-first rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                      <div className="p-4 bg-black rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                         <img src="/icons/location.png" alt="" />
                       </div>
                     </div>
@@ -63,7 +63,7 @@ export default function ContactUs() {
                 <div className="mb-12 lg:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 lg:w-full xl:w-6/12 px-3 md:px-6 xl:px-12">
                   <div className="flex align-start">
                     <div className="shrink-0">
-                      <div className="p-4 bg-first rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                      <div className="p-4 bg-black rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                         <img src="/icons/social-media.png" alt="" />
                       </div>
                     </div>

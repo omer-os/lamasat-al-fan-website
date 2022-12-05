@@ -11,7 +11,7 @@ export default function LandingWorkProccess() {
   ];
 
   return (
-    <section className="bg-first py-10 sm:mt-24 mt-10">
+    <section className="bg-black py-10 sm:mt-24 mt-10">
       <div className="sm:text-center sm:text-3xl text-white  px-10 sm:font-bold">
         عملية عملنا
       </div>
@@ -20,21 +20,18 @@ export default function LandingWorkProccess() {
       </div>
 
       <div className="flex sm:flex-row-reverse flex-col-reverse gap-6 text-xl mt-3 sm:mt-10 md:w-4/6 sm:w-5/6 mx-auto">
-        <AnimatePresence exit>
-          <motion.div
-            animate={{
-              bottom: [-10, 0],
-              opacity: [0, 1],
-            }}
-            exit={{
-              bottom: [0, -10],
-              opacity: [1, 0],
-            }}
-            className="mx-4 text-zinc-500 sm:mx-0 p-10 rounded-xl bg-third sm:bg-transparent sm:px-0"
-          >
-            {workprostext[workProcess]}
-          </motion.div>
-        </AnimatePresence>
+        {workprostext.map((i, index) => {
+          if (index === workProcess) {
+            return (
+              <motion.div
+                key={index}
+                className="mx-4 text-zinc-500 sm:mx-0 p-10 rounded-xl bg-white/10 sm:bg-transparent sm:px-0"
+              >
+                {workprostext[index]}
+              </motion.div>
+            );
+          }
+        })}
         <div className="flex sm:min-w-max sm:flex-col sm:justify-start flex-row w-full gap-2 px-4">
           {["نص وهمي", "نص وهمي", "نص وهمي"].map((i, index) => (
             <button

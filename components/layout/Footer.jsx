@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="gap-4 bg-first p-7 flex items-center flex-col text-white w-full">
+    <div className="gap-4 bg-black p-7 flex items-center flex-col text-white w-full">
       <div className="text-xl font-extrabold text-center w-full">
         Lamasat Al Fan
       </div>

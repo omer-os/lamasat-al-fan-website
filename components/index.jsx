@@ -2,14 +2,14 @@ import MainLayout from "./layout/MainLayout";
 import NavBar from "./layout/NavBar";
 import Footer from "./layout/Footer";
 import CTAcard from "./common/CTAcard";
-import LandingWorkProccess from "./common/LandingWorkProccess";
-import LandingServices from "./common/LandingServices";
-import { LandingServicesCard } from "./common/LandingServicesCard";
-import LandingCarousel from "./common/LandingCarousel";
-import DropDown from "./common/DropDown";
+import LandingWorkProccess from "./landing/LandingWorkProccess";
+import LandingServices from "./landing/LandingServices";
+import { LandingServicesCard } from "./landing/LandingServicesCard";
+import LandingCarousel from "./landing/LandingCarousel";
+import DropDown from "./landing/DropDown";
 import ContactUs from "./common/ContactUs";
 
-import LandingQAndA from "./common/LandingQAndA";
+import LandingQAndA from "./landing/LandingQAndA";
 
 export {
   ContactUs,
@@ -22,5 +22,5 @@ export {
   LandingWorkProccess,
   LandingServices,
   LandingServicesCard,
-  LandingQAndA
+  LandingQAndA,
 };

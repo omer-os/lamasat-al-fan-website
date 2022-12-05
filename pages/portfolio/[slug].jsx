@@ -11,7 +11,7 @@ export default function ProjectDetails({ data }) {
 
   const router = useRouter();
   return (
-    <div className="md:w-4/6 w-full px-6 sm:w-5/6 transition-all mt-[0em] mx-auto mb-20">
+    <div className="md:w-4/6 w-full px-6 sm:w-5/6 transition-all sm:mt-[5em] mx-auto mb-20">
       <div className="sm:relative absolute top-[3.5em] left-0 right-0 h-[25em] w-full -z-10 ">
         <motion.img
           layoutId={data[0].slug}
@@ -26,8 +26,10 @@ export default function ProjectDetails({ data }) {
       </div>
 
       <button
-        onClick={() => router.back()}
-        className="rounded-full flex items-center justify-center w-12 h-12 fixed sm:hidden z-30 top-16 left-2 bg-zinc-200 scale-1 active:scale-95 transition-all"
+        onClick={() => {
+          router.back();
+        }}
+        className="rounded-full flex items-center justify-center w-12 h-12 fixed sm:hidden z-30 top-20 left-2 bg-zinc-200 scale-1 active:scale-95 transition-all"
       >
         <img
           src="/icons/down-arrow.png"
@@ -70,7 +72,6 @@ export default function ProjectDetails({ data }) {
       <FsLightbox
         toggler={toggler}
         sources={[...data[0].projectImages.map((i) => i.url)]}
-        slide
         type={"image"}
       />
     </div>
