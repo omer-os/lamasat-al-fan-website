@@ -39,19 +39,19 @@ export default function NavBar() {
           <div className="md:flex hidden gap-5 text-zinc-500">
             {[
               {
-                name: "الرئيسية",
+                name: t('navigation.home_page'),
                 link: "/",
               },
               {
-                name: " من نحن",
+                name: t('navigation.about_page'),
                 link: "/about",
               },
               {
-                name: "مشاريعنا",
+                name: t('navigation.portfolio_page'),
                 link: "/portfolio",
               },
               {
-                name: "خدماتنا",
+                name: t('navigation.services_page'),
                 link: "/services",
               },
             ].map((i, index) => (
@@ -84,7 +84,7 @@ export default function NavBar() {
           `}
           href="/contact"
         >
-          تواصل معنا
+           {t('navigation.services_page')}
         </Link>
 
         <div

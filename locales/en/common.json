@@ -4,8 +4,9 @@
   "navigation": {
     "home_page": "Home",
     "about_page": "Who we are",
-    "projects_page": "Projects",
-    "services_page": "Services"
+    "portfolio_page": "Portfolio",
+    "services_page": "Services",
+    "contact_page": "Contact us"
   },
   "landing_page": {
     "headline": "Building your own world",
@@ -14,5 +15,4 @@
     "CTA_projects_headline": "",
     "CTA_projects_subheadline": ""
   }
-
 }

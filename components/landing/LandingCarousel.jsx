@@ -5,8 +5,8 @@ import Link from "next/link";
 import useTranslation from 'next-translate/useTranslation';
 export default function LandingCarousel() {
   const [SelectedTap, setSelectedTap] = useState(0);
-  const { t, lang } = useTranslation('common');
-  const headline = t('common:company_name');
+  const { t, lang } = useTranslation('common', 'landing');
+  const headline = t('landing:headline');
   const dta = [
     {
       title: " تصميم الداخلي",

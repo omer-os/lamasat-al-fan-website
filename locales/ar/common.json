@@ -1,17 +1,11 @@
 {
-  "company_name": "لمسات الفم",
-  "tagline": "Engineering & Design Consultancy Company",
+  "company_name": "لمسات الفن",
+  "tagline": "شركة تصاميم وإستشارات هندسية",
   "navigation": {
-    "home_page": "Home",
-    "about_page": "Who we are",
-    "projects_page": "Projects",
-    "services_page": "Services"
-  },
-  "landing_page": {
-    "headline": "Building your own world",
-    "section1_title": "Our Services",
-    "section2_subtitles": "Get to know our services",
-    "CTA_projects_headline": "",
-    "CTA_projects_subheadline": ""
+    "home_page": "الرئيسية",
+    "about_page": "من نحن",
+    "portfolio_page": "أعمالنا",
+    "services_page": "خدماتنا",
+    "contact_page": "تواصل معنا"
   }
 }
