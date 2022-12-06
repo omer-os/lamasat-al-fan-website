@@ -7,5 +7,9 @@
     "portfolio_page": "أعمالنا",
     "services_page": "خدماتنا",
     "contact_page": "تواصل معنا"
-  }
+  },
+  "email": "البريد الإلكتروني",
+  "phone": "الهاتف",
+  "address": "العنوان",
+  "socials": "مواقع التواصل الاجتماعي"
 }

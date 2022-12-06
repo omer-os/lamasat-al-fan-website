@@ -84,7 +84,7 @@ export default function NavBar() {
           `}
           href="/contact"
         >
-           {t('navigation.services_page')}
+           {t('navigation.contact_page')}
         </Link>
 
         <div

@@ -1,6 +1,7 @@
 {
   "company_name": "Lmsat Al-Fan",
   "tagline": "Engineering & Design Consultancy Company",
+  "motto": "نبني عالمك الخاص",
   "navigation": {
     "home_page": "Home",
     "about_page": "Who we are",
@@ -8,11 +9,8 @@
     "services_page": "Services",
     "contact_page": "Contact us"
   },
-  "landing_page": {
-    "headline": "Building your own world",
-    "section1_title": "Our Services",
-    "section2_subtitles": "Get to know our services",
-    "CTA_projects_headline": "",
-    "CTA_projects_subheadline": ""
-  }
+  "email": "email",
+  "phone": "phone",
+  "address": "address",
+  "socials": "socials"
 }

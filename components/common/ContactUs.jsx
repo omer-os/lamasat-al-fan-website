@@ -1,6 +1,10 @@
 import React from "react";
+import useTranslation from "next-translate/useTranslation";
+import Link from "next/link";
 
 export default function ContactUs() {
+  const { t, lang } = useTranslation("common");
+
   return (
     <div className=" my-24 px-6 mx-auto">
       <section className="mb-32 text-gray-800">
@@ -27,8 +31,8 @@ export default function ContactUs() {
                       </div>
                     </div>
                     <div className="grow mr-6">
-                      <p className="font-bold mb-1">عنوان البريد الالكتروني</p>
-                      <p className="text-gray-500">info@lmsatarchi.com</p>
+                      <p className="font-bold mb-1 capitalize">{t('email')}</p>
+                      <p className="text-gray-700 font-bold">info@lmsatarchi.com</p>
                     </div>
                   </div>
                 </div>
@@ -40,8 +44,8 @@ export default function ContactUs() {
                       </div>
                     </div>
                     <div className="grow mr-6">
-                      <p className="font-bold mb-1">رقم الهاتف</p>
-                      <p className="text-gray-500">+1 234-567-89</p>
+                      <p className="font-bold mb-1 capitalize">{t('phone')}</p>
+                      <p className="text-gray-700 font-bold"><span dir="ltr">+964 770 815 5551</span></p>
                     </div>
                   </div>
                 </div>
@@ -53,9 +57,9 @@ export default function ContactUs() {
                       </div>
                     </div>
                     <div className="grow mr-6">
-                      <p className="font-bold mb-1">موقعنا</p>
-                      <p className="text-gray-500">
-                        كركوك، بداية شارع المعارض
+                      <p className="font-bold mb-1 capitalize">{t('address')}</p>
+                      <p className="text-gray-700 font-bold">
+                        كركوك، حي الخضراء - شارع المعارض
                       </p>
                     </div>
                   </div>
@@ -68,10 +72,30 @@ export default function ContactUs() {
                       </div>
                     </div>
                     <div className="grow mr-6">
-                      <p className="font-bold mb-1">تواصل الاجتماعي</p>
-                      <p className="text-gray-500">instagram</p>
-                      <p className="text-gray-500">facebook</p>
-                      <p className="text-gray-500">twitter</p>
+                      <p className="font-bold mb-1 capitalize">{t('socials')}</p>
+                      <div className="flex gap-5 items-center mt-2">
+                        <Link href="https://facebook.com/lmsatarchi/" target="_blank">
+                          <img
+                            className="hover:scale-95 transition-all fill-white"
+                            src="/icons/facebook.svg"
+                            alt=""
+                          />
+                        </Link>
+                        {/* <Link href="/" target="_blank">
+                          <img
+                            className="hover:scale-95 transition-all"
+                            src="/icons/twitter.svg"
+                            alt=""
+                          />
+                        </Link> */}
+                        <Link href="https://instagram.com/lmsatarchi/" target="_blank">
+                          <img
+                            className="hover:scale-95 transition-all"
+                            src="/icons/instagram.svg"
+                            alt=""
+                          />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
