@@ -2,7 +2,10 @@
   "locales": ["en", "ar"],
   "defaultLocale": "en",
   "pages": {
-    "*": ["common", "error"],
-    "/portfolio": ["portfolio"]
+    "*": ["common"],
+    "/": ["home"],
+    "/about": ["about"],
+    "/services": ["home","services"],
+    "/contact":["contact"]
   }
 }
