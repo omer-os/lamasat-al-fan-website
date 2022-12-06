@@ -1,10 +1,5 @@
-import { gql } from "@apollo/client";
 import Router, { useRouter } from "next/router";
-import React from "react";
-import client from "../../data";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import FsLightbox from "fslightbox-react";
 import Head from "next/head";
 import { SanityClient, urlFor } from "../../dta";
 

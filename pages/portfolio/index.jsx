@@ -3,8 +3,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { CTAcard } from "../../components/";
-import { gql } from "@apollo/client";
-import client from "../../data";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";

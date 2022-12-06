@@ -6,11 +6,9 @@ import {
   ContactUs,
   LandingQAndA,
 } from "../components";
-import { gql } from "@apollo/client";
-import client from "../data";
 import { motion } from "framer-motion";
 import Head from "next/head";
-export default function Index({ data }) {
+export default function Index() {
   return (
     <motion.div
       animate={{
@@ -23,7 +21,7 @@ export default function Index({ data }) {
       <Head>
         <title>الرئيسية</title>
       </Head>
-      <LandingCarousel data={data} />
+      <LandingCarousel />
       <LandingServices />
       <LandingWorkProccess />
       <div className="h-1 mx-auto rounded bg-black w-4/6 my-10" />
@@ -34,27 +32,4 @@ export default function Index({ data }) {
       <ContactUs />
     </motion.div>
   );
-}
-
-
-export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      {
-        landingPages {
-          heroImages {
-            url
-          }
-        }
-      }
-    `,
-  });
-
-
-  return {
-    props: {
-      data: data,
-    },
-    revalidate: 10,
-  };
 }
