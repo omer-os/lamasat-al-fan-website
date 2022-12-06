@@ -1,3 +1,18 @@
 {
-  "logo": "lamasat al fan"
+  "company_name": "Lmsat Al-Fan",
+  "tagline": "Engineering & Design Consultancy Company",
+  "navigation": {
+    "home_page": "Home",
+    "about_page": "Who we are",
+    "projects_page": "Projects",
+    "services_page": "Services"
+  },
+  "landing_page": {
+    "headline": "Building your own world",
+    "section1_title": "Our Services",
+    "section2_subtitles": "Get to know our services",
+    "CTA_projects_headline": "",
+    "CTA_projects_subheadline": ""
+  }
+
 }

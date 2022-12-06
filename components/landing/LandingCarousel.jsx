@@ -2,9 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import useTranslation from 'next-translate/useTranslation';
 export default function LandingCarousel() {
   const [SelectedTap, setSelectedTap] = useState(0);
-
+  const { t, lang } = useTranslation('common');
+  const headline = t('common:company_name');
   const dta = [
     {
       title: " تصميم الداخلي",
@@ -70,7 +72,7 @@ export default function LandingCarousel() {
       <div className=" lg:right-[12em] sm:h-[100vh] md:right-[5em] sm:right-[3em] transition-all sm:mx-0 mx-7 relative flex justify-center flex-col mt-[4%] gap-2 sm:w-[25em]">
         <div>
           <div className="sm:text-5xl text-2xl font-extrabold">
-            هناك حقيقة مثبتة منذ طويل زمن طويل
+            {headline}
           </div>
           <div className="text-sm sm:hidden text-zinc-400">
             الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام إيبسوم لأنها تعطي
