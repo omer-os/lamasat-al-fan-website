@@ -87,8 +87,10 @@ export default function ProjectDetails({ data }) {
 
 export const getStaticPaths = async () => {
   const data = await SanityClient.fetch(`*[_type=="projects"]{
-    slug
-  }
+      slug{
+        current
+      }
+    }
   `);
 
   const paths = data.map((i) => {
