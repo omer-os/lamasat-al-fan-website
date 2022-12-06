@@ -2,7 +2,7 @@
   "locales": ["en", "ar"],
   "defaultLocale": "en",
   "pages": {
-    "*": ["common", "error"],
+    "*": ["common", "error", "landing"],
     "/portfolio": ["portfolio"]
   }
 }
