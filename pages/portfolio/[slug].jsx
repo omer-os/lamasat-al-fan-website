@@ -19,14 +19,16 @@ export default function ProjectDetails({ data }) {
       className="md:w-4/6 w-full px-6 sm:w-5/6 transition-all sm:mt-[5em] mx-auto mb-20"
     >
       <Head>
-        <title>{data[0].ProjectName}</title>
+        <title>{data && data[0].ProjectName}</title>
       </Head>
       <div className="sm:relative absolute top-[3.5em] left-0 right-0 h-[25em] w-full -z-10 ">
-        <motion.img
-          src={urlFor(data[0].ProjectCover)}
-          className="w-full h-full object-cover"
-          alt=""
-        />
+        {data && (
+          <motion.img
+            src={urlFor(data[0].ProjectCover)}
+            className="w-full h-full object-cover"
+            alt=""
+          />
+        )}
 
         <div className="absolute sm:flex hidden -top-6 -right-6 w-[8em] h-[7em] bg-first -z-10"></div>
         <div className="absolute  bottom-0 sm:-bottom-6 left-0 sm:-left-6 sm:flex hidden sm:w-[8em] h-[7em] sm:bg-first sm:-z-10"></div>
@@ -47,8 +49,8 @@ export default function ProjectDetails({ data }) {
       </button>
 
       <div className="mt-[24em] z-20 relative sm:mt-0 transition-all">
-        <div className="w-full flex sm:gap-10 gap-2 justify-start sm:mt-3">
-          {data[0].Location && (
+        {/* <div className="w-full flex sm:gap-10 gap-2 justify-start sm:mt-3">
+          {data && (
             <div className="rounded-full py-1 px-4 text-zinc-500 sm:text-sm text-xs bg-zinc-200 border border-zinc-300">
               الموقع: {data[0].Location}
             </div>
@@ -58,27 +60,28 @@ export default function ProjectDetails({ data }) {
               الحالة: {data[0].Status}
             </div>
           )}
-        </div>
+        </div> */}
 
         <div className="flex mt-2 sm:mt-[6em] flex-col">
           <div className="text-2xl sm:text-3xl font-bold">
-            {data[0].ProjectName}{" "}
+            {data && data[0].ProjectName}{" "}
           </div>
           <div className="sm:text-xl text-zinc-500 sm:mt-5 mt-2">
-            {data[0].description && data[0].description}{" "}
+            {data && data[0].description && data[0].description}{" "}
           </div>
         </div>
 
         <div className="grid mt-10  sm:grid-cols-3 w-full gap-6 sm:gap-10 sm:auto-rows-[10em] auto-rows-[15em]">
-          {data[0].ProjectImages.map((i, index) => (
-            <div key={index} className="rounded-xl">
-              <img
-                src={urlFor(i)}
-                className="w-full h-full rounded-xl object-cover"
-                alt=""
-              />
-            </div>
-          ))}
+          {data &&
+            data[0].ProjectImages.map((i, index) => (
+              <div key={index} className="rounded-xl">
+                <img
+                  src={urlFor(i)}
+                  className="w-full h-full rounded-xl object-cover"
+                  alt=""
+                />
+              </div>
+            ))}
         </div>
       </div>
     </motion.div>
@@ -112,13 +115,13 @@ export const getStaticProps = async (context) => {
 
   const data =
     await SanityClient.fetch(`*[_type == 'projects' && slug.current == "${slug}"]{
-    slug,
     ProjectName,
     ProjectCover,
     ProjectImages,
     Status,
     Location,
-    description
+    description,
+    slug
   }
   
   `);
