@@ -133,7 +133,7 @@ export default function NavBar() {
           `}
           href="/contact"
         >
-           {t('navigation.services_page')}
+           {t('navigation.contact_page')}
         </Link>
 
         <div
@@ -156,19 +156,19 @@ export default function NavBar() {
       >
         {[
           {
-            name: "الرئيسية",
+            name: t('navigation.home_page'),
             link: "/",
           },
           {
-            name: "من نحن",
+            name: t('navigation.about_page'),
             link: "/about",
           },
           {
-            name: "خدماتنا",
+            name: t('navigation.services_page'),
             link: "/services",
           },
           {
-            name: "مشاريعنا",
+            name: t('navigation.portfolio_page'),
             link: "/portfolio",
           },
         ].map((i, index) => (
@@ -190,7 +190,7 @@ export default function NavBar() {
             href="/contact"
             className="bg-black text-white active:scale-95 transition-all py-2 px-3 rounded"
           >
-            تواصل معنا
+            {t('navigation.contact_page')}
           </Link>
         </div>
 

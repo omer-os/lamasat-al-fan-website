@@ -6,7 +6,7 @@ import useTranslation from 'next-translate/useTranslation';
 export default function LandingCarousel() {
   const [SelectedTap, setSelectedTap] = useState(0);
   const { t, lang } = useTranslation('common', 'landing');
-  const headline = t('landing:headline');
+
   const dta = [
     {
       title: " تصميم الداخلي",
@@ -70,17 +70,16 @@ export default function LandingCarousel() {
       </div>
 
       <div className=" lg:right-[12em] sm:h-[100vh] md:right-[5em] sm:right-[3em] transition-all sm:mx-0 mx-7 relative flex justify-center flex-col mt-[4%] gap-2 sm:w-[25em]">
-        <div>
+        <div className="text-center sm:text-right mt-5">
           <div className="sm:text-5xl text-2xl font-extrabold">
-            {headline}
+            {t('landing:headline')}
           </div>
-          <div className="text-sm sm:hidden text-zinc-400">
-            الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام إيبسوم لأنها تعطي
-            توزيعاَ.
+          <div className="text-md sm:block text-zinc-400">
+            {t('landing:sub_headline')}
           </div>
           <Link
             href="/portfolio"
-            className="bg-black text-white active:bg-black/90 group active:scale-95 transition-all py-4 px-6 font-bold sm:w-max justify-center mt-4 sm:mt-10 sm:rounded-0 rounded-xl flex gap-7 flex-row"
+            className="mt-5 bg-black text-white active:bg-black/90 group active:scale-95 transition-all py-4 px-6 font-bold sm:w-max justify-center mt-4 sm:mt-10 sm:rounded-0 rounded-xl flex gap-7 flex-row"
           >
             <span className="min-w-max">اهم مشاريعنا</span>
 
