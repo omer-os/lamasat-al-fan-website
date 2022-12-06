@@ -69,7 +69,7 @@ export default function NavBar() {
                       opacity: [0, 1],
                       scale: [0.9, 1],
                     }}
-                    className="absolute w-full h-[.09em] rounded -bottom-1 left-0 z-20 bg-black"
+                    className="absolute w-full h-[.09em] rounded -bottom-1 left-0 z-20 bg-white"
                   />
                 )}
                 {i.name}
@@ -77,6 +77,7 @@ export default function NavBar() {
             ))}
 
             <LanguageDropDown
+              lang={lang}
               setDropDown={setDropDown}
               DropDown={DropDown}
               t={t}
@@ -84,32 +85,26 @@ export default function NavBar() {
 
             <div
               id="dropdown"
-              class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+              className="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow"
             >
               <ul
-                class="py-1 text-sm text-gray-700 dark:text-gray-200"
+                className="py-1 text-sm text-gray-700 dark:text-gray-200"
                 aria-labelledby="dropdownDefault"
               >
                 <li>
-                  <a
-                    href="#"
-                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
+                  <a href="#" className="block py-2 px-4 hover:bg-gray-100 ">
                     Dashboard
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
+                  <a href="#" className="block py-2 px-4 hover:bg-gray-100">
                     Settings
                   </a>
                 </li>
                 <li>
                   <a
                     href="#"
-                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 "
                   >
                     Earnings
                   </a>
@@ -117,7 +112,7 @@ export default function NavBar() {
                 <li>
                   <a
                     href="#"
-                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 "
                   >
                     Sign out
                   </a>
@@ -133,7 +128,7 @@ export default function NavBar() {
           `}
           href="/contact"
         >
-           {t('navigation.services_page')}
+          {t("navigation.services_page")}
         </Link>
 
         <div
@@ -212,23 +207,23 @@ export default function NavBar() {
   );
 }
 
-export function LanguageDropDown({ setDropDown, DropDown, t }) {
+export function LanguageDropDown({ setDropDown, DropDown, t, lang }) {
   return (
     <div className="drop-down group border px-3 py-1  rounded relative">
-      <button className="dropdown" onClick={() => setDropDown(!DropDown)}>
-        En
+      <button className="dropdown uppercase" onClick={() => setDropDown(!DropDown)}>
+        {lang}
       </button>
 
       <div
         id="dropdownSmall"
         className={`${
           !DropDown ? "hidden" : "show"
-        } absolute right-0 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600`}
+        } absolute right-0 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow`}
       >
         <ul className="py-1">
           <li>
             <a
-              className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+              className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100  "
               onClick={() => {
                 setLanguage("ar");
                 setDropDown(!DropDown);
@@ -239,7 +234,7 @@ export function LanguageDropDown({ setDropDown, DropDown, t }) {
           </li>
           <li>
             <a
-              className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+              className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100  "
               onClick={() => {
                 setLanguage("en");
                 setDropDown(!DropDown);

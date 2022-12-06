@@ -18,10 +18,10 @@ export default function Index({ Dta }) {
 
   const { t, lang } = useTranslation("common");
 
-  // useEffect(() => {
-  // QueryCategory === undefined && router.push("?category=governmental");
-  // setSelectedCategory(QueryCategory)
-  // }, []);
+  useEffect(() => {
+    QueryCategory === undefined && router.push("?category=governmental");
+    setSelectedCategory(QueryCategory);
+  }, []);
 
   const categories = [
     {
@@ -38,16 +38,12 @@ export default function Index({ Dta }) {
     },
   ];
 
-  // categories.map((i) => {
-  //   console.log(i[lang]);
-  // });
-
   return (
     <>
       <Head>
         <title>اهم مشاريعنا</title>
       </Head>
-      <div className="w-full sm:px-20 sm:mt-[7em] mt-20 flex flex-col">
+      <div className="w-full sm:px-[3em] sm:mt-[7em] mt-20 flex flex-col">
         <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-30 sm:top-0 left-0 top-8 items-end ">
           <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full overflow-y-hidden p-2 mt-3 gap-2 ">
             {categories.map((i, index) => (
@@ -108,40 +104,6 @@ export default function Index({ Dta }) {
                   </Link>
                 )
               )}
-
-            {/* {Dta &&
-              Dta.filter((i) => i.category === QueryCategory).map(
-                (i, index) => (
-                  <Link href={`/portfolio/${i.slug.current}`} key={index}>
-                    <motion.div
-                      exit={{
-                        scale: [1, 0.9],
-                        opacity: [1, 0.5],
-                      }}
-                      animate={{
-                        scale: [0.9, 1],
-                        opacity: [0.5, 1],
-                      }}
-                      transition={{
-                        duration: 0.3,
-                      }}
-                      className="rounded-xl w-full h-full object-cover relative"
-                    >
-                      <motion.img
-                        layoutId={i.slug.current}
-                        src={urlFor(i.ProjectCover)}
-                        className="w-full h-full object-cover rounded-xl"
-                        alt=""
-                      />
-
-                      <div className="absolute w-full p-4 bottom-0 text-xl text-white left-0 rounded-b-xl font-bold z-20">
-                        {i.ProjectName}
-                      </div>
-                      <div className="absolute rounded-xl h-full bg-gradient-to-t from-black/60 sm:from-black/50 w-full left-0 bottom-0" />
-                    </motion.div>
-                  </Link>
-                )
-              )} */}
           </AnimatePresence>
         </motion.div>
       </div>
