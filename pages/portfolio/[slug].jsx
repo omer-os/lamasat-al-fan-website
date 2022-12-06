@@ -11,7 +11,6 @@ import { SanityClient, urlFor } from "../../dta";
 export default function ProjectDetails({ data }) {
   const router = useRouter();
 
-
   return (
     <motion.div
       animate={{
@@ -87,7 +86,6 @@ export default function ProjectDetails({ data }) {
 }
 
 export const getStaticPaths = async () => {
-
   const data = await SanityClient.fetch(`*[_type=="projects"]{
     slug
   }
@@ -103,7 +101,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
@@ -127,5 +125,6 @@ export const getStaticProps = async (context) => {
     props: {
       data,
     },
+    revalidate: 10,
   };
 };
