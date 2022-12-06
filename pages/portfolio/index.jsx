@@ -14,14 +14,16 @@ import useTranslation from "next-translate/useTranslation";
 export default function Index({ Dta }) {
   const router = useRouter();
   const QueryCategory = router.query.category;
-  const [SelectedCategory, setSelectedCategory] = useState("governmental");
+  const [SelectedCategory, setSelectedCategory] = useState("govermental");
 
   const { t, lang } = useTranslation("common");
 
   useEffect(() => {
-    QueryCategory === undefined && router.push("?category=governmental");
+    QueryCategory === undefined && router.push("?category=govermental");
     setSelectedCategory(QueryCategory);
   }, []);
+
+  // console.log(Dta);
 
   const categories = [
     {
@@ -33,7 +35,7 @@ export default function Index({ Dta }) {
       ar: "تجاري",
     },
     {
-      en: "governmental",
+      en: "govermental",
       ar: "حكومي",
     },
   ];
