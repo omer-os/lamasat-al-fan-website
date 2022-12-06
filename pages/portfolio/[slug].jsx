@@ -2,8 +2,11 @@ import Router, { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { SanityClient, urlFor } from "../../dta";
+import useTranslation from "next-translate/useTranslation";
 
 export default function ProjectDetails({ data }) {
+  const { t, lang } = useTranslation("common");
+
   const router = useRouter();
 
   return (
@@ -14,7 +17,7 @@ export default function ProjectDetails({ data }) {
       className="md:w-4/6 w-full px-6 sm:w-5/6 transition-all sm:mt-[5em] mx-auto mb-20"
     >
       <Head>
-        <title>{data && data[0].ProjectName}</title>
+        <title>{data && data[0].ProjectName[lang]}</title>
       </Head>
       <div className="sm:relative absolute top-[3.5em] left-0 right-0 h-[25em] w-full -z-10 ">
         {data && (
@@ -47,22 +50,22 @@ export default function ProjectDetails({ data }) {
         {/* <div className="w-full flex sm:gap-10 gap-2 justify-start sm:mt-3">
           {data && (
             <div className="rounded-full py-1 px-4 text-zinc-500 sm:text-sm text-xs bg-zinc-200 border border-zinc-300">
-              الموقع: {data[0].Location}
+              الموقع: {data[0].Location[lang]}
             </div>
           )}
-          {data[0].Status && (
+          {data[0].Status[lang] && (
             <div className="rounded-full py-1 px-4 text-zinc-500 sm:text-sm text-xs bg-zinc-200 border border-zinc-300">
-              الحالة: {data[0].Status}
+              الحالة: {data[0].Status[lang]}
             </div>
           )}
         </div> */}
 
         <div className="flex mt-2 sm:mt-[6em] flex-col">
           <div className="text-2xl sm:text-3xl font-bold">
-            {data && data[0].ProjectName}{" "}
+            {data && data[0].ProjectName[lang]}{" "}
           </div>
           <div className="sm:text-xl text-zinc-500 sm:mt-5 mt-2">
-            {data && data[0].description && data[0].description}{" "}
+            {data && data[0].description[lang] && data[0].description[lang]}{" "}
           </div>
         </div>
 
