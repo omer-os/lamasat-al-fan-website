@@ -28,7 +28,7 @@ export default function ContactUs() {
                     </div>
                     <div className="grow mr-6">
                       <p className="font-bold mb-1">عنوان البريد الالكتروني</p>
-                      <p className="text-gray-500">support@example.com</p>
+                      <p className="text-gray-500">info@lmsatarchi.com</p>
                     </div>
                   </div>
                 </div>
@@ -55,7 +55,7 @@ export default function ContactUs() {
                     <div className="grow mr-6">
                       <p className="font-bold mb-1">موقعنا</p>
                       <p className="text-gray-500">
-                        كركوك, طريق بغداد زز خحصةث صثخهىحخ ثىةحث ثحةى
+                        كركوك، بداية شارع المعارض
                       </p>
                     </div>
                   </div>
