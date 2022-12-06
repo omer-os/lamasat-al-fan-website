@@ -30,7 +30,7 @@ export default function Index({ Dta }) {
     },
     {
       en: "commercial",
-      ar: "تجارس",
+      ar: "تجاري",
     },
     {
       en: "governmental",
