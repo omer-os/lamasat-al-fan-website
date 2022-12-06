@@ -2,12 +2,15 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import useTranslation from "next-translate/useTranslation";
+import setLanguage from "next-translate/setLanguage";
 
 export default function NavBar() {
   const [OpenSideBar, setOpenSideBar] = useState(false);
   const [LangOpened, setLangOpened] = useState(false);
   const [ScrollTop, setScrollTop] = useState(0);
   const router = useRouter();
+  const { t, lang } = useTranslation("common");
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -30,7 +33,7 @@ export default function NavBar() {
       >
         <div className="flex flex-row items-baseline gap-10">
           <Link href="/" className="text-xl font-bold">
-            Lamasta Al Fan
+            {t("company_name")}
           </Link>
 
           <div className="md:flex hidden gap-5 text-zinc-500">
