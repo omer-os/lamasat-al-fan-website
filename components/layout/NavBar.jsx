@@ -83,42 +83,6 @@ export default function NavBar() {
               t={t}
             />
 
-            <div
-              id="dropdown"
-              className="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow"
-            >
-              <ul
-                className="py-1 text-sm text-gray-700 dark:text-gray-200"
-                aria-labelledby="dropdownDefault"
-              >
-                <li>
-                  <a href="#" className="block py-2 px-4 hover:bg-gray-100 ">
-                    Dashboard
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="block py-2 px-4 hover:bg-gray-100">
-                    Settings
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 "
-                  >
-                    Earnings
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 "
-                  >
-                    Sign out
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
 
@@ -178,6 +142,12 @@ export default function NavBar() {
             {i.name}
           </Link>
         ))}
+         <LanguageDropDown
+              lang={lang}
+              setDropDown={setDropDown}
+              DropDown={DropDown}
+              t={t}
+            />
 
         <div className="flex items-center sm:hidden flex-col-reverse mt-1 text-sm gap-3">
           <Link
