@@ -12,5 +12,10 @@
   "email": "email",
   "phone": "phone",
   "address": "address",
-  "socials": "socials"
+  "socials": "socials",
+  "cta": {
+    "title": "make a type specimen book. It has survived not only",
+    "contact":"contact us",
+    "portfolio":"see our projects"
+  }
 }

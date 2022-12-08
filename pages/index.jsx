@@ -23,8 +23,8 @@ export default function Index() {
       </Head>
       <LandingCarousel />
       <LandingServices />
-      <LandingWorkProccess />
-      <div className="h-1 mx-auto rounded bg-black w-4/6 my-10" />
+      {/* <LandingWorkProccess /> */}
+      <div className="h-1 mx-auto rounded bg-black w-4/6 my-11" />
       <LandingQAndA />
       <div className="my-10">
         <CTAcard />

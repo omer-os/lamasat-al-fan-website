@@ -23,27 +23,39 @@ export default function ProjectDetails({ data }) {
         {data && (
           <motion.img
             src={urlFor(data[0].ProjectCover)}
-            className="w-full h-full object-cover"
+            className="w-full relative  h-full object-cover"
             alt=""
+            animate={{
+              top: ["-100%", "0%"],
+            }}
           />
         )}
 
-        <div className="absolute sm:flex hidden -top-6 -right-6 w-[8em] h-[7em] bg-first -z-10"></div>
-        <div className="absolute  bottom-0 sm:-bottom-6 left-0 sm:-left-6 sm:flex hidden sm:w-[8em] h-[7em] sm:bg-first sm:-z-10"></div>
-        <div className="absolute  sm:hidden -bottom-1 left-0  w-full h-[7em] bg-gradient-to-t from-white "></div>
+        <div className="absolute sm:flex hidden -top-6 -right-6 w-[8em] h-[7em] bg-zinc-300 -z-10"></div>
+        <div className="absolute  bottom-0 sm:-bottom-6 left-0 sm:-left-6 sm:flex hidden sm:w-[8em] h-[7em] sm:bg-zinc-300 sm:-z-10"></div>
+        <div className="absolute sm:hidden -bottom-1 left-0 w-full h-[8em] bg-gradient-to-t from-white "></div>
       </div>
 
       <button
         onClick={() => {
           router.push("/portfolio");
         }}
-        className="rounded-full flex items-center justify-center w-12 h-12 fixed sm:hidden z-30 top-20 left-2 bg-zinc-200 scale-1 active:scale-95 transition-all"
+        className="rounded-full flex items-center justify-center w-12 h-12 fixed sm:hidden z-30 top-20 right-2 bg-white/80 scale-[.8] active:scale-[.6] transition-all"
       >
-        <img
-          src="/icons/down-arrow.png"
-          alt="go back arrow - الرجوع الى الصفحة السابقة"
-          className="rotate-90 mr-1"
-        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          id="Capa_1"
+          x="0px"
+          y="0px"
+          width="16px"
+          height="16px"
+          viewBox="0 0 94.926 94.926"
+        >
+          <g>
+            <path d="M55.931,47.463L94.306,9.09c0.826-0.827,0.826-2.167,0-2.994L88.833,0.62C88.436,0.224,87.896,0,87.335,0   c-0.562,0-1.101,0.224-1.498,0.62L47.463,38.994L9.089,0.62c-0.795-0.795-2.202-0.794-2.995,0L0.622,6.096   c-0.827,0.827-0.827,2.167,0,2.994l38.374,38.373L0.622,85.836c-0.827,0.827-0.827,2.167,0,2.994l5.473,5.476   c0.397,0.396,0.936,0.62,1.498,0.62s1.1-0.224,1.497-0.62l38.374-38.374l38.374,38.374c0.397,0.396,0.937,0.62,1.498,0.62   s1.101-0.224,1.498-0.62l5.473-5.476c0.826-0.827,0.826-2.167,0-2.994L55.931,47.463z" />
+          </g>
+        </svg>
       </button>
 
       <div className="mt-[24em] z-20 relative sm:mt-0 transition-all">
@@ -60,7 +72,13 @@ export default function ProjectDetails({ data }) {
           )}
         </div> */}
 
-        <div className="flex mt-2 sm:mt-[6em] flex-col">
+        <div
+          className={`
+        flex mt-2 sm:mt-[6em] flex-col ${
+          lang === "ar" ? "text-right" : "text-left"
+        }
+        `}
+        >
           <div className="text-2xl sm:text-3xl font-bold">
             {data && data[0].ProjectName[lang]}{" "}
           </div>

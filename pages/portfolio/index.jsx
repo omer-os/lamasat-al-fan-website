@@ -23,8 +23,6 @@ export default function Index({ Dta }) {
     setSelectedCategory(QueryCategory);
   }, []);
 
-  // console.log(Dta);
-
   const categories = [
     {
       en: "residential",
@@ -50,7 +48,14 @@ export default function Index({ Dta }) {
           <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full overflow-y-hidden p-2 mt-3 gap-2 ">
             {categories.map((i, index) => (
               <button
-                onClick={() => router.push(`?category=${i.en}`)}
+                onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth",
+                  });
+                  router.push(`?category=${i.en}`);
+                }}
                 key={i.en}
                 className={`font-bold flex-1 text-sm  p-2 px-6 rounded-xl relative ${
                   QueryCategory !== i.en && "!text-black"
@@ -76,7 +81,17 @@ export default function Index({ Dta }) {
             {Dta &&
               Dta.filter((i) => i.Category === QueryCategory).map(
                 (i, index) => (
-                  <Link href={`/portfolio/${i.slug.current}`} key={index}>
+                  <Link
+                    href={`/portfolio/${i.slug.current}`}
+                    key={index}
+                    onClick={() => {
+                      window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: "smooth",
+                      });
+                    }}
+                  >
                     <motion.div
                       exit={{
                         scale: [1, 0.9],
@@ -92,13 +107,17 @@ export default function Index({ Dta }) {
                       className="rounded-xl w-full h-full object-cover relative"
                     >
                       <motion.img
-                        layoutId={i.slug.current}
                         src={urlFor(i.ProjectCover)}
                         className="w-full h-full object-cover rounded-xl"
                         alt=""
                       />
 
-                      <div className="absolute w-full p-4 bottom-0 text-xl text-white left-0 rounded-b-xl font-bold z-20">
+                      <div
+                        className={`absolute w-full p-4 bottom-0 text-xl text-white  rounded-b-xl font-bold z-20 
+                      left-0
+                      ${lang === "ar" ? "text-left" : "text-left"}
+                      `}
+                      >
                         {i.ProjectName[lang]}
                       </div>
                       <div className="absolute rounded-xl h-full bg-gradient-to-t from-black/60 sm:from-black/50 w-full left-0 bottom-0" />

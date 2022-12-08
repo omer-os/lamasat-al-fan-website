@@ -21,7 +21,14 @@ export default function About() {
         {["الجوائز", "مهمتنا و رؤيتنا", "عن الشركة"].map((i, index) => (
           <button
             onClick={() => {
-              setSelectedTap(index);
+              window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+              });
+              setTimeout(() => {
+                setSelectedTap(index);
+              }, 1000);
             }}
             key={index}
             className={`relative bg-white flex-1 py-4 transition-all duration-500 ${

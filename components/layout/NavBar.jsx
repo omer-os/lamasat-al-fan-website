@@ -32,7 +32,9 @@ export default function NavBar() {
       <nav
         className={`py-5 w-full ${
           ScrollTop === 0 && "sm:border-b"
-        } border-zinc-300 items-center transition-all flex flex-row-reverse md:flex-row justify-between relative z-20`}
+        } border-zinc-300 items-center transition-all flex md:!flex-row justify-between relative z-20 ${
+          lang === "ar" && "flex-row-reverse"
+        }`}
       >
         <div className="flex flex-row items-baseline gap-10">
           <Link href="/" className="text-xl font-bold">
@@ -149,6 +151,7 @@ export default function NavBar() {
           setDropDown={setDropDown}
           DropDown={DropDown}
           t={t}
+          setOpenSideBar={setOpenSideBar}
         />
 
         <div className="flex items-center sm:hidden flex-col-reverse mt-1 text-sm gap-3">
@@ -179,7 +182,12 @@ export default function NavBar() {
   );
 }
 
-export function LanguageDropDown({ setDropDown, DropDown, t, lang }) {
+export function LanguageDropDown({
+  setDropDown,
+  DropDown,
+  setOpenSideBar,
+  lang,
+}) {
   return (
     <div className="drop-down group border  rounded relative cursor-pointer ">
       <button
@@ -190,10 +198,13 @@ export function LanguageDropDown({ setDropDown, DropDown, t, lang }) {
       </button>
 
       <div
-        id="dropdownSmall"
         className={`${
           !DropDown ? "hidden" : "show"
-        } absolute right-0 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow`}
+        } absolute   z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow 
+        left-[50%]
+        translate-x-[-50%]
+        text-center mt-1
+        `}
       >
         <ul className="py-1">
           <li>
@@ -202,6 +213,7 @@ export function LanguageDropDown({ setDropDown, DropDown, t, lang }) {
               onClick={() => {
                 setLanguage("ar");
                 setDropDown(!DropDown);
+                setOpenSideBar(false);
               }}
             >
               Ar
@@ -213,6 +225,7 @@ export function LanguageDropDown({ setDropDown, DropDown, t, lang }) {
               onClick={() => {
                 setLanguage("en");
                 setDropDown(!DropDown);
+                setOpenSideBar(false);
               }}
             >
               En

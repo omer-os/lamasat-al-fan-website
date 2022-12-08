@@ -10,7 +10,7 @@ export default function DropDown({ Ques, Ans }) {
         className={`
         ${
           Open && "bg-zinc-200"
-        } bg-white transition-all py-3 px-4 font-bold flex rounded-t cursor-pointer justify-between items-center text-sm `}
+        } bg-white transition-all py-3 px-4 font-semibold flex rounded-t cursor-pointer justify-between items-center text-sm `}
       >
         <span className="max-w-[19em]">{Ques}</span>
         <motion.img

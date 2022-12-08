@@ -8,8 +8,6 @@
   "CTA_projects_headline": "نهدف لتحقيق حلمك",
   "CTA_projects_subheadline": "تعرف على مشاريعنا السكنية والتجارية والحكومية.",
   "CTA_projects_button": "عرض أعمالنا",
-
-  "landing_hero_list": ["تصميم داخلي", "تصميم خارجي", "تنفيذ"],
   "landing_hero_texts": [
     {
       "title": " تصميم الداخلي",
@@ -25,6 +23,26 @@
       "title": "التنفيذ",
       "text": "مرحبًا بكم في Vennea مرحبًا بكم في Vennea شريك به في طريقك لبناء مستقبل شريك تجاري موثوق به في طريقك لبناء مستقبل أفضل للجميع",
       "bg": "https://images.unsplash.com/photo-1506749841726-3df2e72b9564?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+    }
+  ],
+  "landing_services_list": [
+    {
+      "category": "تجاري",
+      "title": "عبارة تسويقية لطيفة هنا",
+      "subtitle": "أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات",
+      "bg": "https://images.unsplash.com/photo-1669562022711-a6f27b26a5ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+    },
+    {
+      "category": "تجاري",
+      "title": "عبارة تسويقية لطيفة هنا",
+      "subtitle": "أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات",
+      "bg": "https://images.unsplash.com/photo-1669562022711-a6f27b26a5ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+    },
+    {
+      "category": "تجاري",
+      "title": "عبارة تسويقية لطيفة هنا",
+      "subtitle": "أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات",
+      "bg": "https://images.unsplash.com/photo-1669562022711-a6f27b26a5ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
     }
   ]
 }

@@ -1,14 +1,10 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
+import useTranslation from "next-translate/useTranslation";
 
-export function LandingServicesCard({
-  title,
-  subtitle,
-  category,
-  img,
-  link,
-  dir,
-}) {
+export function LandingServicesCard({ title, subtitle, category, img }) {
+  const { t, lang } = useTranslation("common", "landing");
+
   return (
     <motion.div
       initial={{
@@ -26,7 +22,7 @@ export function LandingServicesCard({
       viewport={{
         once: true,
       }}
-      className="items-center relative flex flex-col gap-5"
+      className="items-center self-start relative flex flex-col gap-5"
     >
       <div className="h-[20em] w-full">
         <img
@@ -35,7 +31,13 @@ export function LandingServicesCard({
           alt=""
         />
       </div>
-      <div className="flex z-20 sm:p-0 p-3 right-0 bottom-0 sm:relative absolute flex-col">
+      <div
+        className={`
+      flex z-20 sm:p-0 p-3 right-0 bottom-0 sm:relative absolute flex-col
+
+      ${lang === "ar" ? "text-right" : "text-left"}
+      `}
+      >
         <div className="text-xs sm:text-lg text-white sm:text-zinc-400 sm:font-semibold transition-all">
           {category}
         </div>
