@@ -3,11 +3,18 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import { SanityClient, urlFor } from "../../dta";
 import useTranslation from "next-translate/useTranslation";
+import FsLightbox from "fslightbox-react";
+import { useState } from "react";
+import Link from "next/link";
 
 export default function ProjectDetails({ data }) {
   const { t, lang } = useTranslation("common");
-
+  const [FlashImage, setFlashImage] = useState(false);
   const router = useRouter();
+
+  let images = [];
+
+  data && data[0].ProjectImages.map((i) => images.push(urlFor(i).url()));
 
   return (
     <motion.div
@@ -26,7 +33,7 @@ export default function ProjectDetails({ data }) {
             className="w-full relative  h-full object-cover"
             alt=""
             animate={{
-              top: ["-100%", "0%"],
+              scale: [0.99, 1],
             }}
           />
         )}
@@ -40,7 +47,7 @@ export default function ProjectDetails({ data }) {
         onClick={() => {
           router.push("/portfolio");
         }}
-        className="rounded-full flex items-center justify-center w-12 h-12 fixed sm:hidden z-30 top-20 right-2 bg-white/80 scale-[.8] active:scale-[.6] transition-all"
+        className="rounded-full flex items-center justify-center w-12 h-12 fixed sm:right-10  sm:hidden z-30 top-20 right-2 bg-white/80 scale-[.8] active:scale-[.6] transition-all"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -79,6 +86,10 @@ export default function ProjectDetails({ data }) {
         }
         `}
         >
+          <Link href="/portfolio" className="font-bold w-max hover:underline sm:flex hidden text-sm mb-2">
+            {lang === "ar" ? "صفحة السابقة" : "Go Back"}
+          </Link>
+
           <div className="text-2xl sm:text-3xl font-bold">
             {data && data[0].ProjectName[lang]}{" "}
           </div>
@@ -95,6 +106,7 @@ export default function ProjectDetails({ data }) {
                   src={urlFor(i)}
                   className="w-full h-full rounded-xl object-cover"
                   alt=""
+                  onClick={() => setFlashImage(true)}
                 />
               </div>
             ))}

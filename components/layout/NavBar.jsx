@@ -213,7 +213,6 @@ export function LanguageDropDown({
               onClick={() => {
                 setLanguage("ar");
                 setDropDown(!DropDown);
-                setOpenSideBar(false);
               }}
             >
               Ar
@@ -225,7 +224,6 @@ export function LanguageDropDown({
               onClick={() => {
                 setLanguage("en");
                 setDropDown(!DropDown);
-                setOpenSideBar(false);
               }}
             >
               En

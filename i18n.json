@@ -3,6 +3,7 @@
   "defaultLocale": "en",
   "pages": {
     "*": ["common", "error", "landing"],
-    "/portfolio": ["portfolio"]
+    "/portfolio": ["portfolio"],
+    "/about": ["about"]
   }
 }

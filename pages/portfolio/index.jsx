@@ -115,7 +115,7 @@ export default function Index({ Dta }) {
                       <div
                         className={`absolute w-full p-4 bottom-0 text-xl text-white  rounded-b-xl font-bold z-20 
                       left-0
-                      ${lang === "ar" ? "text-left" : "text-left"}
+                      ${lang === "ar" ? "text-right" : "text-left"}
                       `}
                       >
                         {i.ProjectName[lang]}

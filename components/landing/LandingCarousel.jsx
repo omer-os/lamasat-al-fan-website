@@ -17,7 +17,7 @@ export default function LandingCarousel() {
       }}
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
-      <div className="sm:-z-10 sm:absolute relative top-0 left-0 sm:h-full sm:rounded-none rounded-xl sm:overflow-hidden sm:w-full sm:mt-0 mt-20 sm:mx-0 mx-0 right-0">
+      <div className="sm:-z-10 sm:absolute relative top-0 left-0 sm:h-full sm:rounded-none rounded-xl sm:overflow-hidden sm:w-full sm:mt-0 mt-20 sm:mx-0 mx-0 right-0 ">
         <div className="sm:block hidden">
           {[0, 1, 2].map((i, index) => (
             <motion.img
@@ -30,7 +30,7 @@ export default function LandingCarousel() {
                   duration: 1,
                 },
               }}
-              className={`w-[50%] h-full  absolute top-0  z-10  object-cover brightness-75 ${
+              className={`w-[50%] h-full absolute top-0  z-10  object-cover brightness-75 ${
                 lang === "ar" ? "left-0" : "right-0"
               }`}
               src={t(`landing:landing_hero_texts.${index}.bg`)}
@@ -38,7 +38,13 @@ export default function LandingCarousel() {
           ))}
         </div>
 
-        <div className="flex overflow-x-scroll snap-display-none snap-x snap-mandatory gap-4 sm:hidden px-8">
+        <div
+          className={`
+        flex overflow-x-scroll  snap-display-none snap-x snap-mandatory gap-4 sm:hidden px-8 flex-row-reverse ${
+          lang === "ar" && "!flex-row"
+        }
+        `}
+        >
           {[0, 1, 2].map((i, index) => (
             <div key={index} className="relative">
               <motion.img
@@ -46,7 +52,11 @@ export default function LandingCarousel() {
                 src={t(`landing:landing_hero_texts.${index}.bg`)}
               />
 
-              <div className="absolute bottom-5 right-5 text-xl text-white sm:hidden font-semibold">
+              <div
+                className={`absolute bottom-5  text-xl text-white sm:hidden font-semibold capitalize
+              ${lang === "ar" ? "right-5" : "left-5"}
+              `}
+              >
                 {t(`landing:landing_hero_texts.${index}.title`)}
               </div>
             </div>
