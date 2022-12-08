@@ -19,7 +19,10 @@ export default function NavBar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full px-7 md:px-16 z-50">
+    <header
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      className="fixed top-0 left-0 w-full px-7 md:px-15 z-50"
+    >
       <div
         className={`absolute transition-all inset-0 shadow-xl bg-white -z-10 ${
           ScrollTop === 0 && "!shadow-none sm:!bg-white/0"
@@ -82,17 +85,16 @@ export default function NavBar() {
               DropDown={DropDown}
               t={t}
             />
-
           </div>
         </div>
 
         <Link
-          className={`border-black transition-all border py-2 px-6 hidden md:block font-bold hover:bg-black hover:!text-white text-black 
-          ${ScrollTop === 0 && "!bg-transparent"}
+          className={` transition-all border border-black py-2 px-6 hidden md:block font-bold hover:bg-black hover:!text-white  
+          ${ScrollTop === 0 && "!bg-transparent !border-white text-white"}
           `}
           href="/contact"
         >
-           {t('navigation.contact_page')}
+          {t("navigation.contact_page")}
         </Link>
 
         <div
@@ -109,25 +111,25 @@ export default function NavBar() {
       </nav>
 
       <div
-        className={`flex sm:hidden flex-col gap-5 fixed w-full h-full z-10 top-0 items-center transition-all duration-300 justify-center left-full font-bold ${
+        className={`flex md:hidden flex-col gap-5 fixed w-full h-full z-10 top-0 items-center transition-all duration-300 justify-center left-full font-bold ${
           OpenSideBar && "!left-0 bg-white visible !opacity-100"
-        }  opacity-0 sm:opacity-100 sm:left-0`}
+        }  opacity-0 md:opacity-100 md:left-0`}
       >
         {[
           {
-            name: t('navigation.home_page'),
+            name: t("navigation.home_page"),
             link: "/",
           },
           {
-            name: t('navigation.about_page'),
+            name: t("navigation.about_page"),
             link: "/about",
           },
           {
-            name: t('navigation.services_page'),
+            name: t("navigation.services_page"),
             link: "/services",
           },
           {
-            name: t('navigation.portfolio_page'),
+            name: t("navigation.portfolio_page"),
             link: "/portfolio",
           },
         ].map((i, index) => (
@@ -142,12 +144,12 @@ export default function NavBar() {
             {i.name}
           </Link>
         ))}
-         <LanguageDropDown
-              lang={lang}
-              setDropDown={setDropDown}
-              DropDown={DropDown}
-              t={t}
-            />
+        <LanguageDropDown
+          lang={lang}
+          setDropDown={setDropDown}
+          DropDown={DropDown}
+          t={t}
+        />
 
         <div className="flex items-center sm:hidden flex-col-reverse mt-1 text-sm gap-3">
           <Link
@@ -155,7 +157,7 @@ export default function NavBar() {
             href="/contact"
             className="bg-black text-white active:scale-95 transition-all py-2 px-3 rounded"
           >
-            {t('navigation.contact_page')}
+            {t("navigation.contact_page")}
           </Link>
         </div>
 
@@ -179,8 +181,11 @@ export default function NavBar() {
 
 export function LanguageDropDown({ setDropDown, DropDown, t, lang }) {
   return (
-    <div className="drop-down group border px-3 py-1  rounded relative">
-      <button className="dropdown uppercase" onClick={() => setDropDown(!DropDown)}>
+    <div className="drop-down group border  rounded relative cursor-pointer ">
+      <button
+        onClick={() => setDropDown(!DropDown)}
+        className="dropdown uppercase px-3 py-1 active:scale-95 transition-all"
+      >
         {lang}
       </button>
 
