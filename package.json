@@ -17,6 +17,7 @@
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
+    "@vercel/analytics": "^0.1.6",
     "autoprefixer": "^10.4.13",
     "framer-motion": "^7.6.7",
     "fslightbox-react": "1.6.2-2",

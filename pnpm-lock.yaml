@@ -9,6 +9,7 @@ specifiers:
   '@types/node': 18.11.9
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.9
+  '@vercel/analytics': ^0.1.6
   autoprefixer: ^10.4.13
   framer-motion: ^7.6.7
   fslightbox-react: 1.6.2-2
@@ -33,6 +34,7 @@ dependencies:
   '@types/node': 18.11.9
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.9
+  '@vercel/analytics': 0.1.6_react@18.2.0
   autoprefixer: 10.4.13_postcss@8.4.19
   framer-motion: 7.6.7_biqbaboplfbrettd7655fr4n2y
   fslightbox-react: 1.6.2-2_biqbaboplfbrettd7655fr4n2y
@@ -462,6 +464,14 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
+    dev: false
+
+  /@vercel/analytics/0.1.6_react@18.2.0:
+    resolution: {integrity: sha512-zNd5pj3iDvq8IMBQHa1YRcIteiw6ZiPB8AsONHd8ieFXlNpLqhXfIYnf4WvTfZ7S1NSJ++mIM14aJnNac/VMXQ==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@wry/context/0.7.0:
