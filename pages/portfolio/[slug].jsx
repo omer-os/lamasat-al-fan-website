@@ -6,6 +6,8 @@ import useTranslation from "next-translate/useTranslation";
 import FsLightbox from "fslightbox-react";
 import { useState } from "react";
 import Link from "next/link";
+import Carousel from "react-gallery-carousel";
+import "react-gallery-carousel/dist/index.css";
 
 export default function ProjectDetails({ data }) {
   const { t, lang } = useTranslation("common");
@@ -20,6 +22,9 @@ export default function ProjectDetails({ data }) {
     <motion.div
       animate={{
         opacity: [0, 1],
+        transition: {
+          delay: 0.2,
+        },
       }}
       className="md:w-4/6 w-full px-6 sm:w-5/6 transition-all sm:mt-[5em] mx-auto mb-20"
     >
@@ -86,7 +91,10 @@ export default function ProjectDetails({ data }) {
         }
         `}
         >
-          <Link href="/portfolio" className="font-bold w-max hover:underline sm:flex hidden text-sm mb-2">
+          <Link
+            href="/portfolio"
+            className="font-bold w-max hover:underline sm:flex hidden text-sm mb-2"
+          >
             {lang === "ar" ? "صفحة السابقة" : "Go Back"}
           </Link>
 
@@ -106,12 +114,20 @@ export default function ProjectDetails({ data }) {
                   src={urlFor(i)}
                   className="w-full h-full rounded-xl object-cover"
                   alt=""
-                  onClick={() => setFlashImage(true)}
+                  onClick={() => setFlashImage(!FlashImage)}
                 />
               </div>
             ))}
         </div>
       </div>
+
+      {images && (
+        <FsLightbox
+          toggler={FlashImage}
+          sources={images}
+          types={[...new Array(images.length).fill("image")]}
+        />
+      )}
     </motion.div>
   );
 }
