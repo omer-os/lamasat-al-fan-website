@@ -1,4 +1,3 @@
-import React from "react";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 
@@ -6,7 +5,7 @@ export default function ContactUs() {
   const { t, lang } = useTranslation("common");
 
   return (
-    <div className=" my-24 px-6 mx-auto">
+    <div dir={lang === "ar" ? "rtl" : "ltr"} className=" my-24 px-6 mx-auto">
       <section className="mb-32 text-gray-800">
         <div className="block rounded-lg  bg-white">
           <div className="flex flex-wrap items-center">
@@ -30,9 +29,11 @@ export default function ContactUs() {
                         <img src="/icons/gmail.png" alt="" />
                       </div>
                     </div>
-                    <div className="grow mr-6">
-                      <p className="font-bold mb-1 capitalize">{t('email')}</p>
-                      <p className="text-gray-700 font-bold">info@lmsatarchi.com</p>
+                    <div className={`grow ${lang === "ar" ? "mr-6" : "ml-6"}`}>
+                      <p className="font-bold mb-1 capitalize">{t("email")}</p>
+                      <p className="text-gray-700 font-bold">
+                        info@lmsatarchi.com
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -43,9 +44,11 @@ export default function ContactUs() {
                         <img src="/icons/phone.png" alt="" />
                       </div>
                     </div>
-                    <div className="grow mr-6">
-                      <p className="font-bold mb-1 capitalize">{t('phone')}</p>
-                      <p className="text-gray-700 font-bold"><span dir="ltr">+964 770 815 5551</span></p>
+                    <div className={`grow ${lang === "ar" ? "mr-6" : "ml-6"}`}>
+                      <p className="font-bold mb-1 capitalize">{t("phone")}</p>
+                      <p className="text-gray-700 font-bold">
+                        <span dir="ltr">+964 770 815 5551</span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -56,10 +59,12 @@ export default function ContactUs() {
                         <img src="/icons/location.png" alt="" />
                       </div>
                     </div>
-                    <div className="grow mr-6">
-                      <p className="font-bold mb-1 capitalize">{t('address')}</p>
+                    <div className={`grow ${lang === "ar" ? "mr-6" : "ml-6"}`}>
+                      <p className="font-bold mb-1 capitalize">
+                        {t("address")}
+                      </p>
                       <p className="text-gray-700 font-bold">
-                        كركوك، حي الخضراء - شارع المعارض
+                        {t("text_address")}
                       </p>
                     </div>
                   </div>
@@ -71,24 +76,25 @@ export default function ContactUs() {
                         <img src="/icons/social-media.png" alt="" />
                       </div>
                     </div>
-                    <div className="grow mr-6">
-                      <p className="font-bold mb-1 capitalize">{t('socials')}</p>
+                    <div className={`grow ${lang === "ar" ? "mr-6" : "ml-6"}`}>
+                      <p className="font-bold mb-1 capitalize">
+                        {t("socials")}
+                      </p>
                       <div className="flex gap-5 items-center mt-2">
-                        <Link href="https://facebook.com/lmsatarchi/" target="_blank">
+                        <Link
+                          href="https://facebook.com/lmsatarchi/"
+                          target="_blank"
+                        >
                           <img
                             className="hover:scale-95 transition-all fill-white"
                             src="/icons/facebook.svg"
                             alt=""
                           />
                         </Link>
-                        {/* <Link href="/" target="_blank">
-                          <img
-                            className="hover:scale-95 transition-all"
-                            src="/icons/twitter.svg"
-                            alt=""
-                          />
-                        </Link> */}
-                        <Link href="https://instagram.com/lmsatarchi/" target="_blank">
+                        <Link
+                          href="https://instagram.com/lmsatarchi/"
+                          target="_blank"
+                        >
                           <img
                             className="hover:scale-95 transition-all"
                             src="/icons/instagram.svg"

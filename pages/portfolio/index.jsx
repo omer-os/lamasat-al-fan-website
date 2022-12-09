@@ -41,8 +41,9 @@ export default function Index({ Dta }) {
   return (
     <>
       <Head>
-        <title>اهم مشاريعنا</title>
+        <title>{t(`page_titles.portfolio`)}</title>
       </Head>
+
       <div className="w-full sm:px-[3em] sm:mt-[7em] mt-20 flex flex-col">
         <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-30 sm:top-0 left-0 top-8 items-end ">
           <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full overflow-y-hidden p-2 mt-3 gap-2 ">

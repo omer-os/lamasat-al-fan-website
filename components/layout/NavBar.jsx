@@ -127,12 +127,12 @@ export default function NavBar() {
             link: "/about",
           },
           {
-            name: t("navigation.services_page"),
-            link: "/services",
-          },
-          {
             name: t("navigation.portfolio_page"),
             link: "/portfolio",
+          },
+          {
+            name: t("navigation.services_page"),
+            link: "/services",
           },
         ].map((i, index) => (
           <Link

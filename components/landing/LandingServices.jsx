@@ -5,7 +5,6 @@ import useTranslation from "next-translate/useTranslation";
 
 export default function LandingServices() {
   const { t, lang } = useTranslation("common", "landing");
-  const headline = t("landing:headline");
   return (
     <section className=" sm:mt-4 mt-10">
       <div className="text-center text-first">
@@ -20,8 +19,7 @@ export default function LandingServices() {
       <div className="grid md:grid-cols-2 grid-cols-1 gap-12 py-10 items-center sm:px-12 px-7 lg:px-[10em]">
         {[0, 1, 2].map((i, index) => (
           <LandingServicesCard
-          key={index}
-
+            key={index}
             title={t(`landing:landing_services_list.${index}.title`)}
             subtitle={t(`landing:landing_services_list.${index}.subtitle`)}
             category={t(`landing:landing_services_list.${index}.category`)}

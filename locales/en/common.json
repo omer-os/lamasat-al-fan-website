@@ -1,7 +1,7 @@
 {
   "company_name": "Art Touch",
   "tagline": "Engineering & Design Consultancy Company",
-  "motto": "نبني عالمك الخاص",
+  "motto": "we build your dream world",
   "navigation": {
     "home_page": "Home",
     "about_page": "Who we are",
@@ -9,13 +9,21 @@
     "services_page": "Services",
     "contact_page": "Contact us"
   },
+  "text_address": "Kirkuk, Al-Khadraa neighborhood - Al-Maarad Street",
   "email": "email",
   "phone": "phone",
   "address": "address",
   "socials": "socials",
   "cta": {
     "title": "make a type specimen book. It has survived not only",
-    "contact":"contact us",
-    "portfolio":"see our projects"
+    "contact": "contact us",
+    "portfolio": "see our projects"
+  },
+  "page_titles": {
+    "home": "home page",
+    "about": "about us",
+    "contact": "contact us",
+    "services": "our services",
+    "portfolio": "our projects"
   }
 }

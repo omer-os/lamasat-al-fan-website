@@ -1,6 +1,5 @@
 import DropDown from "./DropDown";
 
-
 export default function LandingQAndA() {
   return (
     <div className="flex flex-col">

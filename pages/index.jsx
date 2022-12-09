@@ -8,7 +8,11 @@ import {
 } from "../components";
 import { motion } from "framer-motion";
 import Head from "next/head";
+import { useTransition } from "react";
+import useTranslation from "next-translate/useTranslation";
 export default function Index() {
+  const { t, lang } = useTranslation("common");
+
   return (
     <motion.div
       animate={{
@@ -19,8 +23,9 @@ export default function Index() {
       }}
     >
       <Head>
-        <title>الرئيسية</title>
+        <title>{t(`page_titles.home`)}</title>
       </Head>
+
       <LandingCarousel />
       <LandingServices />
       {/* <LandingWorkProccess /> */}

@@ -1,0 +1,23 @@
+{
+  "services": "our services",
+  "headline": "some of our services are",
+  "subheadline": "unknown printer took a galley of type and scrambled it to make a type specimen unknown printer took a galley.",
+  "button": "our projects",
+  "services_list": [
+    {
+      "title": "engineering designs",
+      "subtitle": ".Design of urban buildings, architectural, structural, mechanical and electrical",
+      "img": "design"
+    },
+    {
+      "title": "Engineering Consultancy",
+      "subtitle": "General Safety Oversight (HSE) during the work period Suggestions or modifications to existing engineering designs Providing engineering solutions to major engineering problems",
+      "img": "consulting"
+    },
+    {
+      "title": "implementation",
+      "subtitle": "Executing engineering projects (houses, roads, residential complexes, buildings, residential towers, etc.).",
+      "img": "implement"
+    }
+  ]
+}
