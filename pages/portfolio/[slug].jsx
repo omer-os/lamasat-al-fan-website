@@ -14,6 +14,30 @@ export default function ProjectDetails({ data }) {
 
   let images = [];
 
+  const status = [
+    {
+      en: "design",
+      value: {
+        ar: "الحالة: تصميم",
+        en: "status: design",
+      },
+    },
+    {
+      en: "progress",
+
+      value: {
+        ar: "الحالة: قيد الانشاء",
+        en: "status: in progress",
+      },
+    },
+    {
+      en: "done",
+      value: {
+        ar: "الحالة: منجز",
+        en: "status: done",
+      },
+    },
+  ];
   data && data[0].ProjectImages.map((i) => images.push(urlFor(i).url()));
 
   return (
@@ -27,10 +51,12 @@ export default function ProjectDetails({ data }) {
       className="md:w-4/6 w-full px-6 sm:w-5/6 transition-all sm:mt-[5em] mx-auto mb-20"
     >
       <Head>
-        <title>{data && data[0].ProjectName[lang]}</title>
+        <title>
+          {data && data[0].ProjectName && data[0].ProjectName[lang]}
+        </title>
       </Head>
       <div className="sm:relative absolute top-[3.5em] left-0 right-0 h-[25em] w-full -z-10 ">
-        {data && (
+        {data && data[0].ProjectCover && (
           <motion.img
             src={urlFor(data[0].ProjectCover)}
             className="w-full relative  h-full object-cover"
@@ -69,18 +95,27 @@ export default function ProjectDetails({ data }) {
       </button>
 
       <div className="mt-[24em] z-20 relative sm:mt-0 transition-all">
-        {/* <div className="w-full flex sm:gap-10 gap-2 justify-start sm:mt-3">
-          {data && (
+        <div
+          dir={lang === "ar" ? "rtl" : "ltr"}
+          className="w-full flex sm:gap-4 gap-1 sm:mx-3 justify-start sm:mt-3"
+        >
+          {data && data[0].ProjectStatus && (
             <div className="rounded-full py-1 px-4 text-zinc-500 sm:text-sm text-xs bg-zinc-200 border border-zinc-300">
-              الموقع: {data[0].Location[lang]}
+              {
+                status.filter((i) => i.en === data[0].ProjectStatus)[0].value[
+                  lang
+                ]
+              }
             </div>
           )}
-          {data[0].Status[lang] && (
+
+          {data && data[0].ProjectLocation && (
             <div className="rounded-full py-1 px-4 text-zinc-500 sm:text-sm text-xs bg-zinc-200 border border-zinc-300">
-              الحالة: {data[0].Status[lang]}
+              {lang === "ar" ? "الموقع:" : "location:"}
+              {data[0].ProjectLocation.location[lang]}
             </div>
           )}
-        </div> */}
+        </div>
 
         <div
           className={`
@@ -97,20 +132,21 @@ export default function ProjectDetails({ data }) {
           </Link>
 
           <div className="text-2xl sm:text-3xl font-bold">
-            {data && data[0].ProjectName[lang]}{" "}
+            {data && data[0].ProjectName[lang]}
           </div>
           <div className="sm:text-xl text-zinc-500 sm:mt-5 mt-2">
-            {data && data[0].description[lang] && data[0].description[lang]}{" "}
+            {data && data[0].description && data[0].description[lang]}
           </div>
         </div>
 
         <div className="grid mt-10  sm:grid-cols-3 w-full gap-6 sm:gap-10 sm:auto-rows-[10em] auto-rows-[15em]">
           {data &&
+            data[0].ProjectImages &&
             data[0].ProjectImages.map((i, index) => (
               <div key={index} className="rounded-xl">
                 <img
                   src={urlFor(i)}
-                  className="w-full h-full rounded-xl object-cover"
+                  className="w-full cursor-pointer active:scale-95 transition-all h-full rounded-xl object-cover"
                   alt=""
                   onClick={() => setFlashImage(!FlashImage)}
                 />
@@ -160,8 +196,8 @@ export const getStaticProps = async (context) => {
     ProjectName,
     ProjectCover,
     ProjectImages,
-    Status,
-    Location,
+    ProjectStatus,
+    ProjectLocation->{location{en,ar}},
     description,
     slug
   }

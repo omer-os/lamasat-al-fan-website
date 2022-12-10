@@ -1,18 +1,18 @@
 export default {
-  name: "categories",
-  title: "categories",
+  name: "locations",
+  title: "locations",
   type: "document",
   fields: [
     {
-      name: "title",
-      title: "title",
+      name: "location",
+      title: "location",
       type: "LocaleString",
       validation: (Rule) => [Rule.required()],
     },
   ],
   preview: {
     select: {
-      title: "title.en",
+      title: "location.en",
     },
   },
 };

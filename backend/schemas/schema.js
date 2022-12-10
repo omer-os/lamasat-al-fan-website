@@ -2,6 +2,7 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 import projects from "./projects";
 import categories from "./categories";
+import locations from "./locations";
 
 
 const LocaleString = {
@@ -26,5 +27,5 @@ const LocaleString = {
 
 export default createSchema({
   name: "default",
-  types: schemaTypes.concat([projects, LocaleString, categories]),
+  types: schemaTypes.concat([projects, LocaleString, categories,locations]),
 });

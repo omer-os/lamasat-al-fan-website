@@ -4,16 +4,29 @@ export default {
   type: "document",
   fields: [
     {
-      title: "Document Name",
-      name: "SanityName",
-      type: "string",
-    },
-    {
       title: "project name",
       name: "ProjectName",
       type: "LocaleString",
       description: "should be uniqe",
       validation: (Rule) => [Rule.required()],
+    },
+    {
+      title: "project location",
+      name: "ProjectLocation",
+      type: "reference",
+      to: [{ type: "locations" }],
+    },
+    {
+      title: "project status",
+      name: "ProjectStatus",
+      type: "string",
+      options: {
+        list: [
+          { title: "منجز", value: "done" },
+          { title: "قيد الانشاء", value: "progress" },
+          { title: "تصميم", value: "design" },
+        ],
+      },
     },
     {
       title: "project description",
@@ -42,19 +55,6 @@ export default {
       type: "array",
       of: [{ type: "image" }],
     },
-
-    // {
-    //   title: "Category",
-    //   name: "Category",
-    //   type: "string",
-    //   options: {
-    //     list: [
-    //       { title: "residential", value: "residential" },
-    //       { title: "commercial", value: "commercial" },
-    //       { title: "govermental", value: "govermental" },
-    //     ],
-    //   },
-    // },
     {
       name: "category",
       type: "reference",
@@ -62,4 +62,10 @@ export default {
       validation: (Rule) => [Rule.required()],
     },
   ],
+  preview: {
+    select: {
+      title: "ProjectName.en",
+      media: "ProjectCover",
+    },
+  },
 };
