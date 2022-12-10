@@ -6,11 +6,11 @@ import {
   ContactUs,
   LandingQAndA,
 } from "../components";
+import { SanityClient } from "../dta";
 import { motion } from "framer-motion";
 import Head from "next/head";
-import { useTransition } from "react";
 import useTranslation from "next-translate/useTranslation";
-export default function Index() {
+export default function Index({ data }) {
   const { t, lang } = useTranslation("common");
 
   return (
@@ -26,15 +26,43 @@ export default function Index() {
         <title>{t(`page_titles.home`)}</title>
       </Head>
 
-      <LandingCarousel />
+      <LandingCarousel data={data.FeaturedProjects} />
       <LandingServices />
-      {/* <LandingWorkProccess /> */}
       <div className="h-1 mx-auto rounded bg-black w-4/6 my-11" />
-      <LandingQAndA />
+      <LandingQAndA data={data.questions} lang={lang} />
       <div className="my-10">
         <CTAcard />
       </div>
       <ContactUs />
     </motion.div>
   );
+}
+
+export async function getStaticProps() {
+  const data =
+    await SanityClient.fetch(`*[_type in ["FeaturedProjects", "questions"]][0]{
+    "FeaturedProjects":*[_type == 'FeaturedProjects']{
+       project->{
+       ProjectName,
+       description,
+       ProjectCover,
+       category->{
+       title{
+       en,ar
+     }
+     }
+     }
+     },
+   "questions":*[_type == 'questions']{
+   q{ar,en},
+   a{ar,en}
+ }
+ }`);
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 10,
+  };
 }

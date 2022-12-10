@@ -58,9 +58,7 @@ export default function Index({ Dta }) {
             ))}
           </div>
 
-          <div className="sm:text-zinc-500 text-black text-xl font-bold sm:font-normal mt-2">
-            {t(`lmsatAlFanProjects`)}
-          </div>
+          
         </div>
         <motion.div className="mt-10 px-6 grid md:grid-cols-3 sm:grid-cols-2 gap-10 min-h-[30em] auto-rows-[15em]">
           <AnimatePresence exit>

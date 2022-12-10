@@ -3,7 +3,8 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import projects from "./projects";
 import categories from "./categories";
 import locations from "./locations";
-
+import featuredProjects from "./featuredProjects";
+import questions from "./questions";
 
 const LocaleString = {
   title: "locale",
@@ -27,5 +28,12 @@ const LocaleString = {
 
 export default createSchema({
   name: "default",
-  types: schemaTypes.concat([projects, LocaleString, categories,locations]),
+  types: schemaTypes.concat([
+    projects,
+    LocaleString,
+    categories,
+    locations,
+    featuredProjects,
+    questions,
+  ]),
 });

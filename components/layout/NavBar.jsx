@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import useTranslation from "next-translate/useTranslation";
 import setLanguage from "next-translate/setLanguage";
+import Image from "next/image";
 
 export default function NavBar() {
   const [OpenSideBar, setOpenSideBar] = useState(false);
@@ -36,12 +37,13 @@ export default function NavBar() {
           lang === "ar" && "flex-row-reverse"
         }`}
       >
-        <div className="flex flex-row items-baseline gap-10">
+        <div className="flex flex-row items-center gap-10">
           <Link href="/" className="text-xl font-bold">
-            {t("company_name")}
+            {/* {t("company_name")} */}
+            <Image src="/images/logo.png" width={50} height={50} alt="lmsat logo" />
           </Link>
 
-          <div className="md:flex hidden gap-5 text-zinc-500">
+          <div className="md:flex hidden gap-5 text-zinc-500 items-center">
             {[
               {
                 name: t("navigation.home_page"),
@@ -86,13 +88,18 @@ export default function NavBar() {
               setDropDown={setDropDown}
               DropDown={DropDown}
               t={t}
+              setOpenSideBar={setOpenSideBar}
             />
           </div>
         </div>
 
         <Link
-          className={` transition-all border border-black py-2 px-6 hidden md:block font-bold hover:bg-black hover:!text-white  
-          ${ScrollTop === 0 && "!bg-transparent !border-white text-white"}
+          className={`transition-all border border-black py-2 px-6 hidden md:block font-bold hover:bg-black hover:!text-white  
+          ${
+            ScrollTop === 0 &&
+            router.pathname == "/" &&
+            "!bg-transparent !border-white text-white"
+          }
           `}
           href="/contact"
         >
@@ -174,7 +181,7 @@ export default function NavBar() {
             href="/"
             className="text-center capitalize text-zinc-600 font-normal"
           >
-            lamasat al fan ©2020{" "}
+            lmsat al fan ©2020{" "}
           </Link>
         </div>
       </div>
@@ -188,7 +195,6 @@ export function LanguageDropDown({
   setOpenSideBar,
   lang,
 }) {
-  const ScrollToTop = () => {};
   return (
     <div className="drop-down group border  rounded relative cursor-pointer ">
       <button
