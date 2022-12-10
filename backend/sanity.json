@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "nextyyyy"
+    "name": "lmsat-al-fat"
   },
   "api": {
-    "projectId": "9zeiwwka",
+    "projectId": "301w11sr",
     "dataset": "production"
   },
   "plugins": [
