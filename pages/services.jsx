@@ -10,7 +10,7 @@ export default function Services() {
   return (
     <main dir={lang === "ar" ? "rtl" : "ltr"}>
       <Head>
-        <title>{t(`page_titles.services`)}</title>
+        <title>{t(`common:page_titles.services`)}</title>
       </Head>
 
       <div className="flex md:flex-row flex-col items-center px-5 sm:px-10 mt-20 gap-10 xl:w-4/6 mx-auto sm:mt-28">
@@ -69,10 +69,7 @@ export default function Services() {
               </div>
               <div
                 className={`absolute h-full bg-zinc-300  flex items-center justify-center py-3 px-6
-        ${lang === "ar" ? "top-0 right-0" : "top-0 left-0"}
-              
-              
-              `}
+        ${lang === "ar" ? "top-0 right-0" : "top-0 left-0"}`}
               >
                 <img
                   src={`/icons/${t(`services:services_list.${index}.img`)}.png`}

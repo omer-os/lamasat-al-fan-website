@@ -81,6 +81,7 @@ export default function LandingCarousel() {
             {t("landing:sub_headline")}
           </div>
           <Link
+            scroll={false}
             href="/portfolio"
             className="mt-5 bg-black text-white active:bg-black/90 group active:scale-95 transition-all py-4 px-6 font-bold sm:w-max justify-center sm:mt-10 sm:rounded-0 rounded-xl flex gap-7 flex-row"
           >

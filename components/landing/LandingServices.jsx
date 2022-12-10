@@ -56,6 +56,7 @@ export default function LandingServices() {
             <Link
               href="/portfolio"
               className="rounded-xl py-3 mt-4 bg-black text-white font-bold active:scale-95 transition-all active:bg-black/80"
+              scroll={false}
             >
               {t("landing:CTA_projects_button")}
             </Link>

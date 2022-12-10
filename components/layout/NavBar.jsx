@@ -188,6 +188,7 @@ export function LanguageDropDown({
   setOpenSideBar,
   lang,
 }) {
+  const ScrollToTop = () => {};
   return (
     <div className="drop-down group border  rounded relative cursor-pointer ">
       <button
@@ -213,6 +214,7 @@ export function LanguageDropDown({
               onClick={() => {
                 setLanguage("ar");
                 setDropDown(!DropDown);
+                setOpenSideBar(false);
               }}
             >
               Ar
@@ -224,6 +226,7 @@ export function LanguageDropDown({
               onClick={() => {
                 setLanguage("en");
                 setDropDown(!DropDown);
+                setOpenSideBar(false);
               }}
             >
               En

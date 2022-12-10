@@ -1,4 +1,4 @@
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { SanityClient, urlFor } from "../../dta";
@@ -6,8 +6,6 @@ import useTranslation from "next-translate/useTranslation";
 import FsLightbox from "fslightbox-react";
 import { useState } from "react";
 import Link from "next/link";
-import Carousel from "react-gallery-carousel";
-import "react-gallery-carousel/dist/index.css";
 
 export default function ProjectDetails({ data }) {
   const { t, lang } = useTranslation("common");
@@ -19,7 +17,7 @@ export default function ProjectDetails({ data }) {
   data && data[0].ProjectImages.map((i) => images.push(urlFor(i).url()));
 
   return (
-    <motion.div
+    <div
       animate={{
         opacity: [0, 1],
         transition: {
@@ -128,7 +126,7 @@ export default function ProjectDetails({ data }) {
           types={[...new Array(images.length).fill("image")]}
         />
       )}
-    </motion.div>
+    </div>
   );
 }
 

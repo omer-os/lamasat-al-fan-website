@@ -23,12 +23,14 @@ export default function CTAcard() {
         </div>
         <div className="flex items-center mt-4 gap-10">
           <Link
+            scroll={false}
             href="/contact"
             className="active:scale-95 transition-all py-2 px-3 bg-black text-white"
           >
             {t(`common:cta.contact`)}
           </Link>
           <Link
+            scroll={false}
             href="/portfolio"
             className="active:scale-95 transition-all underline "
           >

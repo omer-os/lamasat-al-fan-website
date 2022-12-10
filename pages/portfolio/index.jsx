@@ -23,23 +23,8 @@ export default function Index({ Dta }) {
     setSelectedCategory(QueryCategory);
   }, []);
 
-  const categories = [
-    {
-      en: "residential",
-      ar: "سكني",
-    },
-    {
-      en: "commercial",
-      ar: "تجاري",
-    },
-    {
-      en: "govermental",
-      ar: "حكومي",
-    },
-  ];
-
   return (
-    <>
+    <div dir={lang === "ar" ? "rtl" : "ltr"}>
       <Head>
         <title>{t(`page_titles.portfolio`)}</title>
       </Head>
@@ -47,7 +32,7 @@ export default function Index({ Dta }) {
       <div className="w-full sm:px-[3em] sm:mt-[7em] mt-20 flex flex-col">
         <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-30 sm:top-0 left-0 top-8 items-end ">
           <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full overflow-y-hidden p-2 mt-3 gap-2 ">
-            {categories.map((i, index) => (
+            {Dta.categories.map((i, index) => (
               <button
                 onClick={() => {
                   window.scrollTo({
@@ -55,15 +40,15 @@ export default function Index({ Dta }) {
                     left: 0,
                     behavior: "smooth",
                   });
-                  router.push(`?category=${i.en}`);
+                  router.push(`?category=${i.title.en}`);
                 }}
-                key={i.en}
+                key={i.title.en}
                 className={`font-bold flex-1 text-sm  p-2 px-6 rounded-xl relative ${
-                  QueryCategory !== i.en && "!text-black"
+                  QueryCategory !== i.title.en && "!text-black"
                 } text-white transition-all duration-200`}
               >
-                <span className="z-20 relative">{i[lang]}</span>
-                {QueryCategory === i.en && (
+                <span className="z-20 relative">{i.title[lang]}</span>
+                {QueryCategory === i.title.en && (
                   <motion.div
                     className="bg-black w-full rounded-xl h-full absolute inset-0 z-10"
                     layoutId="category-bg"
@@ -73,15 +58,16 @@ export default function Index({ Dta }) {
             ))}
           </div>
 
-          <div className="sm:text-zinc-500 text-black ml-auto text-xl font-bold sm:font-normal mt-2">
-            مشاريع لمسات الفن
+          <div className="sm:text-zinc-500 text-black text-xl font-bold sm:font-normal mt-2">
+            {t(`lmsatAlFanProjects`)}
           </div>
         </div>
         <motion.div className="mt-10 px-6 grid md:grid-cols-3 sm:grid-cols-2 gap-10 min-h-[30em] auto-rows-[15em]">
           <AnimatePresence exit>
             {Dta &&
-              Dta.filter((i) => i.Category === QueryCategory).map(
-                (i, index) => (
+              Dta.projects
+                .filter((i) => i.category.title.en === QueryCategory)
+                .map((i, index) => (
                   <Link
                     href={`/portfolio/${i.slug.current}`}
                     key={index}
@@ -124,25 +110,27 @@ export default function Index({ Dta }) {
                       <div className="absolute rounded-xl h-full bg-gradient-to-t from-black/60 sm:from-black/50 w-full left-0 bottom-0" />
                     </motion.div>
                   </Link>
-                )
-              )}
+                ))}
           </AnimatePresence>
         </motion.div>
       </div>
       <div className="mt-20">
         <CTAcard />
       </div>
-    </>
+    </div>
   );
 }
 
 export async function getStaticProps() {
-  const Dta = await SanityClient.fetch(`*[_type=="projects"]{
-    ProjectName,
-    slug,
-    Category,
-    ProjectCover
-  }
+  const Dta =
+    await SanityClient.fetch(`*[_type in ["categories", "projects"]][0]{
+      "categories":*[_type == 'categories']{title},
+      "projects":*[_type == 'projects']{
+      ProjectName,
+      slug,
+      category->{title},
+      ProjectCover
+    }}
   `);
 
   return {
