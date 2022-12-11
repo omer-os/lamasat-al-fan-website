@@ -47,13 +47,15 @@ export default {
       title: "cover image",
       name: "ProjectCover",
       type: "image",
-      description: "project first cover. ",
+      description: "project cover image.",
+      validation: (Rule) => [Rule.required()],
     },
     {
       name: "ProjectImages",
       title: "ProjectImages",
       type: "array",
       of: [{ type: "image" }],
+      validation: (Rule) => [Rule.required()],
     },
     {
       name: "category",
