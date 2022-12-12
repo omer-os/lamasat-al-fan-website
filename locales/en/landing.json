@@ -26,22 +26,22 @@
   ],
   "landing_services_list": [
     {
-      "category": "interior",
-      "title": "kind commercial words here",
-      "subtitle": "industry. . Lorem Ipsum has been the industry's standard dummy text ever since",
-      "bg": "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=410&q=80"
+      "category": "Architecture",
+      "title": "Engineering & Designing Projects",
+      "subtitle": "We design for urban, construction, mechanical and electrical projects",
+      "bg": "/images/architecture-service-cover.png"
     },
     {
-      "category": "External",
-      "title": "kind commercial words here",
-      "subtitle": "with sheets ,with the release of Letraset sheets containing Lorem Ipsum passages,",
-      "bg": "https://images.unsplash.com/photo-1435575653489-b0873ec954e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "category": "Consultancy",
+      "title": "Helping you reach success in your projects",
+      "subtitle": "You will probably face some issues when working on your projects, but no worries because we can help you with that",
+      "bg": "/images/consultancy-service-cover.png"
     },
     {
-      "category": "building",
-      "title": "kind commercial words here",
-      "subtitle": "release of  of Letraset sheets containing Lorem Ipsum passages, and more recently",
-      "bg": "https://images.unsplash.com/photo-1506749841726-3df2e72b9564?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+      "category": "Supervision",
+      "title": "Supervising the completion of your projects",
+      "subtitle": "Supervising projects from start to finish",
+      "bg": "/images/supervision-service-cover.png"
     }
   ]
 }

@@ -5,18 +5,18 @@
   "button": "our projects",
   "services_list": [
     {
-      "title": "engineering designs",
-      "subtitle": ".Design of urban buildings, architectural, structural, mechanical and electrical",
+      "title": "Architecture",
+      "subtitle": "We design for urban, construction, mechanical and electrical projects",
       "img": "design"
     },
     {
       "title": "Engineering Consultancy",
-      "subtitle": "General Safety Oversight (HSE) during the work period Suggestions or modifications to existing engineering designs Providing engineering solutions to major engineering problems",
+      "subtitle": "You will probably face some issues when working on your projects, but no worries because we can help you with that",
       "img": "consulting"
     },
     {
-      "title": "implementation",
-      "subtitle": "Executing engineering projects (houses, roads, residential complexes, buildings, residential towers, etc.).",
+      "title": "Supervision",
+      "subtitle": "Supervising projects from start to finish",
       "img": "implement"
     }
   ]

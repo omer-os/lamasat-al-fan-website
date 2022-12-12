@@ -4,7 +4,7 @@
   "navigation": {
     "home_page": "الرئيسية",
     "about_page": "من نحن",
-    "portfolio_page": "أعمالنا",
+    "portfolio_page": "مشاريعنا",
     "services_page": "خدماتنا",
     "contact_page": "تواصل معنا"
   },
@@ -14,17 +14,17 @@
   "socials": "مواقع التواصل الاجتماعي",
   "text_address": "كركوك، حي الخضراء - شارع المعارض",
   "cta": {
-    "title": "هل انت جاهز للمغامرة؟",
+    "title": "سوية نتخذ أول خطة للنجاح",
     "contact": "تواصل معنا",
-    "works": "انظر مشاريعنا",
-    "services":"انظر خدماتنا"
+    "works": "مشاريعنا",
+    "services":"خدماتنا"
   },
   "page_titles": {
     "home": "الرئيسية",
     "about": "من نحن",
     "contact": "تواصل معنا",
     "services": "اهم خدماتنا",
-    "portfolio": "بعض مشاريعنا"
+    "portfolio": "مشاريعنا"
   },
-  "lmsatAlFanProjects": "مشاريع لمسات الفن"
+  "lmsatAlFanProjects": "مشاريعنا"
 }
