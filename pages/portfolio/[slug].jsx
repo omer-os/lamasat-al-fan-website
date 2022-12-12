@@ -7,6 +7,7 @@ import FsLightbox from "fslightbox-react";
 import { useState } from "react";
 import Link from "next/link";
 import { CTAcard } from "../../components";
+import LoadingImage from "../../components/common/LoadingImage";
 
 export default function ProjectDetails({ data }) {
   const { t, lang } = useTranslation("common");
@@ -59,13 +60,9 @@ export default function ProjectDetails({ data }) {
         </Head>
         <div className="sm:relative absolute top-[3.5em] left-0 right-0 h-[25em] w-full -z-10 ">
           {data && data[0].ProjectCover && (
-            <motion.img
-              src={urlFor(data[0].ProjectCover)}
-              className="w-full relative  h-full object-cover"
-              alt=""
-              animate={{
-                scale: [0.99, 1],
-              }}
+            <LoadingImage
+              src={urlFor(data[0].ProjectCover).url()}
+              alt={data[0].ProjectName[lang]}
             />
           )}
 

@@ -7,9 +7,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Head from "next/head";
-
+import Image from "next/image";
 import { SanityClient, urlFor } from "../../dta";
 import useTranslation from "next-translate/useTranslation";
+import LoadingImage from "../../components/common/LoadingImage";
 
 export default function Index({ Dta }) {
   const router = useRouter();
@@ -25,42 +26,38 @@ export default function Index({ Dta }) {
 
   return (
     <div dir={lang === "ar" ? "rtl" : "ltr"}>
-      {/* <Head>
+      <Head>
         <title>{t(`page_titles.portfolio`)}</title>
-      </Head> */}
-
-
-
-
-
-
+      </Head>
 
       <div className="w-full sm:px-[3em] sm:mt-[7em] mt-20 flex flex-col">
         <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-30 sm:top-0 left-0 top-24 items-end ">
           <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full overflow-y-hidden p-2 mt-3 gap-2 ">
             {Dta.categories.map((i, index) => (
-              <button
+              <Link
                 onClick={() => {
                   window.scrollTo({
                     top: 0,
                     left: 0,
                     behavior: "smooth",
                   });
-                  router.push(`?category=${i.title.en}`);
                 }}
+                href={`/portfolio/?category=${i.title.en}`}
                 key={i.title.en}
                 className={`font-bold flex-1 text-sm  p-2 px-6 rounded-xl relative ${
                   QueryCategory !== i.title.en && "!text-black"
                 } text-white transition-all duration-200`}
               >
-                <span className="z-20 relative">{i.title[lang]}</span>
-                {QueryCategory === i.title.en && (
-                  <motion.div
-                    className="bg-black w-full rounded-xl h-full absolute inset-0 z-10"
-                    layoutId="category-bg"
-                  />
-                )}
-              </button>
+                <>
+                  <span className="z-20 relative">{i.title[lang]}</span>
+                  {QueryCategory === i.title.en && (
+                    <motion.div
+                      className="bg-black w-full rounded-xl h-full absolute inset-0 z-10"
+                      layoutId="category-bg"
+                    />
+                  )}
+                </>
+              </Link>
             ))}
           </div>
         </div>
@@ -95,11 +92,13 @@ export default function Index({ Dta }) {
                       }}
                       className="rounded-xl w-full h-full object-cover relative"
                     >
-                      <motion.img
-                        src={urlFor(i.ProjectCover)}
-                        className="w-full h-full object-cover rounded-xl"
-                        alt=""
-                      />
+                      <div className="img w-full h-full relative">
+                        <LoadingImage
+                          src={urlFor(i.ProjectCover).url()}
+                          alt={i.ProjectName[lang]}
+                        />
+                        <div className="absolute rounded-xl h-full bg-gradient-to-t from-black/60 sm:from-black/50 w-full left-0 bottom-0" />
+                      </div>
 
                       <div
                         className={`absolute w-full p-4 bottom-0 text-xl text-white  rounded-b-xl font-bold z-20 
@@ -109,7 +108,6 @@ export default function Index({ Dta }) {
                       >
                         {i.ProjectName[lang]}
                       </div>
-                      <div className="absolute rounded-xl h-full bg-gradient-to-t from-black/60 sm:from-black/50 w-full left-0 bottom-0" />
                     </motion.div>
                   </Link>
                 ))}
