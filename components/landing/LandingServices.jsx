@@ -6,7 +6,7 @@ import useTranslation from "next-translate/useTranslation";
 export default function LandingServices() {
   const { t, lang } = useTranslation("common", "landing");
   return (
-    <section className=" sm:mt-4 mt-10">
+    <section className=" sm:mt-4 mt-12">
       <div className="text-center text-first">
         <h2 className="text-3xl font-extrabold">
           {t("landing:section1_title")}

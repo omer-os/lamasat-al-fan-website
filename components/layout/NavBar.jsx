@@ -181,7 +181,7 @@ export default function NavBar() {
             href="/"
             className="text-center capitalize text-zinc-600 font-normal"
           >
-            lmsat al fan ©2020{" "}
+            {t("company_name")} ©{new Date().getFullYear()}
           </Link>
         </div>
       </div>
@@ -223,7 +223,7 @@ export function LanguageDropDown({
                 setOpenSideBar(false);
               }}
             >
-              Ar
+              العربية
             </a>
           </li>
           <li>
@@ -235,7 +235,7 @@ export function LanguageDropDown({
                 setOpenSideBar(false);
               }}
             >
-              En
+              English
             </a>
           </li>
         </ul>

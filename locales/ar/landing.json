@@ -27,22 +27,22 @@
   ],
   "landing_services_list": [
     {
-      "category": "تجاري",
-      "title": "عبارة تسويقية لطيفة هنا",
-      "subtitle": "أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات",
-      "bg": "https://images.unsplash.com/photo-1669562022711-a6f27b26a5ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+      "category": "هندسة معمارية",
+      "title": "تصميم المشاريع",
+      "subtitle": "تصميم مباني حضرية, معمارية, انشائية, ميكانيكية و كهربائية.",
+      "bg": "/images/architecture-service-cover.png"
     },
     {
-      "category": "تجاري",
-      "title": "عبارة تسويقية لطيفة هنا",
-      "subtitle": "أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات",
-      "bg": "https://images.unsplash.com/photo-1669562022711-a6f27b26a5ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+      "category": "إستشارات هندسية",
+      "title": "نساعدك في إيجاد الحلول الهندسية لنجاح مشروعك",
+      "subtitle": "إشراف سلامة عام (HSE) خلال فترة العمل اقتراحات أو تعديلات على التصاميم الهندسية الموجودة تقديم الحلول الهندسية للمشاكل الهندسية الكبرى",
+      "bg": "/images/consultancy-service-cover.png"
     },
     {
-      "category": "تجاري",
-      "title": "عبارة تسويقية لطيفة هنا",
-      "subtitle": "أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات أحياناً عن طريق الصدفة، وأحياناً عن عمد كإدخال بعض العبارات",
-      "bg": "https://images.unsplash.com/photo-1669562022711-a6f27b26a5ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+      "category": "إشراف وتنفيذ المشاريع",
+      "title": "ننفذ مشروعك بكل دقة ونظام",
+      "subtitle": "تنفيذ المشاريع الهندسية (بيوت، طرق، مجمعات سكنية، عمارات، أبراج سكنية… وغيرها).",
+      "bg": "/images/supervision-service-cover.png"
     }
   ]
 }

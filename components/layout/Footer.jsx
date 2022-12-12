@@ -38,7 +38,7 @@ export default function Footer() {
       <div className="h-[.2em] max-w-[10em] rounded-xl w-full bg-third/30 mt-2" />
 
       <div className="text-center text-sm text-zinc-300">
-        {t("company_name")} {new Date().getFullYear()}
+        {t("company_name")} ©{new Date().getFullYear()}
       </div>
     </div>
   );
