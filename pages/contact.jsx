@@ -12,7 +12,7 @@ export default function ContectUs() {
         <title>{t(`page_titles.contact`)}</title>
       </Head>
 
-      <ContactUs />
+      <ContactUs  />
     </div>
   );
 }

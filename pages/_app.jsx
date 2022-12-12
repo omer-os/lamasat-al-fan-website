@@ -21,7 +21,7 @@ export default function MyApp({ Component, pageProps }) {
             opacity: 0,
           }}
           transition={{ 
-            duration: .1}}
+            duration: .4}}
         >
           <Component {...pageProps} />
         </motion.div>

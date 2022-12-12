@@ -56,7 +56,7 @@ export default function About() {
         {SelectedTap === 1 && <Tap_2 t={t} lang={lang} />}
       </div>
       <div className="mt-10">
-        <CTAcard />
+        <CTAcard contact />
       </div>
     </div>
   );
@@ -155,24 +155,6 @@ export const Tap_2 = ({ t, lang }) => {
       <div className="text-xl text-zinc-500">{t(`mission.subtitle_1`)} </div>
       <div className="text-2xl mt-20 font-bold">{t(`mission.title_2`)}</div>
       <div className="text-xl text-zinc-500">{t(`mission.subtitle_1`)} </div>
-    </motion.div>
-  );
-};
-export const Tap_3 = () => {
-  return (
-    <motion.div
-      animate={{
-        opacity: [0, 1],
-        bottom: [-10, 0],
-      }}
-      exit={{
-        bottom: -10,
-        opacity: 0,
-      }}
-    >
-      <div className="text-3xl font-bold">{t(`about.title_1`)}</div>
-
-      <div className="text-xl text-zinc-500">{t(`about.subtitle_1`)}</div>
     </motion.div>
   );
 };

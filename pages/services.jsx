@@ -13,7 +13,7 @@ export default function Services() {
         <title>{t(`common:page_titles.services`)}</title>
       </Head>
 
-      <div className="flex md:flex-row flex-col items-center px-5 sm:px-10 mt-20 gap-10 xl:w-4/6 mx-auto sm:mt-28">
+      <div className="flex md:flex-row flex-col items-center px-5 sm:px-10  gap-10 xl:w-4/6 mx-auto mt-28">
         <motion.div
           animate={{
             right: [-10, 0],
@@ -57,9 +57,7 @@ export default function Services() {
               key={index}
               className={`px-3 py-4 relative flex flex-col bg-zinc-100 
               
-        ${lang === "ar" ? "text-right pr-[8em]" : "text-left pl-[8em]"}
-              
-              `}
+        ${lang === "ar" ? "text-right pr-[8em]" : "text-left pl-[8em]"}`}
             >
               <div className="font-bold">
                 {t(`services:services_list.${index}.title`)}

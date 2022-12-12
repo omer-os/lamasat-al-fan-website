@@ -40,7 +40,12 @@ export default function NavBar() {
         <div className="flex flex-row items-center gap-10">
           <Link href="/" className="text-xl font-bold">
             {/* {t("company_name")} */}
-            <Image src="/images/logo.png" width={50} height={50} alt="lmsat logo" />
+            <Image
+              src="/images/logo.png"
+              width={50}
+              height={50}
+              alt="lmsat logo"
+            />
           </Link>
 
           <div className="md:flex hidden gap-5 text-zinc-500 items-center">
@@ -173,9 +178,27 @@ export default function NavBar() {
 
         <div className="sm:hidden absolute items-center gap-3 bottom-2 flex flex-col">
           <div className="flex items-center gap-5">
-            <img src="/icons/facebook.svg" alt="" />
-            <img src="/icons/twitter.svg" alt="" />
-            <img src="/icons/instagram.svg" alt="" />
+            <Link href="https://facebook.com/lmsatarchi/" target="_blank">
+              <img
+                className="hover:scale-95 transition-all fill-white"
+                src="/icons/facebook.svg"
+                alt=""
+              />
+            </Link>
+            <Link href="https://instagram.com/lmsatarchi/" target="_blank">
+              <img
+                className="hover:scale-95 transition-all"
+                src="/icons/instagram.svg"
+                alt=""
+              />
+            </Link>
+            <Link href="https://instagram.com/lmsatarchi/" target="_blank">
+              <img
+                className="hover:scale-95 transition-all "
+                src="/icons/whatsapp.svg"
+                alt=""
+              />
+            </Link>
           </div>
           <Link
             href="/"

@@ -33,9 +33,9 @@ export function LandingServicesCard({ title, subtitle, category, img }) {
       </div>
       <div
         className={`
-      flex z-20 sm:p-0 p-3 right-0 bottom-0 sm:relative absolute flex-col
+      flex z-20 sm:p-0 p-3 bottom-0 sm:relative absolute flex-col
 
-      ${lang === "ar" ? "text-right" : "text-left"}
+      ${lang === "ar" ? "text-right right-0 " : "text-left left-0"}
       `}
       >
         <div className="text-xs sm:text-lg text-white sm:text-zinc-400 sm:font-semibold transition-all">
