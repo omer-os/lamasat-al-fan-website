@@ -101,6 +101,17 @@ export default function ContactUs() {
                             alt=""
                           />
                         </Link>
+                        <Link
+                          href="https://instagram.com/lmsatarchi/"
+                          target="_blank"
+                        >
+                          <img
+                            className="hover:scale-95 transition-all "
+                            src="/icons/whatsapp.svg"
+                            alt=""
+
+                          />
+                        </Link>
                       </div>
                     </div>
                   </div>

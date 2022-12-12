@@ -25,12 +25,18 @@ export default function Index({ Dta }) {
 
   return (
     <div dir={lang === "ar" ? "rtl" : "ltr"}>
-      <Head>
+      {/* <Head>
         <title>{t(`page_titles.portfolio`)}</title>
-      </Head>
+      </Head> */}
+
+
+
+
+
+
 
       <div className="w-full sm:px-[3em] sm:mt-[7em] mt-20 flex flex-col">
-        <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-30 sm:top-0 left-0 top-8 items-end ">
+        <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-30 sm:top-0 left-0 top-24 items-end ">
           <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full overflow-y-hidden p-2 mt-3 gap-2 ">
             {Dta.categories.map((i, index) => (
               <button
@@ -57,8 +63,6 @@ export default function Index({ Dta }) {
               </button>
             ))}
           </div>
-
-          
         </div>
         <motion.div className="mt-10 px-6 grid md:grid-cols-3 sm:grid-cols-2 gap-10 min-h-[30em] auto-rows-[15em]">
           <AnimatePresence exit>
@@ -113,7 +117,7 @@ export default function Index({ Dta }) {
         </motion.div>
       </div>
       <div className="mt-20">
-        <CTAcard />
+        <CTAcard services />
       </div>
     </div>
   );

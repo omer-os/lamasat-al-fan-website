@@ -7,8 +7,6 @@ export default function LandingCarousel({ data }) {
   const [SelectedTap, setSelectedTap] = useState(0);
   const { t, lang } = useTranslation("common", "landing");
 
-
-
   return (
     <motion.div
       initial={{
@@ -19,7 +17,7 @@ export default function LandingCarousel({ data }) {
       }}
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
-      <div className="sm:-z-10 sm:absolute relative top-0 left-0 sm:h-full sm:rounded-none rounded-xl sm:overflow-hidden sm:w-full sm:mt-0 mt-20 sm:mx-0 mx-0 right-0 ">
+      <div className="sm:-z-10 sm:absolute relative top-0 left-0 sm:h-full sm:rounded-none rounded-xl sm:overflow-hidden sm:w-full sm:mt-0 mt-24 sm:mx-0 mx-0 right-0 ">
         <div className="sm:block hidden">
           {data.map((i, index) => (
             <motion.img
@@ -32,7 +30,7 @@ export default function LandingCarousel({ data }) {
                   duration: 1,
                 },
               }}
-              className={`w-[50%] h-full absolute top-0  z-10  object-cover brightness-75 ${
+              className={`w-[50%] h-full absolute top-0 z-10 object-cover brightness-75 ${
                 lang === "ar" ? "left-0" : "right-0"
               }`}
               src={urlFor(i.project.ProjectCover).url()}
@@ -42,7 +40,7 @@ export default function LandingCarousel({ data }) {
 
         <div
           className={`
-        flex overflow-x-scroll  snap-display-none snap-x snap-mandatory gap-4 sm:hidden px-8 flex-row-reverse ${
+        flex overflow-x-scroll snap-display-none snap-x snap-mandatory gap-4 sm:hidden px-8 flex-row-reverse ${
           lang === "ar" && "!flex-row"
         }
         `}
@@ -50,7 +48,7 @@ export default function LandingCarousel({ data }) {
           {data.map((i, index) => (
             <div key={index} className="relative">
               <motion.img
-                className={`snap-center min-w-[18em] rounded-xl h-[23em] brightness-75 top-0 left-0 z-10 object-cover`}
+                className={`snap-center min-w-[18em] rounded-xl h-[21em] brightness-75 top-0 left-0 z-10 object-cover`}
                 src={urlFor(i.project.ProjectCover).url()}
               />
 

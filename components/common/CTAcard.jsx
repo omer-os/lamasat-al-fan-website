@@ -1,80 +1,45 @@
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 
-// export default function CTAcard() {
-//   const { t, lang } = useTranslation("common", "landing");
-
-//   return (
-//     <div
-//       dir={lang === "ar" ? "ltr" : "rtl"}
-//       className="w-full relative sm:gap-10 gap-5 transition-all flex md:flex-row flex-col md:h-[25em] md:pb-0 pb-10 bg-zinc-100"
-//     >
-//       <div className="min-w-[50%] md:h-full h-[15em]">
-//         <img
-//           src="/images/cta-bg.jpg"
-//           className="w-full h-full object-cover"
-//           alt=""
-//         />
-//       </div>
-
-//       <div className="flex w-full capitalize flex-col justify-center items-center">
-//         <div className="text-center w-4/6 text-3xl font-bold">
-//           {t(`common:cta.title`)}
-//         </div>
-//         <div className="flex items-center mt-4 gap-10">
-//           <Link
-//             scroll={false}
-//             href="/contact"
-//             className="active:scale-95 transition-all py-2 px-3 bg-black text-white"
-//           >
-//             {t(`common:cta.contact`)}
-//           </Link>
-//           <Link
-//             scroll={false}
-//             href="/portfolio"
-//             className="active:scale-95 transition-all underline "
-//           >
-//             {t(`common:cta.portfolio`)}
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-export default function CTAcard() {
+export default function CTAcard({ works, contact, services }) {
   const { t, lang } = useTranslation("common", "landing");
 
   return (
-    <div
-      dir={lang === "ar" ? "rtl" : "ltr"}
-      className="flex mx-10 h-[15em] rounded bg-black capitalize overflow-hidden"
-    >
-      <div className="flex w-3/6 px-10 py-4 flex-col text-lg text-white font-bold">
-        <div>{t(`common:cta.title`)}</div>
-        <div className="flex text-sm gap-4">
-          <Link
-            href="/"
-            className="rounded-full bg-white text-black px-3 py-2 w-max"
-          >
-            contact us
-          </Link>
-          <Link
-            href="/"
-            className="rounded-full bg-white text-black px-3 py-2 w-max"
-          >
-            our works
-          </Link>
-        </div>
+    <div dir={lang==="ar"?"rtl":"ltr"} className="flex items-center justify-center relative h-[20em] rounded-xl sm:mx-20 flex-col mb-10 mx-5 transition-all p-4">
+      <div className="text-center font-bold text-3xl font-sans text-white max-w-[10em] mx-auto">
+        {t(`common:cta.title`)}
       </div>
 
-      <div className="flex-1 h-full">
-        <img
-          src="/images/cta-bg.jpg"
-          className="w-full h-full object-cover"
-          alt=""
-        />
-      </div>
+      <img
+        src="/images/cta-bg.png"
+        alt=""
+        className="absolute object-cover brightness-50 rounded-xl -z-10 h-full w-full top-0 left-0"
+      />
+
+      {works && (
+        <Link
+          href="/portfolio"
+          className="transition-all active:scale-95 rounded border-2 border-white text-white font-sans mt-5 hover:bg-white hover:text-black text-xl w-max py-2 px-3 mx-auto"
+        >
+          {t(`common:cta.works`)}
+        </Link>
+      )}
+      {services && (
+        <Link
+          href="/services"
+          className="transition-all active:scale-95 rounded border-2 border-white text-white font-sans mt-5 hover:bg-white hover:text-black text-xl w-max py-2 px-3 mx-auto"
+        >
+          {t(`common:cta.services`)}
+        </Link>
+      )}
+      {contact && (
+        <Link
+          href="/contact"
+          className="transition-all active:scale-95 rounded border-2 border-white text-white font-sans mt-5 hover:bg-white hover:text-black text-xl w-max py-2 px-3 mx-auto"
+        >
+          {t(`common:cta.contact`)}
+        </Link>
+      )}
     </div>
   );
 }

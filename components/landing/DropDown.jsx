@@ -12,13 +12,14 @@ export default function DropDown({ Ques, Ans }) {
           Open && "bg-zinc-200"
         } bg-white transition-all py-3 px-4 font-semibold flex rounded-t cursor-pointer justify-between items-center text-sm `}
       >
-        <span className="max-w-[19em]">{Ques}</span>
+        <span className="max-w-[35em]">{Ques}</span>
         <motion.img
           animate={{
             rotate: Open ? 0 : 180,
           }}
           src="/icons/down-arrow.png"
           alt=""
+          className="px-2"
         />
       </div>
       <motion.div

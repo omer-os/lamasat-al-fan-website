@@ -25,7 +25,7 @@ export default function Services() {
           className="flex-col min-w-[17em] flex"
         >
           <div className="text-zinc-400"> {t(`services:services`)}</div>
-          <div className="font-bold text-first md:text-3xl text-2xl">
+          <div className="font-bold text-black md:text-3xl text-2xl">
             {t(`services:headline`)}
           </div>
 
@@ -34,7 +34,7 @@ export default function Services() {
           </div>
 
           <Link
-            className="py-2 px-4 bg-first mt-4 sm:mt-10 text-white w-max"
+            className="py-2 px-4 bg-black mt-4 sm:mt-10 text-white w-max"
             href="/portfolio"
           >
             {t(`services:button`)}
@@ -82,7 +82,7 @@ export default function Services() {
         </div>
       </div>
       <div className="mt-20">
-        <CTAcard />
+        <CTAcard works />
       </div>
     </main>
   );

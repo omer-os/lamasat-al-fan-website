@@ -2,7 +2,6 @@ import {
   CTAcard,
   LandingCarousel,
   LandingServices,
-  LandingWorkProccess,
   ContactUs,
   LandingQAndA,
 } from "../components";
@@ -31,7 +30,7 @@ export default function Index({ data }) {
       <div className="h-1 mx-auto rounded bg-black w-4/6 my-11" />
       <LandingQAndA data={data.questions} lang={lang} />
       <div className="my-10">
-        <CTAcard />
+        <CTAcard works />
       </div>
       <ContactUs />
     </motion.div>

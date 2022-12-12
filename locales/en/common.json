@@ -15,9 +15,10 @@
   "address": "address",
   "socials": "socials",
   "cta": {
-    "title": "make a type specimen book. It has survived not only",
+    "title": "Are you ready for an adventure?",
     "contact": "contact us",
-    "portfolio": "see our projects"
+    "works": "see our projects",
+    "services": "our services"
   },
   "page_titles": {
     "home": "home page",
@@ -26,5 +27,5 @@
     "services": "our services",
     "portfolio": "our projects"
   },
-  "lmsatAlFanProjects":"lmsat al fan projects"
+  "lmsatAlFanProjects": "lmsat al fan projects"
 }
