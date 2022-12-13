@@ -14,8 +14,7 @@ export default function LoadingImage({ src, alt }) {
         alt={alt}
         fill
         onLoadingComplete={() => setLoaded(false)}
-        //   placeholder="blur"
-        //   blurDataURL="/images/bluredImage.jpg"
+        priority
       />
     </>
   );
