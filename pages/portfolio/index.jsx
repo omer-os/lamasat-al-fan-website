@@ -20,7 +20,8 @@ export default function Index({ Dta }) {
 
   useEffect(() => {
     QueryCategory === undefined && router.push("?category=govermental");
-    setSelectedCategory(QueryCategory);
+
+    // setSelectedCategory(QueryCategory);
   }, []);
 
   return (
@@ -77,9 +78,10 @@ export default function Index({ Dta }) {
                       opacity: [0.5, 1],
                     }}
                     transition={{
-                      duration: 0.3,
+                      duration: 0.6,
                     }}
-                    key={index}
+                    key={i.slug.current}
+                    layout
                   >
                     <Link
                       href={`/portfolio/${i.slug.current}`}

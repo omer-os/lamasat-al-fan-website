@@ -21,7 +21,7 @@ export default function LandingCarousel({ data }) {
         <div className="sm:block hidden">
           {data.map((i, index) => (
             <motion.img
-              key={index}
+              key={i.project.category.title.en}
               animate={{
                 opacity: SelectedTap === index ? 1 : 0,
                 scale: SelectedTap === index ? 1 : 1.1,
