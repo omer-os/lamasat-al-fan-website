@@ -20,7 +20,7 @@ export default function LandingCarousel({ data }) {
       <div className="sm:-z-10 sm:absolute relative top-0 left-0 sm:h-full sm:rounded-none rounded-xl sm:overflow-hidden sm:w-full sm:mt-0 mt-24 sm:mx-0 mx-0 right-0 ">
         <div className="sm:block hidden">
           {data.map((i, index) => (
-            <Link lang={lang} href={`/portfolio/${i.slug}`}>
+            // <Link lang={lang} href={`/portfolio/${i.slug}`}>
               <motion.img
                 key={i.project.category.title.en}
                 animate={{
@@ -36,7 +36,7 @@ export default function LandingCarousel({ data }) {
                 }`}
                 src={urlFor(i.project.ProjectCover).url()}
               ></motion.img>
-            </Link>
+            // </Link>
           ))}
         </div>
 
@@ -49,7 +49,7 @@ export default function LandingCarousel({ data }) {
         >
           {data.map((i, index) => (
             <div key={index} className="relative">
-              <Link lang={lang} href={`/portfolio/${i.slug}`}>
+              {/* <Link lang={lang} href={`/portfolio/${i.slug}`}> */}
                 <motion.img
                   className={`snap-center min-w-[18em] rounded-xl h-[21em] brightness-75 top-0 left-0 z-10 object-cover`}
                   src={urlFor(i.project.ProjectCover).url()}
@@ -60,9 +60,9 @@ export default function LandingCarousel({ data }) {
                 ${lang === "ar" ? "right-5" : "left-5"}
                 `}
                 >
-                  {i.project.category.title[lang]} {i.slug}
+                  {i.project.category.title[lang]}
                 </div>
-              </Link>
+              {/* </Link> */}
 
             </div>
           ))}
