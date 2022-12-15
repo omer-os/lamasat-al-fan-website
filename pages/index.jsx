@@ -27,9 +27,9 @@ export default function Index({ data }) {
 
       <LandingCarousel data={data.FeaturedProjects} />
       <LandingServices />
-      <div className="h-1 mx-auto rounded bg-black w-4/6 my-11" />
-      <LandingQAndA data={data.questions} lang={lang} />
-      <div className="my-5">
+      <div className="h-1 mx-auto rounded bg-black w-4/6 mt-11" />
+      {/* <LandingQAndA data={data.questions} lang={lang} /> */}
+      <div className="mb-5">
         <CTAcard projects />
       </div>
       <ContactUs />

@@ -41,7 +41,7 @@ export default function Footer() {
             alt=""
           />
         </Link>
-        <Link href="https://instagram.com/lmsatarchi/" target="_blank">
+        <Link href="https://api.whatsapp.com/send?phone=9647708155551" target="_blank">
           <img
             className="hover:scale-95 transition-all "
             src="/icons/whatsapp.svg"
