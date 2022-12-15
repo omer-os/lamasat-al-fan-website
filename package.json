@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sanity:deploy": "cd ./backend && sanity deploy"
   },
   "dependencies": {
     "@react-hook/mouse-position": "^4.1.3",

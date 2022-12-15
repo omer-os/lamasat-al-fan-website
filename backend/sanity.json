@@ -1,7 +1,7 @@
 {
   "root": true,
   "project": {
-    "name": "lmsat-al-fat"
+    "name": "lmsat-architecture"
   },
   "api": {
     "projectId": "301w11sr",

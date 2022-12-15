@@ -11,6 +11,7 @@ import Head from "next/head";
 import useTranslation from "next-translate/useTranslation";
 export default function Index({ data }) {
   const { t, lang } = useTranslation("common");
+
   return (
     <motion.div
       animate={{
@@ -26,9 +27,9 @@ export default function Index({ data }) {
 
       <LandingCarousel data={data.FeaturedProjects} />
       <LandingServices />
-      <div className="h-1 mx-auto rounded bg-black w-4/6 my-11" />
-      <LandingQAndA data={data.questions} lang={lang} />
-      <div className="my-5">
+      <div className="h-1 mx-auto rounded bg-black w-4/6 mt-11" />
+      {/* <LandingQAndA data={data.questions} lang={lang} /> */}
+      <div className="mb-5">
         <CTAcard projects />
       </div>
       <ContactUs />
@@ -40,21 +41,18 @@ export async function getStaticProps() {
   const data =
     await SanityClient.fetch(`*[_type in ["FeaturedProjects", "questions"]][0]{
     "FeaturedProjects":*[_type == 'FeaturedProjects']{
-      
        project->{
-        slug,
+       slug,
        ProjectName,
        description,
        ProjectCover,
-       slug,
        category->{
-        title{
-        en,ar
-      }
+       title{
+       en,ar
+     }
      }
      }
      },
-
    "questions":*[_type == 'questions']{
    q{ar,en},
    a{ar,en}

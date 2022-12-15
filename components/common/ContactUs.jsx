@@ -12,7 +12,7 @@ export default function ContactUs() {
             <div className="grow-0 shrink-0 basis-auto block w-full lg:flex lg:w-6/12 xl:w-4/12">
               <div className="map-container-2 w-full">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.956563764727!2d44.35285599999999!3d35.43110599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zMzXCsDI1JzUyLjAiTiA0NMKwMjEnMTAuMyJF!5e0!3m2!1sen!2siq!4v1669462202702!5m2!1sen!2siq"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d491.55963274795363!2d44.351954189229495!3d35.431006385026876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1554d764b4fb1f4d%3A0xa9e3dda35f58e9f!2sC9J2%2BCQ8%2C%20Kirkuk!5e1!3m2!1sen!2siq!4v1671112576082!5m2!1sen!2siq"
                   width="100%"
                   height="500"
                   allowFullScreen=""
@@ -102,7 +102,7 @@ export default function ContactUs() {
                           />
                         </Link>
                         <Link
-                          href="https://instagram.com/lmsatarchi/"
+                          href="https://api.whatsapp.com/send?phone=9647708155551"
                           target="_blank"
                         >
                           <img

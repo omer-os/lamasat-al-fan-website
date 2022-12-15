@@ -4,13 +4,14 @@
   "taps": ["about company", "misson and vision"],
   "about": {
     "title_1": "about company",
-    "subtitle_1": "Loreelit. Explicabo labore optio voluptate? Asperiores, quis odio quasi unde. Iusto sit ab ratione, itaque cupiditate laborum alias dolor sapiente consequuntur."
+    "subtitle_1": "Your destination for modern design that aims to serve you and your community happiness and luxury that is a result of our design methods which focus on achieving what you imagine.",
+    "tagline": "Building freedom and luxury for you"
   },
   "mission": {
-    "title_1": "our mission",
-    "subtitle_1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo labore optio voluptate? Asperiores, maiores. Libero quis odio quasi unde. Iusto sit ab ratione, itaque cupiditate laborum alias dolor sapiente consequuntur.",
-    "title_2": "our vision",
-    "subtitle_2": "Lorem ipsum dolor sit amet consectetur ate? Asperiores, maiores. Libero quis odio quasi unborum alias dolor sapiente consequuntur."
+    "title_1": "Mission",
+    "subtitle_1": "Our mission is to make life more beautiful and luxurious for you and your family by designing and overseeing urban projects based on what you imagine.",
+    "title_2": "Vision",
+    "subtitle_2": "Our vision lies on a simple principle, that is to provide sustainability and aesthetics in the projects we are doing so you can always feel a sense of freedom and luxury in your daily life."
   },
   "cover_image": "/images/about-us-cover-en.png"
 }

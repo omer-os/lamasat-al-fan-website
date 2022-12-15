@@ -65,7 +65,7 @@ export default function LandingCarousel({ data }) {
                 ${lang === "ar" ? "right-5" : "left-5"}
                 `}
                 >
-                  {i.project.category.title[lang]} {i.slug}
+                  {i.project.category.title[lang]}
                 </div>
               </Link>
             </div>
