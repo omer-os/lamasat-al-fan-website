@@ -21,7 +21,7 @@ export default function About() {
         <div className="max-w-[4em] w-full mt-1 h-[.09em] bg-zinc-400 rounded"></div>
       </div>
 
-      <div className="flex sm:relative sm:top-0 sticky top-16 bg-white flex-row-reverse sm:w-4/6 w-full z-40 sm:mt-10 mt-4 mx-auto items-center justify-center px-2">
+      <div className="flex sm:relative sm:top-0 sticky top-[5.5em] bg-white flex-row-reverse sm:w-4/6 w-full z-40 sm:mt-10 mt-4 mx-auto items-center justify-center px-2">
         {[0, 1].map((i, index) => (
           <button
             onClick={() => {
