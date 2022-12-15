@@ -42,10 +42,10 @@ export async function getStaticProps() {
     await SanityClient.fetch(`*[_type in ["FeaturedProjects", "questions"]][0]{
     "FeaturedProjects":*[_type == 'FeaturedProjects']{
        project->{
+       slug,
        ProjectName,
        description,
        ProjectCover,
-       slug,
        category->{
        title{
        en,ar
