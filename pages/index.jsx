@@ -28,8 +28,8 @@ export default function Index({ data }) {
       <LandingServices />
       <div className="h-1 mx-auto rounded bg-black w-4/6 my-11" />
       <LandingQAndA data={data.questions} lang={lang} />
-      <div className="my-10">
-        <CTAcard works />
+      <div className="my-5">
+        <CTAcard projects />
       </div>
       <ContactUs />
     </motion.div>
@@ -46,6 +46,7 @@ export async function getStaticProps() {
        ProjectName,
        description,
        ProjectCover,
+       slug,
        category->{
         title{
         en,ar
