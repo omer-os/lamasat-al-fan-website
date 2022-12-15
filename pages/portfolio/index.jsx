@@ -14,12 +14,12 @@ import useTranslation from "next-translate/useTranslation";
 export default function Index({ Dta }) {
   const router = useRouter();
   const QueryCategory = router.query.category;
-  const [SelectedCategory, setSelectedCategory] = useState("govermental");
+  const [SelectedCategory, setSelectedCategory] = useState("residential");
 
   const { t, lang } = useTranslation("common");
 
   useEffect(() => {
-    QueryCategory === undefined && router.push("?category=govermental");
+    QueryCategory === undefined && router.push("?category=residential");
 
     // setSelectedCategory(QueryCategory);
   }, []);
