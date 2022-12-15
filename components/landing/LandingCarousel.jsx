@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
@@ -6,8 +6,8 @@ import { urlFor } from "../../dta";
 export default function LandingCarousel({ data }) {
   const [SelectedTap, setSelectedTap] = useState("project-10");
   const { t, lang } = useTranslation("common", "landing");
+  var CenterHeroImage = useRef();
 
-  console.log(data.filter((i) => i.project.slug.current === SelectedTap));
   return (
     <motion.div
       initial={{
@@ -53,7 +53,7 @@ export default function LandingCarousel({ data }) {
         }`}
         >
           {data.map((i, index) => (
-            <div key={index} className="relative">
+            <div ref={CenterHeroImage} key={index} className="relative">
               <Link lang={lang} href={`/portfolio/${i.project.slug.current}`}>
                 <motion.img
                   className={`snap-center min-w-[18em] rounded-xl h-[21em] brightness-75 top-0 left-0 z-10 object-cover`}
@@ -74,13 +74,13 @@ export default function LandingCarousel({ data }) {
       </div>
 
       <div
-        className={`transition-all flex flex-col gap-2 z-20 sm:h-screen lg:max-w-[26em] sm:max-w-[45%] relative sm:top-32 top-2 sm:mx-10 lg:mx-0 ${
+        className={`transition-all flex flex-col gap-2 z-20 sm:h-screen lg:max-w-[26em] sm:max-w-[45%] relative sm:top-10 top-2 sm:mx-10 lg:mx-0 justify-center ${
           lang === "ar" ? "lg:right-[10em]" : "lg:left-[8em] text-left"
         }`}
       >
         <div
           className={`
-        text-center sm:mt-5 mt-2 px-8 sm:px-0
+        text-center  sm:mt-5 mt-2 px-8 sm:px-0
         ${lang === "ar" ? "sm:text-right" : "sm:text-left"}
         `}
         >

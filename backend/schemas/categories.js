@@ -9,6 +9,12 @@ export default {
       type: "LocaleString",
       validation: (Rule) => [Rule.required()],
     },
+    {
+      name: "order",
+      title: "order",
+      type: "string",
+      validation: (Rule) => [Rule.required()],
+    },
   ],
   preview: {
     select: {

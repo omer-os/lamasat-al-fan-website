@@ -18,22 +18,23 @@ export default function Index({ Dta }) {
 
   const { t, lang } = useTranslation("common");
 
+
+
   useEffect(() => {
     QueryCategory === undefined && router.push("?category=govermental");
-
-    // setSelectedCategory(QueryCategory);
   }, []);
 
   return (
     <div dir={lang === "ar" ? "rtl" : "ltr"}>
       <Head>
         <title>{t(`page_titles.portfolio`)}</title>
+        {/* meta:  */}
       </Head>
 
       <div className="w-full sm:px-[3em] sm:mt-[7em] mt-20 flex flex-col">
         <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-30 sm:top-0 left-0 top-24 items-end ">
           <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full overflow-y-hidden p-2 mt-3 gap-2 ">
-            {Dta.categories.map((i, index) => (
+            {Dta.categories?.sort((a, b) => (a.order > b.order ? 1 : -1)).map((i, index) => (
               <div
                 onClick={() => {
                   setSelectedCategory(i.title.en);
@@ -131,7 +132,7 @@ export default function Index({ Dta }) {
 export async function getStaticProps() {
   const Dta =
     await SanityClient.fetch(`*[_type in ["categories", "projects"]][0]{
-      "categories":*[_type == 'categories']{title},
+      "categories":*[_type == 'categories']{title,order},
       "projects":*[_type == 'projects']{
       ProjectName,
       slug,
