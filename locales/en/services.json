@@ -1,8 +1,8 @@
 {
-  "services": "our services",
-  "headline": "some of our services are",
-  "subheadline": "unknown printer took a galley of type and scrambled it to make a type specimen unknown printer took a galley.",
-  "button": "our projects",
+  "services": "Our services",
+  "headline": "See what fits your needs",
+  "subheadline": "Our team consists of architectures and civil; mechanical, electrical engineers. We also have a staff of various skills for construction projects",
+  "button": "Our projects",
   "services_list": [
     {
       "title": "Architecture",
