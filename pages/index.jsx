@@ -11,7 +11,6 @@ import Head from "next/head";
 import useTranslation from "next-translate/useTranslation";
 export default function Index({ data }) {
   const { t, lang } = useTranslation("common");
-
   return (
     <motion.div
       animate={{
@@ -41,17 +40,20 @@ export async function getStaticProps() {
   const data =
     await SanityClient.fetch(`*[_type in ["FeaturedProjects", "questions"]][0]{
     "FeaturedProjects":*[_type == 'FeaturedProjects']{
+      
        project->{
+        slug,
        ProjectName,
        description,
        ProjectCover,
        category->{
-       title{
-       en,ar
-     }
+        title{
+        en,ar
+      }
      }
      }
      },
+
    "questions":*[_type == 'questions']{
    q{ar,en},
    a{ar,en}
