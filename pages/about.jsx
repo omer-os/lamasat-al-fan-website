@@ -34,7 +34,7 @@ export default function About() {
                 setSelectedTap(index);
               }, 1000);
             }}
-            key={index}
+            key={index + i}
             className={`relative bg-white flex-1 py-4 transition-all duration-500 ${
               index === SelectedTap && "bg-zinc-200"
             }`}
