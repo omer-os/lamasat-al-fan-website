@@ -1,12 +1,13 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import { urlFor } from "../../dta";
 export default function LandingCarousel({ data }) {
-  const [SelectedTap, setSelectedTap] = useState(0);
+  const [SelectedTap, setSelectedTap] = useState("project-10");
   const { t, lang } = useTranslation("common", "landing");
 
+  console.log(data.filter((i) => i.project.slug.current === SelectedTap));
   return (
     <motion.div
       initial={{
@@ -17,39 +18,43 @@ export default function LandingCarousel({ data }) {
       }}
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
-      <div className="sm:-z-10 sm:absolute relative top-0 left-0 sm:h-full sm:rounded-none rounded-xl sm:overflow-hidden sm:w-full sm:mt-0 mt-24 sm:mx-0 mx-0 right-0 ">
+      <div className="z-10 sm:absolute relative top-0 left-0 sm:h-full sm:rounded-none rounded-xl sm:overflow-hidden sm:w-full sm:mt-0 mt-24 sm:mx-0 mx-0 right-0 ">
         <div className="sm:block hidden">
-          {data.map((i, index) => (
-            // <Link lang={lang} href={`/portfolio/${i.slug}`}>
-              <motion.img
-                key={i.project.category.title.en}
-                animate={{
-                  opacity: SelectedTap === index ? 1 : 0,
-                  scale: SelectedTap === index ? 1 : 1.1,
-                  transition: {
-                    type: "just",
-                    duration: 1,
-                  },
-                }}
-                className={`w-[50%] h-full absolute top-0 z-10 object-cover brightness-75 ${
-                  lang === "ar" ? "left-0" : "right-0"
-                }`}
-                src={urlFor(i.project.ProjectCover).url()}
-              ></motion.img>
-            // </Link>
-          ))}
+          <AnimatePresence exit>
+            {data
+              .filter((i) => i.project.slug.current === SelectedTap)
+              .map((i) => (
+                <Link
+                  lang={lang}
+                  href={`/portfolio/${i.project.slug.current}`}
+                  key={i.project.slug.current}
+                >
+                  <motion.img
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    transition={{
+                      duration: 1,
+                    }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.05 }}
+                    className={`h-full w-[50%]  absolute top-0 z-10 object-cover cursor-pointer brightness-75 ${
+                      lang === "ar" ? "left-0" : "right-0"
+                    }`}
+                    src={urlFor(i.project.ProjectCover).url()}
+                  ></motion.img>
+                </Link>
+              ))}
+          </AnimatePresence>
         </div>
 
         <div
           className={`
         flex overflow-x-scroll snap-display-none snap-x snap-mandatory gap-4 sm:hidden px-8 flex-row-reverse ${
           lang === "ar" && "!flex-row"
-        }
-        `}
+        }`}
         >
           {data.map((i, index) => (
             <div key={index} className="relative">
-              {/* <Link lang={lang} href={`/portfolio/${i.slug}`}> */}
+              <Link lang={lang} href={`/portfolio/${i.project.slug.current}`}>
                 <motion.img
                   className={`snap-center min-w-[18em] rounded-xl h-[21em] brightness-75 top-0 left-0 z-10 object-cover`}
                   src={urlFor(i.project.ProjectCover).url()}
@@ -62,15 +67,14 @@ export default function LandingCarousel({ data }) {
                 >
                   {i.project.category.title[lang]}
                 </div>
-              {/* </Link> */}
-
+              </Link>
             </div>
           ))}
         </div>
       </div>
 
       <div
-        className={`transition-all flex flex-col gap-2 sm:h-screen lg:max-w-[26em] sm:max-w-[45%] relative sm:top-32 top-2 sm:mx-10 lg:mx-0 ${
+        className={`transition-all flex flex-col gap-2 z-20 sm:h-screen lg:max-w-[26em] sm:max-w-[45%] relative sm:top-32 top-2 sm:mx-10 lg:mx-0 ${
           lang === "ar" ? "lg:right-[10em]" : "lg:left-[8em] text-left"
         }`}
       >
@@ -117,12 +121,12 @@ export default function LandingCarousel({ data }) {
             {data.map((i, index) => (
               <div key={index}>
                 <div
-                  onClick={() => setSelectedTap(index)}
+                  onClick={() => setSelectedTap(i.project.slug.current)}
                   className="relative py-4 active:bg-zinc-200 transition-all cursor-pointer px-6"
                 >
                   {i.project.category.title[lang]}
 
-                  {index === SelectedTap && (
+                  {i.project.slug.current === SelectedTap && (
                     <motion.div
                       layoutId="bottom-b"
                       className="h-[.1em] w-full bg-black absolute bottom-0 z-20 left-0"
