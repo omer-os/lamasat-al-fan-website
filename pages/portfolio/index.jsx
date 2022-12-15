@@ -49,7 +49,7 @@ export default function Index({ Dta }) {
                 } text-white transition-all cursor-pointer duration-200`}
               >
                 <>
-                  <span className="z-20 relative">{i.title[lang]}</span>
+                  <span className="z-20 relative capitalize">{i.title[lang]}</span>
                   {SelectedCategory === i.title.en && (
                     <motion.div
                       className="bg-black w-full rounded-xl h-full absolute inset-0 z-10"
