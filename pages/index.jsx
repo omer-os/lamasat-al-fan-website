@@ -45,6 +45,7 @@ export async function getStaticProps() {
        ProjectName,
        description,
        ProjectCover,
+       slug,
        category->{
        title{
        en,ar

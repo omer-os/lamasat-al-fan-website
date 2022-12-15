@@ -20,21 +20,23 @@ export default function LandingCarousel({ data }) {
       <div className="sm:-z-10 sm:absolute relative top-0 left-0 sm:h-full sm:rounded-none rounded-xl sm:overflow-hidden sm:w-full sm:mt-0 mt-24 sm:mx-0 mx-0 right-0 ">
         <div className="sm:block hidden">
           {data.map((i, index) => (
-            <motion.img
-              key={i.project.category.title.en}
-              animate={{
-                opacity: SelectedTap === index ? 1 : 0,
-                scale: SelectedTap === index ? 1 : 1.1,
-                transition: {
-                  type: "just",
-                  duration: 1,
-                },
-              }}
-              className={`w-[50%] h-full absolute top-0 z-10 object-cover brightness-75 ${
-                lang === "ar" ? "left-0" : "right-0"
-              }`}
-              src={urlFor(i.project.ProjectCover).url()}
-            ></motion.img>
+            <Link lang={lang} href={`/portfolio/${i.slug}`}>
+              <motion.img
+                key={i.project.category.title.en}
+                animate={{
+                  opacity: SelectedTap === index ? 1 : 0,
+                  scale: SelectedTap === index ? 1 : 1.1,
+                  transition: {
+                    type: "just",
+                    duration: 1,
+                  },
+                }}
+                className={`w-[50%] h-full absolute top-0 z-10 object-cover brightness-75 ${
+                  lang === "ar" ? "left-0" : "right-0"
+                }`}
+                src={urlFor(i.project.ProjectCover).url()}
+              ></motion.img>
+            </Link>
           ))}
         </div>
 
