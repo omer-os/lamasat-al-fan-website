@@ -5,7 +5,7 @@ import { CTAcard } from "../components/";
 import Head from "next/head";
 import useTranslation from "next-translate/useTranslation";
 export default function About() {
-  const [SelectedTap, setSelectedTap] = useState(1);
+  const [SelectedTap, setSelectedTap] = useState(0);
   const { t, lang } = useTranslation("about", "common");
 
   return (
@@ -88,50 +88,12 @@ export const Tap_1 = ({ t, lang }) => {
         </div>
       </div>
 
-      <div className="flex sm:hidden w-full h-[20em]">
+      <div className="flex w-full">
         <img
-          src="https://images.unsplash.com/photo-1669255180382-b99ea3fcfe09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+          src={t(`cover_image`)}
           className="w-full h-full object-cover rounded-xl"
           alt=""
         />
-      </div>
-
-      <div className="gap-3 md:h-[70vh] min-w-[20em] lg:min-w-[25em] sm:grid hidden md:grid-cols-2 md:grid-rows-6 grid-cols-5">
-        <div className="rounded-xl md:row-span-2">
-          <img
-            src="https://images.unsplash.com/photo-1669255182290-525a9840c93d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-            className="w-full h-full object-cover rounded-xl"
-            alt=""
-          />
-        </div>
-        <div className=" rounded-xl md:row-span-3">
-          <img
-            src="https://images.unsplash.com/photo-1669255182290-525a9840c93d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-            className="w-full h-full object-cover rounded-xl"
-            alt=""
-          />
-        </div>
-        <div className=" rounded-xl md:row-span-2">
-          <img
-            src="https://images.unsplash.com/photo-1669255182290-525a9840c93d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-            className="w-full h-full object-cover rounded-xl"
-            alt=""
-          />
-        </div>
-        <div className=" rounded-xl md:row-span-3">
-          <img
-            src="https://images.unsplash.com/photo-1669255182290-525a9840c93d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-            className="w-full h-full object-cover rounded-xl"
-            alt=""
-          />
-        </div>
-        <div className=" rounded-xl md:row-span-2">
-          <img
-            src="https://images.unsplash.com/photo-1669255182290-525a9840c93d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-            className="w-full h-full object-cover rounded-xl"
-            alt=""
-          />
-        </div>
       </div>
     </motion.div>
   );

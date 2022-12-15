@@ -80,7 +80,7 @@ export default function Services() {
         </div>
       </div>
       <div className="mt-20">
-        <CTAcard works />
+        <CTAcard projects />
       </div>
     </main>
   );

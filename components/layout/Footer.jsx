@@ -7,6 +7,13 @@ export default function Footer() {
 
   return (
     <div className="gap-4 bg-black p-7 flex items-center flex-col text-white w-full">
+        <Link href="/" target="_blank">
+          <img
+            src="/images/lmsat-logo-light-no-title.png"
+            width="110px"
+            alt=""
+          />
+        </Link>
       <div className="text-center w-full">
         <h3 className="text-xl font-extrabold">{t("company_name")}</h3>
         <p className="text-md text-gray-300">{t("tagline")}</p>

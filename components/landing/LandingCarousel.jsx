@@ -47,18 +47,21 @@ export default function LandingCarousel({ data }) {
         >
           {data.map((i, index) => (
             <div key={index} className="relative">
-              <motion.img
-                className={`snap-center min-w-[18em] rounded-xl h-[21em] brightness-75 top-0 left-0 z-10 object-cover`}
-                src={urlFor(i.project.ProjectCover).url()}
-              />
+              <Link lang={lang} href={`/portfolio/${i.slug}`}>
+                <motion.img
+                  className={`snap-center min-w-[18em] rounded-xl h-[21em] brightness-75 top-0 left-0 z-10 object-cover`}
+                  src={urlFor(i.project.ProjectCover).url()}
+                />
 
-              <div
-                className={`absolute bottom-5  text-xl text-white sm:hidden font-semibold capitalize
-              ${lang === "ar" ? "right-5" : "left-5"}
-              `}
-              >
-                {i.project.category.title[lang]}
-              </div>
+                <div
+                  className={`absolute bottom-5  text-xl text-white sm:hidden font-semibold capitalize
+                ${lang === "ar" ? "right-5" : "left-5"}
+                `}
+                >
+                  {i.project.category.title[lang]} {i.slug}
+                </div>
+              </Link>
+
             </div>
           ))}
         </div>

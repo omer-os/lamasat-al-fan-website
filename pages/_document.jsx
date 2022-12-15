@@ -15,18 +15,18 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <meta name="title" content="Lamasat Al Fan" />
+          <meta name="title" content="Lmsat Architecture" />
           <meta name="robots" content="index, follow" />
           <meta
             name="description"
             content="A company specializing in designs, engineering consultancy, and implementation such as buildings, complexes, high-rise buildings, roads, and urban des"
           />
-          <meta name="author" content="cineon agency" />
+          <meta name="author" content="Cineon Pictures" />
           <meta
             name="keywords"
             content="engineering consultancy, architechture, building"
           />
-          <meta property="og:title" content="Lamasat Al Fan" />
+          <meta property="og:title" content="Lmsat Architecture" />
           <meta
             property="og:site_name"
             data-page-subject="true"
@@ -34,7 +34,7 @@ class MyDocument extends Document {
           />
           <meta
             property="og:url"
-            content="https://lamasat-al-fan-website.vercel.app/"
+            content="https://lmsatarchi.com/"
           />
           <meta
             property="og:description"
@@ -43,24 +43,24 @@ class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://images.unsplash.com/photo-1669934378104-5336b59afd93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+            content="/images/consultancy-service-cover.png"
           />
           <meta property="twitter:card" content="summary_large_image" />
           <meta
             property="twitter:url"
-            content="https://lamasat-al-fan-website.vercel.app/"
+            content="https://lmsatarchi.com/"
           />
           <meta
             name="twitter:image"
-            content="https://images.unsplash.com/photo-1669934378104-5336b59afd93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+            content="/images/consultancy-service-cover.png"
           />
-          <meta name="twitter:title" content="Lamasat Al Fan" />
+          <meta name="twitter:title" content="Lmsat Architecture" />
           <meta
             name="twitter:description"
             content="A company specializing in designs, engineering consultancy, and implementation such as buildings, complexes, high-rise buildings, roads, and urban des"
           />
         </Head>
-        <body dir="rtl">
+        <body dir="auto">
           <Main />
           <NextScript />
         </body>
