@@ -7,6 +7,7 @@ export const SanityClient = createClient({
   apiVersion: "2022-03-25",
   useCdn: true,
 });
+
 const builder = ImageUrlBuilder(SanityClient);
 
 export function urlFor(source) {

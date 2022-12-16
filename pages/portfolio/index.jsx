@@ -18,8 +18,6 @@ export default function Index({ Dta }) {
 
   const { t, lang } = useTranslation("common");
 
-
-
   useEffect(() => {
     QueryCategory === undefined && router.push("?category=residential");
 
@@ -36,32 +34,36 @@ export default function Index({ Dta }) {
       <div className="w-full sm:px-[3em] sm:mt-[7em] mt-20 flex flex-col">
         <div className="flex px-5 justify-between sm:flex-row-reverse flex-col-reverse sm:items-center sticky sm:relative z-30 sm:top-0 left-0 top-24 items-end ">
           <div className="bg-zinc-300 flex rounded-xl sm:w-max w-full overflow-y-hidden p-2 mt-3 gap-2 ">
-            {Dta.categories?.sort((a, b) => (a.order > b.order ? 1 : -1)).map((i, index) => (
-              <div
-                onClick={() => {
-                  setSelectedCategory(i.title.en);
-                  window.scrollTo({
-                    top: 0,
-                    left: 0,
-                    behavior: "smooth",
-                  });
-                }}
-                key={i.title.en}
-                className={`font-bold flex-1 text-sm  p-2 px-6 rounded-xl relative ${
-                  SelectedCategory !== i.title.en && "!text-black"
-                } text-white transition-all cursor-pointer duration-200`}
-              >
-                <>
-                  <span className="z-20 relative capitalize">{i.title[lang]}</span>
-                  {SelectedCategory === i.title.en && (
-                    <motion.div
-                      className="bg-black w-full rounded-xl h-full absolute inset-0 z-10"
-                      layoutId="category-bg"
-                    />
-                  )}
-                </>
-              </div>
-            ))}
+            {Dta.categories
+              ?.sort((a, b) => (a.order > b.order ? 1 : -1))
+              .map((i, index) => (
+                <div
+                  onClick={() => {
+                    setSelectedCategory(i.title.en);
+                    window.scrollTo({
+                      top: 0,
+                      left: 0,
+                      behavior: "smooth",
+                    });
+                  }}
+                  key={i.title.en}
+                  className={`font-bold flex-1 text-sm  p-2 px-6 rounded-xl relative ${
+                    SelectedCategory !== i.title.en && "!text-black"
+                  } text-white transition-all cursor-pointer duration-200`}
+                >
+                  <>
+                    <span className="z-20 relative capitalize">
+                      {i.title[lang]}
+                    </span>
+                    {SelectedCategory === i.title.en && (
+                      <motion.div
+                        className="bg-black w-full rounded-xl h-full absolute inset-0 z-10"
+                        layoutId="category-bg"
+                      />
+                    )}
+                  </>
+                </div>
+              ))}
           </div>
         </div>
         <motion.div className="mt-10 px-6 grid md:grid-cols-3 sm:grid-cols-2 gap-10 min-h-[30em] auto-rows-[15em]">

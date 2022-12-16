@@ -8,6 +8,10 @@ export default function LandingCarousel({ data }) {
   const { t, lang } = useTranslation("common", "landing");
   var CenterHeroImage = useRef();
 
+  useEffect(() => {
+    CenterHeroImage.current.scrollLeft -= 300;
+  }, []);
+
   return (
     <motion.div
       initial={{
@@ -47,13 +51,14 @@ export default function LandingCarousel({ data }) {
         </div>
 
         <div
+          ref={CenterHeroImage}
           className={`
         flex overflow-x-scroll snap-display-none snap-x snap-mandatory gap-4 sm:hidden px-8 flex-row-reverse ${
           lang === "ar" && "!flex-row"
         }`}
         >
           {data.map((i, index) => (
-            <div ref={CenterHeroImage} key={index} className="relative">
+            <div key={index} className="relative">
               <Link lang={lang} href={`/portfolio/${i.project.slug.current}`}>
                 <motion.img
                   className={`snap-center min-w-[18em] rounded-xl h-[21em] brightness-75 top-0 left-0 z-10 object-cover`}
@@ -74,7 +79,7 @@ export default function LandingCarousel({ data }) {
       </div>
 
       <div
-        className={`transition-all flex flex-col gap-2 z-20 sm:h-screen lg:max-w-[26em] sm:max-w-[45%] relative sm:top-10 top-2 sm:mx-10 lg:mx-0 justify-center ${
+        className={`transition-all flex flex-col gap-2 z-20 sm:h-screen lg:max-w-[29em] sm:max-w-[45%] relative sm:top-10 top-2 sm:mx-10 lg:mx-0 justify-center ${
           lang === "ar" ? "lg:right-[10em]" : "lg:left-[8em] text-left"
         }`}
       >
@@ -84,16 +89,19 @@ export default function LandingCarousel({ data }) {
         ${lang === "ar" ? "sm:text-right" : "sm:text-left"}
         `}
         >
-          <div className="lg:text-5xl transition-all sm:text-4xl text-2xl font-extrabold">
+          <div className="lg:text-6xl transition-all sm:text-4xl text-2xl font-extrabold">
             {t("landing:headline")}
           </div>
-          <div className="lg:text-md transition-all text-sm sm:block text-zinc-400 mt-2">
-            {t("landing:sub_headline")}
+          <div className="sm:hidden">
+            <div className="lg:text-lg transition-all text-sm sm:block text-zinc-400 mt-2">
+              {t("landing:sub_headline")}
+            </div>
           </div>
+
           <Link
             scroll={false}
             href="/portfolio"
-            className="mt-5 bg-black text-white active:bg-black/90 group active:scale-95 transition-all py-4 px-6 font-bold sm:w-max justify-center sm:mt-10 sm:rounded-0 rounded-xl flex gap-7 flex-row text-sm lg:text-md"
+            className="mt-5 bg-black text-white active:bg-black/90 group active:scale-95 transition-all py-4 px-6 font-bold sm:w-max justify-center sm:mt-10 sm:rounded-none rounded-xl flex gap-7 flex-row text-sm lg:text-md"
           >
             <span className="min-w-max">{t("landing:landing_hero_btn")}</span>
 
@@ -136,9 +144,12 @@ export default function LandingCarousel({ data }) {
               </div>
             ))}
           </div>
-          <>
+          <div className="lg:text-xl hidden transition-all text-sm sm:block text-zinc-400 mt-5">
+            {t("landing:sub_headline")}
+          </div>
+          {/* <>
             {data.map((i, index) => {
-              if (index === SelectedTap) {
+              if (i.project.slug.current === SelectedTap) {
                 return (
                   <motion.div
                     key={index}
@@ -155,7 +166,7 @@ export default function LandingCarousel({ data }) {
                 );
               }
             })}
-          </>
+          </> */}
         </div>
       </div>
     </motion.div>

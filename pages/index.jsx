@@ -28,7 +28,7 @@ export default function Index({ data }) {
       <LandingCarousel data={data.FeaturedProjects} />
       <LandingServices />
       <div className="h-1 mx-auto rounded bg-black w-4/6 mt-11" />
-      {/* <LandingQAndA data={data.questions} lang={lang} /> */}
+      <LandingQAndA data={data.questions} lang={lang} />
       <div className="mb-5">
         <CTAcard projects />
       </div>
@@ -47,12 +47,12 @@ export async function getStaticProps() {
        description,
        ProjectCover,
        category->{
-       title{
-       en,ar
-     }
-     }
-     }
-     },
+        title{
+        en,ar
+        }
+       }
+      }
+    },
    "questions":*[_type == 'questions']{
    q{ar,en},
    a{ar,en}

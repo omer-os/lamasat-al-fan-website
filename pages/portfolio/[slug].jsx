@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { motion } from "framer-motion";
 import Head from "next/head";
 import { SanityClient, urlFor } from "../../dta";
 import useTranslation from "next-translate/useTranslation";
@@ -73,8 +72,7 @@ export default function ProjectDetails({ data }) {
 
         <button
           onClick={() => {
-            // router.push("/portfolio");
-            console.log(router.pathname);
+            router.back();
           }}
           className="rounded-full flex items-center justify-center w-12 h-12 fixed sm:right-10  sm:hidden z-30 top-24 right-2 bg-white/80 scale-[.8] active:scale-[.6] transition-all"
         >
