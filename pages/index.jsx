@@ -29,7 +29,7 @@ export default function Index({ data }) {
       <LandingServices />
       <div className="h-1 mx-auto rounded bg-black w-4/6 mt-11" />
       <LandingQAndA data={data.questions} lang={lang} />
-      <div className="mb-5">
+      <div className="my-5 mt-20">
         <CTAcard projects />
       </div>
       <ContactUs />
