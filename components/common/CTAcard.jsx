@@ -23,7 +23,7 @@ export default function CTAcard({ projects, contact, services }) {
             {t(`common:cta.subtitle_projects`)}
           </p>
           <Link
-            href="/contact"
+            href="/projects"
             className="transition-all active:scale-95 rounded border-2 border-white text-white font-sans mt-24 hover:bg-white hover:text-black text-xl w-max py-2 px-3 mx-auto"
           >
             {t(`common:cta.projects`)}
@@ -39,7 +39,7 @@ export default function CTAcard({ projects, contact, services }) {
             {t(`common:cta.subtitle_services`)}
           </p>
           <Link
-            href="/contact"
+            href="/services"
             className="transition-all active:scale-95 rounded border-2 border-white text-white font-sans mt-24 hover:bg-white hover:text-black text-xl w-max py-2 px-3 mx-auto"
           >
             {t(`common:cta.services`)}
