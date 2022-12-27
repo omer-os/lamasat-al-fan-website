@@ -4,7 +4,10 @@ import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import { urlFor } from "../../dta";
 export default function LandingCarousel({ data }) {
-  const [SelectedTap, setSelectedTap] = useState("project-10");
+
+
+
+  const [SelectedTap, setSelectedTap] = useState(data[0].project.slug.current);
   const { t, lang } = useTranslation("common", "landing");
   var CenterHeroImage = useRef();
 

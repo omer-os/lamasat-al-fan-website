@@ -39,6 +39,7 @@ export default function ProjectDetails({ data }) {
       },
     },
   ];
+  
   data && data[0].ProjectImages.map((i) => images.push(urlFor(i).url()));
 
   return (
