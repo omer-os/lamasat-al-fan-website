@@ -19,6 +19,7 @@ export default {
   preview: {
     select: {
       title: "title.en",
+      order: "order",
     },
   },
 };
