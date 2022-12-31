@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 export default function MyApp({ Component, pageProps }) {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <MainLayout>
       <AnimatePresence exit>
@@ -20,8 +20,9 @@ export default function MyApp({ Component, pageProps }) {
           exit={{
             opacity: 0,
           }}
-          transition={{ 
-            duration: .4}}
+          transition={{
+            duration: 0.4,
+          }}
         >
           <Component {...pageProps} />
         </motion.div>

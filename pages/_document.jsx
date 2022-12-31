@@ -14,6 +14,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;800&display=swap"
             rel="stylesheet"
           />
+          <link rel="manifest" href="/manifest.json" />
 
           <meta name="title" content="Lmsat Architecture" />
           <meta name="robots" content="index, follow" />
@@ -32,10 +33,7 @@ class MyDocument extends Document {
             data-page-subject="true"
             content="Lamasat Al Fan"
           />
-          <meta
-            property="og:url"
-            content="https://lmsatarchi.com/"
-          />
+          <meta property="og:url" content="https://lmsatarchi.com/" />
           <meta
             property="og:description"
             name="description"
@@ -46,10 +44,7 @@ class MyDocument extends Document {
             content="/images/consultancy-service-cover.png"
           />
           <meta property="twitter:card" content="summary_large_image" />
-          <meta
-            property="twitter:url"
-            content="https://lmsatarchi.com/"
-          />
+          <meta property="twitter:url" content="https://lmsatarchi.com/" />
           <meta
             name="twitter:image"
             content="/images/consultancy-service-cover.png"

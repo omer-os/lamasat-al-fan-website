@@ -4,9 +4,6 @@ import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import { urlFor } from "../../dta";
 export default function LandingCarousel({ data }) {
-
-
-
   const [SelectedTap, setSelectedTap] = useState(data[0].project.slug.current);
   const { t, lang } = useTranslation("common", "landing");
   var CenterHeroImage = useRef();
@@ -130,7 +127,7 @@ export default function LandingCarousel({ data }) {
         <div className="sm:flex hidden mt-6 flex-col  h-[8em]">
           <div className="flex flex-row w-full z-30">
             {data.map((i, index) => (
-              <div key={index}>
+              <div key={i.project.slug.current}>
                 <div
                   onClick={() => setSelectedTap(i.project.slug.current)}
                   className="relative py-4 active:bg-zinc-200 transition-all cursor-pointer px-6"
@@ -150,26 +147,6 @@ export default function LandingCarousel({ data }) {
           <div className="lg:text-xl hidden transition-all text-sm sm:block text-zinc-400 mt-5">
             {t("landing:sub_headline")}
           </div>
-          {/* <>
-            {data.map((i, index) => {
-              if (i.project.slug.current === SelectedTap) {
-                return (
-                  <motion.div
-                    key={index}
-                    animate={{
-                      opacity: [0, 1],
-                    }}
-                    exit={{
-                      opacity: 0,
-                    }}
-                    className="text-sm text-zinc-400 mt-5"
-                  >
-                    {i.project.description[lang]}
-                  </motion.div>
-                );
-              }
-            })}
-          </> */}
         </div>
       </div>
     </motion.div>
